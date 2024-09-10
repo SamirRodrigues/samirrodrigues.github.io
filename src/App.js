@@ -1,15 +1,21 @@
-import logo from './logo.svg'
-import './App.css'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+import HomePage from "./pages/HomePage";
+import DetailsPage from "./pages/DetailsPage"; // Import the new page
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>In Development</p>
-      </header>
-    </div>
-  )
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/details" element={<DetailsPage />} />{" "}
+          {/* Define the new route */}
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;

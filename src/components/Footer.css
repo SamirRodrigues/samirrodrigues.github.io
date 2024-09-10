@@ -1,0 +1,111 @@
+.footer {
+  background-color: #393645;
+  color: white;
+  font-size: 15px;
+  font-family: "Red Hat Display", sans-serif;
+  padding: 40px 0;
+}
+
+.footer-container {
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+.logo-container {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.footer-logo {
+  max-width: 150px;
+}
+
+.footer-links {
+  margin-top: 30px;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 15px;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.footer-menu {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.footer-menu li {
+  margin-bottom: 5px;
+}
+
+.footer-menu li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-menu li a:hover {
+  color: #fba42b;
+  transform: translateX(5px);
+}
+
+footer p {
+  margin: 0;
+  text-align: left;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer h5 {
+  text-align: left;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.footer-rights {
+  margin-top: 30px;
+  text-align: left;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 767px) {
+  .footer-container {
+    max-width: 100%;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .footer-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer-rights {
+    margin-top: 20px;
+  }
+
+  .footer-logo {
+    max-width: 120px;
+  }
+}

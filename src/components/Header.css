@@ -1,0 +1,355 @@
+/* Estilos Gerais */
+.main-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  font-family: "Red Hat Display", sans-serif;
+  background-color: transparent;
+  z-index: 1000;
+}
+
+.logo {
+  max-height: 50px;
+  position: relative;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* Espaçamento entre os links */
+}
+
+.nav-menu .nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 1rem;
+  padding: 0 15px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 0.05rem; /* Ajuste o valor conforme necessário */
+}
+.nav-menu .nav-link.active {
+  font-weight: 700;
+  color: white;
+}
+
+.nav-menu .nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s ease-in-out;
+  margin-top: 5px;
+}
+
+.nav-menu .nav-link.active::after {
+  width: 100%;
+}
+
+.nav-icons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-icons .nav-icon {
+  max-height: 30px;
+  margin: 10px;
+}
+
+/* Estilos para Desktop (a partir de 1025px) */
+@media (min-width: 1025px) {
+  .logo-container {
+    justify-content: flex-end;
+  }
+
+  .custom-toggler {
+    display: none; /* Esconde o botão de sanduíche no desktop */
+  }
+
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60%;
+    border-radius: 25px 0 0 25px;
+    height: 65%;
+    background-color: white;
+    z-index: 9999;
+    transform: translateX(100%); /* Estado inicial fora da tela */
+    opacity: 0; /* Invisível no estado inicial */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Transição suave para ambas propriedades */
+  }
+
+  .navbar-collapse.show {
+    transform: translateX(0); /* Menu desliza para a tela */
+    opacity: 1; /* Torna visível */
+  }
+
+  .navbar-collapse.hidden {
+    transform: translateX(100%); /* Menu fora da tela */
+    opacity: 0; /* Mantém invisível */
+  }
+}
+
+/* Estilos para Tablets (768px - 1024px) */
+@media (min-width: 767px) and (max-width: 1024px) {
+  .main-header {
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    max-height: 45px;
+    margin-right: auto; /* Mantém a logo à esquerda */
+  }
+
+  .logo-container {
+    justify-content: flex-start;
+  }
+
+  .custom-toggler {
+    display: block;
+    border: none;
+    background-color: transparent;
+    margin-left: auto; /* Empurra o botão hambúrguer para a direita */
+  }
+
+  .custom-toggler:focus {
+    box-shadow: none;
+  }
+
+  .sanduich-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60%;
+    border-radius: 25px 0 0 25px;
+    height: 65%;
+    background-color: white;
+    z-index: 9999;
+    transform: translateX(100%); /* Estado inicial fora da tela */
+    opacity: 0; /* Invisível no estado inicial */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Transição suave para ambas propriedades */
+  }
+
+  .navbar-collapse.show {
+    transform: translateX(0); /* Menu desliza para a tela */
+    opacity: 1; /* Torna visível */
+  }
+
+  .navbar-collapse.hidden {
+    transform: translateX(100%); /* Menu fora da tela */
+    opacity: 0; /* Mantém invisível */
+  }
+  .navbar-collapse .header-top {
+    background-color: #f8f4f2;
+    padding: 15px 20px;
+    border-radius: 25px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-collapse .logo,
+  .close-btn img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-top: 40px;
+    padding: 20px;
+  }
+
+  .nav-menu .nav-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.25rem;
+    text-align: center;
+    position: relative;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  .nav-menu .nav-link:hover,
+  .nav-menu .nav-link.active {
+    font-weight: 700;
+    transform: scale(1.05);
+    color: #000;
+  }
+
+  .nav-menu .nav-link.active::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #333;
+    margin-top: 5px;
+  }
+
+  .nav-icons .nav-icon {
+    max-height: 35px;
+    justify-content: left;
+    margin: 10px;
+  }
+
+  .close-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* Estilos para Dispositivos Móveis (até 767px) */
+@media (max-width: 767px) {
+  .main-header {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* Alinha a logo à esquerda e o menu à direita */
+    align-items: center;
+  }
+
+  .logo-container {
+    justify-content: flex-start;
+  }
+
+  .custom-toggler {
+    margin-left: auto;
+  }
+
+  .logo {
+    max-height: 40px;
+    margin-right: auto; /* Mantém a logo à esquerda */
+  }
+
+  .custom-toggler {
+    display: block;
+    border: none;
+    background-color: transparent;
+    margin-left: auto; /* Empurra o botão hambúrguer para a direita */
+  }
+
+  .custom-toggler:focus {
+    box-shadow: none;
+  }
+
+  .sanduich-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60%;
+    border-radius: 25px 0 0 25px;
+    height: 65%;
+    background-color: white;
+    z-index: 9999;
+    transform: translateX(100%); /* Estado inicial fora da tela */
+    opacity: 0; /* Invisível no estado inicial */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Transição suave para ambas propriedades */
+  }
+
+  .navbar-collapse.show {
+    transform: translateX(0); /* Menu desliza para a tela */
+    opacity: 1; /* Torna visível */
+  }
+
+  .navbar-collapse.hidden {
+    transform: translateX(100%); /* Menu fora da tela */
+    opacity: 0; /* Mantém invisível */
+  }
+
+  .navbar-collapse .header-top {
+    background-color: #f8f4f2;
+    padding: 10px 15px;
+    border-radius: 25px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-collapse .logo,
+  .close-btn img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+    padding: 20px;
+  }
+
+  .nav-menu .nav-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-align: center;
+    position: relative;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  .nav-menu .nav-link:hover,
+  .nav-menu .nav-link.active {
+    font-weight: 700;
+    transform: scale(1.05);
+    color: #000;
+  }
+
+  .nav-menu .nav-link.active::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #333;
+    margin-top: 5px;
+  }
+
+  .nav-icons .nav-icon {
+    max-height: 30px;
+    justify-content: left;
+    margin: 15px;
+  }
+
+  .close-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+  }
+}

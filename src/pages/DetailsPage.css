@@ -1,0 +1,163 @@
+.details-page {
+  font-family: "Red Hat Display", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.first-section {
+  padding: 40px 20px; /* Padding ajustado para maior responsividade */
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.first-title {
+  color: #f04b23;
+  font-size: 36px;
+  font-weight: 500;
+  text-align: left;
+  padding-top: 60px; /* Adicionado padding-top para espaçamento do header */
+  line-height: 1.2; /* Ajuste de espaçamento entre linhas */
+}
+
+.first-section strong {
+  font-weight: 800;
+}
+
+.who-we-are {
+  display: flex;
+  text-align: justify;
+  align-items: center;
+  padding-right: 5%;
+  padding-top: 60px; /* Adicionado padding-top para espaçamento do header */
+}
+
+.who-we-are .content-box {
+  background-color: #292c37;
+  border-radius: 16px; /* Bordas arredondadas */
+  padding: 40px 30px; /* Espaçamento interno */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Alinhamento com espaço entre o texto e a logo */
+  flex-wrap: wrap; /* Flexibilidade para telas menores */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Adiciona sombra suave */
+}
+
+.who-we-are h3 {
+  font-size: 2rem; /* Tamanho de fonte um pouco maior */
+  color: white;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.who-we-are p {
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.who-we-are img {
+  max-width: 120px; /* Aumentei o tamanho da logo */
+  margin-left: 20px; /* Espaçamento entre o texto e a logo */
+  transition: transform 0.3s ease-in-out; /* Animação suave na logo */
+}
+
+.who-we-are img:hover {
+  transform: scale(1.05); /* Efeito de hover para a logo */
+}
+
+.btn-know-more {
+  background-color: white;
+  color: #292c37;
+  padding: 12px 30px;
+  border-radius: 50px; /* Mais bordas arredondadas */
+  border: 2px solid #292c37; /* Adiciona uma borda */
+  font-size: 1.1rem; /* Fonte levemente maior */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Suave transição de cor */
+}
+
+.btn-know-more:hover {
+  background-color: #292c37;
+  color: white;
+}
+
+@media (min-width: 992px) {
+  .who-we-are {
+    padding-top: 80px; /* Mais espaçamento em telas maiores */
+  }
+  .who-we-are .content-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .first-section {
+    padding: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .who-we-are {
+    padding-top: 50px; /* Ajuste de padding-top para telas menores */
+  }
+
+  .who-we-are .content-box {
+    flex-direction: column; /* Organização vertical em telas menores */
+    text-align: center;
+    padding: 30px 20px; /* Ajuste de padding para telas menores */
+  }
+
+  .who-we-are img {
+    margin: 20px 0; /* Espaçamento da logo em telas menores */
+    max-width: 100px; /* Tamanho reduzido da logo em dispositivos menores */
+  }
+
+  .first-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px; /* Redução do espaçamento inferior */
+  }
+
+  .btn-know-more {
+    margin-top: 20px; /* Aumenta o espaçamento superior */
+    padding: 10px 20px; /* Ajuste de padding para o botão */
+  }
+
+  .first-section {
+    padding: 30px;
+  }
+}
+
+/* Responsividade adicional para telas menores que 576px */
+@media (max-width: 576px) {
+  .who-we-are {
+    padding-top: 40px; /* Menor espaçamento em telas muito pequenas */
+  }
+
+  .who-we-are h3 {
+    font-size: 1.5rem;
+  }
+
+  .who-we-are p {
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+
+  .btn-know-more {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .first-title {
+    font-size: 1.8rem;
+  }
+}

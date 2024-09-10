@@ -1,0 +1,348 @@
+/* Estilos Gerais para HeaderGrey */
+.header-grey {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0px;
+  font-family: "Red Hat Display", sans-serif;
+  background-color: transparent;
+  z-index: 1000;
+}
+
+.header-grey-logo {
+  max-height: 50px;
+  position: relative;
+}
+
+.header-grey-nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header-grey-nav-link {
+  color: #393645;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 1rem;
+  padding: 0 15px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 0.05rem;
+}
+
+.header-grey-nav-link.active {
+  font-weight: 700;
+  color: #393645;
+}
+
+.header-grey-nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #393645;
+  transition: width 0.3s ease-in-out;
+  margin-top: 5px;
+}
+
+.header-grey-nav-link.active::after {
+  width: 100%;
+}
+
+.header-grey-nav-icons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header-grey-nav-icon {
+  max-height: 30px;
+  margin: 10px;
+  filter: grayscale(1);
+}
+
+/* Estilos para Desktop (a partir de 1025px) */
+@media (min-width: 1025px) {
+  .header-grey-logo-container {
+    justify-content: center;
+  }
+
+  .header-grey-toggler {
+    display: none;
+  }
+
+  .header-grey-navbar-collapse {
+    transform: none;
+    position: static;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Estilos para Tablets (768px - 1024px) */
+@media (min-width: 767px) and (max-width: 1024px) {
+  .header-grey {
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-grey-logo {
+    max-height: 45px;
+    margin-right: auto;
+  }
+
+  .header-grey-logo-container {
+    justify-content: flex-start;
+  }
+
+  .header-grey-toggler {
+    display: block;
+    border: none;
+    background-color: transparent;
+    margin-left: auto;
+  }
+
+  .header-grey-toggler:focus {
+    box-shadow: none;
+  }
+
+  .header-grey-sanduich-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .header-grey-navbar-collapse {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60%;
+    border-radius: 25px 0 0 25px;
+    height: 65%;
+    background-color: white;
+    z-index: 9999;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  .header-grey-navbar-collapse.show {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .header-grey-navbar-collapse.hidden {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  .header-grey-header-top {
+    background-color: #f8f4f2;
+    padding: 15px 20px;
+    border-radius: 25px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-grey-navbar-collapse .header-grey-logo,
+  .header-grey-close-btn img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .header-grey-nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-top: 40px;
+    padding: 20px;
+  }
+
+  .header-grey-nav-link {
+    color: #393645;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.25rem;
+    text-align: center;
+    position: relative;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  .header-grey-nav-link:hover,
+  .header-grey-nav-link.active {
+    font-weight: 700;
+    transform: scale(1.05);
+    color: #393645;
+  }
+
+  .header-grey-nav-link.active::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #393645;
+    margin-top: 5px;
+  }
+
+  .header-grey-nav-icons .header-grey-nav-icon {
+    max-height: 35px;
+    justify-content: left;
+    margin: 10px;
+    filter: grayscale(1);
+  }
+
+  .header-grey-close-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* Estilos para Dispositivos Móveis (até 767px) */
+@media (max-width: 767px) {
+  .header-grey {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-grey-logo-container {
+    justify-content: flex-start;
+  }
+
+  .header-grey-toggler {
+    margin-left: auto;
+  }
+
+  .header-grey-logo {
+    max-height: 40px;
+    margin-right: auto;
+  }
+
+  .header-grey-toggler {
+    display: block;
+    border: none;
+    background-color: transparent;
+    margin-left: auto;
+  }
+
+  .header-grey-toggler:focus {
+    box-shadow: none;
+  }
+
+  .header-grey-sanduich-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .header-grey-navbar-collapse {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 75%;
+    border-radius: 25px 0 0 25px;
+    height: 65%;
+    background-color: white;
+    z-index: 9999;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  .header-grey-navbar-collapse.show {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .header-grey-navbar-collapse.hidden {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  .header-grey-header-top {
+    background-color: #f8f4f2;
+    padding: 10px 15px;
+    border-radius: 25px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-grey-navbar-collapse .header-grey-logo,
+  .header-grey-close-btn img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header-grey-nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+    padding: 20px;
+  }
+
+  .header-grey-nav-link {
+    color: #393645;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-align: center;
+    position: relative;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  .header-grey-nav-link:hover,
+  .header-grey-nav-link.active {
+    font-weight: 700;
+    transform: scale(1.05);
+    color: #393645;
+  }
+
+  .header-grey-nav-link.active::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #393645;
+    margin-top: 5px;
+  }
+
+  .header-grey-nav-icons .header-grey-nav-icon {
+    max-height: 30px;
+    justify-content: left;
+    margin: 15px;
+    filter: grayscale(1);
+  }
+
+  .header-grey-close-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+  }
+}

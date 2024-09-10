@@ -1,0 +1,64 @@
+.hero-section {
+  background-image: url("/public/assets/background-sand.png");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh; /* Garante que a hero section ocupe pelo menos a altura da viewport */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end; /* Alinha o conteúdo na parte inferior */
+  color: white;
+  font-family: "Red Hat Display", sans-serif;
+  position: relative;
+  padding-bottom: 40px; /* Espaço inferior para distanciar o conteúdo do fundo */
+  padding-top: 0;
+  text-align: center;
+}
+
+h1 {
+  font-size: 38px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+h1 strong {
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.btn-hero {
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn-hero .mr-2 {
+  margin-right: 8px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero-section {
+    padding-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .btn-hero {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Estilos para a rolagem suave */
+html {
+  scroll-behavior: smooth;
+}
