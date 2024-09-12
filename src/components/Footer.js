@@ -59,6 +59,14 @@ const Footer = () => {
               <li>
                 <a href="#contato">Contato</a>
               </li>
+              <li>
+                <a href="/privacypolicy">Política de Privacidade</a>{" "}
+                {/* Link adicionado */}
+              </li>
+              <li>
+                <a href="/termsconditions">Termos e Condições</a>{" "}
+                {/* Link adicionado */}
+              </li>
             </ul>
           </Col>
 
