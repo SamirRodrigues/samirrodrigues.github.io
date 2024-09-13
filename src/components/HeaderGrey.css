@@ -1,18 +1,24 @@
-/* Estilos Gerais para HeaderGrey */
+/* ===================== Estilos Gerais para HeaderGrey ===================== */
 .header-grey {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 0px;
+  padding: 20px 0;
   font-family: "Red Hat Display", sans-serif;
   background-color: transparent;
   z-index: 1000;
+  transition: background-color 0.3s ease-in-out; /* Transição suave ao mudar de cor */
 }
 
 .header-grey-logo {
-  max-height: 50px;
-  position: relative;
+  max-height: 50px; /* Definir altura máxima */
+  width: auto; /* Manter proporções corretas */
+  transition: transform 0.3s ease-in-out; /* Transição para hover */
+}
+
+.header-grey-logo:hover {
+  transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
 }
 
 .header-grey-nav-menu {
@@ -27,7 +33,6 @@
   text-decoration: none;
   font-weight: 300;
   font-size: 1rem;
-  padding: 0 15px;
   position: relative;
   transition: all 0.3s ease-in-out;
   letter-spacing: 0.05rem;
@@ -48,6 +53,7 @@
   margin-top: 5px;
 }
 
+.header-grey-nav-link:hover::after,
 .header-grey-nav-link.active::after {
   width: 100%;
 }
@@ -62,16 +68,34 @@
   max-height: 30px;
   margin: 10px;
   filter: grayscale(1);
+  transition: filter 0.3s ease-in-out; /* Transição suave para hover */
 }
 
-/* Estilos para Desktop (a partir de 1025px) */
+.header-grey-nav-icon:hover {
+  filter: grayscale(0); /* Remover efeito grayscale ao passar o mouse */
+}
+
+/* ===================== Ajuste do ícone do menu hambúrguer ===================== */
+.header-grey-toggler {
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  margin-right: 10px; /* Adiciona espaço à direita do ícone */
+}
+
+.header-grey-toggler-col {
+  padding-right: 20px; /* Aumenta o espaçamento à direita */
+}
+
+/* ===================== Estilos para Desktop (a partir de 1025px) ===================== */
 @media (min-width: 1025px) {
   .header-grey-logo-container {
     justify-content: center;
   }
 
   .header-grey-toggler {
-    display: none;
+    display: none; /* Esconder o menu hambúrguer no desktop */
   }
 
   .header-grey-navbar-collapse {
@@ -87,47 +111,31 @@
   }
 }
 
-/* Estilos para Tablets (768px - 1024px) */
-@media (min-width: 767px) and (max-width: 1024px) {
+/* ===================== Estilos para Tablets (768px - 1024px) ===================== */
+@media (min-width: 768px) and (max-width: 1024px) {
   .header-grey {
     padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 
   .header-grey-logo {
     max-height: 45px;
-    margin-right: auto;
-  }
-
-  .header-grey-logo-container {
-    justify-content: flex-start;
   }
 
   .header-grey-toggler {
     display: block;
-    border: none;
     background-color: transparent;
-    margin-left: auto;
-  }
-
-  .header-grey-toggler:focus {
-    box-shadow: none;
-  }
-
-  .header-grey-sanduich-icon {
-    width: 35px;
-    height: 35px;
+    border: none;
+    padding: 0;
+    margin: 0;
   }
 
   .header-grey-navbar-collapse {
     position: fixed;
     top: 0;
     right: 0;
-    width: 60%;
+    width: 65%; /* Definir 65% da largura */
     border-radius: 25px 0 0 25px;
-    height: 65%;
+    height: 65%; /* Ocupa 100% da altura */
     background-color: white;
     z-index: 9999;
     transform: translateX(100%);
@@ -135,12 +143,12 @@
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   }
 
-  .header-grey-navbar-collapse.show {
+  .header-grey-navbar-collapse.menu-open {
     transform: translateX(0);
     opacity: 1;
   }
 
-  .header-grey-navbar-collapse.hidden {
+  .header-grey-navbar-collapse.menu-closed {
     transform: translateX(100%);
     opacity: 0;
   }
@@ -154,127 +162,92 @@
     align-items: center;
   }
 
-  .header-grey-navbar-collapse .header-grey-logo,
-  .header-grey-close-btn img {
-    width: 45px;
-    height: 45px;
+  .header-grey-navbar-collapse .header-grey-logo {
+    margin-left: 0;
+    max-height: 45px;
   }
 
   .header-grey-nav-menu {
-    display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 25px;
     margin-top: 40px;
     padding: 20px;
   }
 
   .header-grey-nav-link {
-    color: #393645;
-    text-decoration: none;
-    font-weight: 500;
     font-size: 1.25rem;
     text-align: center;
-    position: relative;
-    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
   }
 
   .header-grey-nav-link:hover,
   .header-grey-nav-link.active {
-    font-weight: 700;
     transform: scale(1.05);
-    color: #393645;
-  }
-
-  .header-grey-nav-link.active::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: #393645;
-    margin-top: 5px;
   }
 
   .header-grey-nav-icons .header-grey-nav-icon {
     max-height: 35px;
-    justify-content: left;
     margin: 10px;
-    filter: grayscale(1);
   }
 
   .header-grey-close-btn {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 45px;
     height: 45px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .header-grey-close-btn img {
+    max-height: 30px;
   }
 }
 
-/* Estilos para Dispositivos Móveis (até 767px) */
+/* ===================== Estilos para Dispositivos Móveis (até 767px) ===================== */
 @media (max-width: 767px) {
   .header-grey {
     padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .header-grey-logo-container {
-    justify-content: flex-start;
-  }
-
-  .header-grey-toggler {
-    margin-left: auto;
   }
 
   .header-grey-logo {
     max-height: 40px;
-    margin-right: auto;
   }
 
   .header-grey-toggler {
-    display: block;
-    border: none;
     background-color: transparent;
-    margin-left: auto;
-  }
-
-  .header-grey-toggler:focus {
-    box-shadow: none;
-  }
-
-  .header-grey-sanduich-icon {
-    width: 30px;
-    height: 30px;
+    border: none;
+    padding: 0;
+    margin: 0;
   }
 
   .header-grey-navbar-collapse {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 75%;
-    border-radius: 25px 0 0 25px;
+    width: 65%; /* Ajuste para o menu ocupar 65% da largura */
     height: 65%;
+    position: fixed;
+    right: 0;
+    top: 0;
     background-color: white;
-    z-index: 9999;
+    border-radius: 25px 0 0 25px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     transform: translateX(100%);
     opacity: 0;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   }
 
-  .header-grey-navbar-collapse.show {
+  .header-grey-navbar-collapse.menu-open {
     transform: translateX(0);
     opacity: 1;
   }
 
-  .header-grey-navbar-collapse.hidden {
+  .header-grey-navbar-collapse.menu-closed {
     transform: translateX(100%);
     opacity: 0;
+  }
+
+  .header-grey-navbar-collapse .header-grey-logo {
+    margin-left: 0;
+    max-height: 40px;
   }
 
   .header-grey-header-top {
@@ -286,63 +259,48 @@
     align-items: center;
   }
 
-  .header-grey-navbar-collapse .header-grey-logo,
-  .header-grey-close-btn img {
-    width: 40px;
-    height: 40px;
-  }
-
   .header-grey-nav-menu {
-    display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 30px;
     margin-top: 50px;
     padding: 20px;
   }
 
   .header-grey-nav-link {
-    color: #393645;
-    text-decoration: none;
-    font-weight: 500;
     font-size: 1.5rem;
     text-align: center;
-    position: relative;
-    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
   }
 
   .header-grey-nav-link:hover,
   .header-grey-nav-link.active {
-    font-weight: 700;
     transform: scale(1.05);
-    color: #393645;
   }
 
-  .header-grey-nav-link.active::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: #393645;
-    margin-top: 5px;
+  .header-grey-close-btn {
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .header-grey-close-btn img {
+    max-height: 30px;
   }
 
   .header-grey-nav-icons .header-grey-nav-icon {
     max-height: 30px;
-    justify-content: left;
     margin: 15px;
-    filter: grayscale(1);
   }
+}
 
-  .header-grey-close-btn {
-    background: none;
-    border: none;
+/* ===================== Ajustes Adicionais ===================== */
+/* Remover padding do container-fluid em mobile/tablet para alinhamento correto */
+@media (max-width: 1024px) {
+  .header-grey .container-fluid {
     padding: 0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
   }
 }

@@ -12,22 +12,21 @@ const DetailsPage = () => {
       <div className="details-page">
         {/* Primeira Seção - Quem nós Somos */}
         <Container fluid className="first-section">
-          <Row className="justify-content-center align-items-center text-center">
+          <Row className="justify-content-between align-items-center text-center">
             <Col xs={2} lg={2}></Col> {/* Espaço à esquerda */}
             <Col xs={8} lg={8}>
               <Row className="align-items-center text-left">
                 <Col md={4} className="text-left">
                   <h2 className="first-title">
-                    De <strong>Natal</strong> para<br></br> o{" "}
-                    <strong>MUNDO!</strong>
+                    De <strong>Natal</strong> para
+                    <br /> o <strong>MUNDO!</strong>
                   </h2>
                 </Col>
                 <Col md={8} className="who-we-are">
                   <div className="content-box d-flex flex-column flex-md-row align-items-center">
                     <Col md={7} className="text-left">
                       <h3>
-                        Quem nós <br></br>
-                        <strong>Somos?</strong>
+                        Quem nós <br /> <strong>Somos?</strong>
                       </h3>
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -59,19 +58,35 @@ const DetailsPage = () => {
 
         {/* Segunda Seção - Lançamento */}
         <Container fluid className="launch-section">
-          <Row className="justify-content-center text-center">
+          <Row className="justify-content-between text-start">
+            <Col xs={2} lg={2}></Col> {/* Espaço à esquerda */}
+            <Col xs={8} lg={8} className="launch-title-div">
+              <h2 className="launch-title">
+                Conheça nosso <strong>lançamento!</strong>
+              </h2>
+            </Col>
+            <Col xs={2} lg={2}></Col> {/* Espaço à direita */}
+          </Row>
+
+          <Row className="justify-content-between text-center align-items-center">
             <Col xs={2} lg={2}></Col> {/* Espaço à esquerda */}
             <Col xs={8} lg={8}>
-              <h2 className="launch-title">Conheça nosso lançamento!</h2>
-              <div className="launch-content">
-                <h3>O Refúgio do Banzé</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-                <Button variant="dark" className="launch-btn">
-                  Ver mais
-                </Button>
+              <div className="launch-content d-flex align-items-center justify-content-between">
+                <div className="launch-text">
+                  <h3 className="launch-subtitle">O Refúgio do Banzé</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
+                  </p>
+                  <Button variant="dark" className="launch-btn">
+                    <FaChevronRight className="icon-left" />
+                    Ver mais
+                  </Button>
+                </div>
+                <div className="launch-logo">
+                  <img src="/assets/banzé.png" alt="Refúgio do Banzé" />
+                </div>
               </div>
             </Col>
             <Col xs={2} lg={2}></Col> {/* Espaço à direita */}
@@ -80,11 +95,11 @@ const DetailsPage = () => {
 
         {/* Seção de Patrocinadores */}
         <Container fluid className="partners-section">
-          <Row className="justify-content-center text-center">
+          <Row className="justify-content-between text-center">
             <Col xs={2} lg={2}></Col> {/* Espaço à esquerda */}
             <Col xs={8} lg={8}>
               <h4 className="partners-title">Parceiros e Apoiadores</h4>
-              <div className="partners-logos">
+              <div className="partners-logos d-flex justify-content-around">
                 <img
                   src="/assets/logo1.png"
                   alt="Logo 1"
