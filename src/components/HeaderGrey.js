@@ -40,7 +40,7 @@ const HeaderGrey = () => {
   return (
     <Navbar expand="lg" className="header-grey" expanded={menuOpen}>
       <Container fluid>
-        <Row className="w-100 justify-content-between align-items-center">
+        <Row className="w-100 align-items-center">
           {/* Espaçamento esquerdo */}
           <Col xs={1} lg={2}></Col>
 
@@ -134,7 +134,7 @@ const HeaderGrey = () => {
             <Col
               xs="auto"
               lg={1}
-              className="d-flex align-items-center justify-content-end ml-auto"
+              className="d-flex align-items-center justify-content-end pr-0"
             >
               <Navbar.Toggle
                 aria-controls="basic-navbar-nav"
@@ -151,7 +151,7 @@ const HeaderGrey = () => {
           )}
 
           {/* Espaçamento direito */}
-          <Col xs={1} lg={2}></Col>
+          <Col xs={0} lg={2}></Col>
         </Row>
 
         {/* Menu colapsável com ícones quando aberto no mobile/tablet */}

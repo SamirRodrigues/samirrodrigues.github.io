@@ -88,6 +88,16 @@
   padding-right: 20px; /* Aumenta o espaçamento à direita */
 }
 
+.header-grey-sanduich-icon {
+  width: 30px; /* Ajuste conforme necessário */
+  height: auto;
+  transition: transform 0.3s ease-in-out; /* Exemplo de transição */
+}
+
+.header-grey-sanduich-icon:hover {
+  transform: rotate(90deg); /* Exemplo de efeito ao passar o mouse */
+}
+
 /* ===================== Estilos para Desktop (a partir de 1025px) ===================== */
 @media (min-width: 1025px) {
   .header-grey-logo-container {
@@ -135,6 +145,7 @@
     right: 0;
     width: 65%; /* Definir 65% da largura */
     border-radius: 25px 0 0 25px;
+    min-height: 600px;
     height: 65%; /* Ocupa 100% da altura */
     background-color: white;
     z-index: 9999;
@@ -226,6 +237,7 @@
     width: 65%; /* Ajuste para o menu ocupar 65% da largura */
     height: 65%;
     position: fixed;
+    min-height: 600px;
     right: 0;
     top: 0;
     background-color: white;
