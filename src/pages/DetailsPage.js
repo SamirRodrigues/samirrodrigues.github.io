@@ -98,20 +98,19 @@ const DetailsPage = () => {
           <Row className="justify-content-between text-center">
             <Col xs={2} lg={2}></Col> {/* Espaço à esquerda */}
             <Col xs={8} lg={8}>
-              <h4 className="partners-title">Parceiros e Apoiadores</h4>
               <div className="partners-logos d-flex justify-content-around">
                 <img
-                  src="/assets/logo1.png"
+                  src="/assets/GOV.png"
                   alt="Logo 1"
                   className="partner-logo"
                 />
                 <img
-                  src="/assets/logo2.png"
+                  src="/assets/Natal.png"
                   alt="Logo 2"
                   className="partner-logo"
                 />
                 <img
-                  src="/assets/logo3.png"
+                  src="/assets/Capangas.png"
                   alt="Logo 3"
                   className="partner-logo"
                 />

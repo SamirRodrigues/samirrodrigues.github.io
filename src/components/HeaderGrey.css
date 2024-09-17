@@ -143,25 +143,18 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: 65%; /* Definir 65% da largura */
-    border-radius: 25px 0 0 25px;
-    min-height: 600px;
-    height: 65%; /* Ocupa 100% da altura */
+    width: 70%;
+    height: 70%;
     background-color: white;
     z-index: 9999;
-    transform: translateX(100%);
-    opacity: 0;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    border-radius: 25px 0 0 25px;
+    transform: translateX(100%); /* Inicialmente fora da tela à direita */
+    transition: transform 0.3s ease-in-out; /* Transição para o efeito de slide */
   }
 
-  .header-grey-navbar-collapse.menu-open {
-    transform: translateX(0);
-    opacity: 1;
-  }
-
-  .header-grey-navbar-collapse.menu-closed {
-    transform: translateX(100%);
-    opacity: 0;
+  /* Quando o menu está aberto */
+  .header-grey-navbar-collapse.show {
+    transform: translateX(0); /* Move o menu para a posição visível */
   }
 
   .header-grey-header-top {
@@ -234,27 +227,21 @@
   }
 
   .header-grey-navbar-collapse {
-    width: 65%; /* Ajuste para o menu ocupar 65% da largura */
-    height: 65%;
     position: fixed;
-    min-height: 600px;
-    right: 0;
     top: 0;
+    right: 0;
+    width: 70%; /* Ajuste para o menu ocupar 65% da largura */
+    height: 70%; /* Ocupa 100% da altura */
     background-color: white;
+    z-index: 9999;
     border-radius: 25px 0 0 25px;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    transform: translateX(100%);
-    opacity: 0;
+    transform: translateX(100%); /* Inicialmente fora da tela à direita */
+    transition: transform 0.3s ease-in-out; /* Transição para o efeito de slide */
   }
 
-  .header-grey-navbar-collapse.menu-open {
-    transform: translateX(0);
-    opacity: 1;
-  }
-
-  .header-grey-navbar-collapse.menu-closed {
-    transform: translateX(100%);
-    opacity: 0;
+  /* Quando o menu está aberto */
+  .header-grey-navbar-collapse.show {
+    transform: translateX(0); /* Move o menu para a posição visível */
   }
 
   .header-grey-navbar-collapse .header-grey-logo {
@@ -314,5 +301,26 @@
 @media (max-width: 1024px) {
   .header-grey .container-fluid {
     padding: 0;
+  }
+}
+
+/* ===================== Estilos Específicos para a Homepage no Desktop ===================== */
+@media (min-width: 1025px) {
+  .header-homepage .header-grey-nav-link {
+    color: white;
+  }
+
+  .header-homepage .header-grey-nav-link.active {
+    color: white;
+  }
+
+  .header-homepage .header-grey-nav-link::after {
+    background: white;
+  }
+
+  .header-homepage .header-grey-nav-link:hover,
+  .header-homepage .header-grey-nav-link.active {
+    font-weight: 700;
+    color: white;
   }
 }

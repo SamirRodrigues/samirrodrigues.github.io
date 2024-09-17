@@ -179,16 +179,9 @@
 
 /* ===================== Seção de Patrocinadores ===================== */
 .partners-section {
-  padding: 60px 0;
+  padding: 20px 0;
   background-color: #f8f4f2;
   text-align: center;
-}
-
-.partners-title {
-  font-size: 2rem;
-  color: #292c37;
-  font-weight: 700;
-  margin-bottom: 30px;
 }
 
 .partners-logos {
@@ -199,7 +192,7 @@
 }
 
 .partner-logo {
-  max-width: 150px;
+  max-width: 300px;
   margin: 20px;
   transition: transform 0.3s ease-in-out;
 }

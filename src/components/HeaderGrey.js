@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container, Row, Col } from "react-bootstrap";
+import { useLocation } from "react-router-dom"; // Importa useLocation
 import "./HeaderGrey.css";
 
 const HeaderGrey = () => {
@@ -10,10 +11,13 @@ const HeaderGrey = () => {
   );
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
+  const location = useLocation();
+  const isHomePage = location.pathname === "/"; // Ajuste conforme a rota da sua homepage
+
   const handleSelect = (selectedKey) => {
     setActiveKey(selectedKey);
 
-    // Se você deseja que o menu feche ao clicar em um link no mobile/tablet, mantenha este código
+    // Fecha o menu ao clicar em um link no mobile/tablet
     if (isMobile || isTablet) {
       setTimeout(() => {
         setMenuOpen(false);
@@ -38,7 +42,13 @@ const HeaderGrey = () => {
   }, []);
 
   return (
-    <Navbar expand="lg" className="header-grey" expanded={menuOpen}>
+    <Navbar
+      expand="lg"
+      className={`header-grey ${
+        isHomePage && !isMobile && !isTablet ? "header-homepage" : ""
+      }`}
+      expanded={menuOpen}
+    >
       <Container fluid>
         <Row className="w-100 align-items-center">
           {/* Espaçamento esquerdo */}
@@ -52,7 +62,9 @@ const HeaderGrey = () => {
           >
             <Navbar.Brand href="#inicio">
               <img
-                src="assets/logo-bs-grey.png"
+                src={
+                  isHomePage ? "assets/logo-bs.png" : "assets/logo-bs-grey.png"
+                }
                 alt="Baladeira Studio Logo"
                 className="header-grey-logo"
               />
@@ -116,12 +128,18 @@ const HeaderGrey = () => {
             >
               <div className="header-grey-nav-icons">
                 <img
-                  src="assets/x-black-icon.png"
+                  src={
+                    isHomePage ? "assets/x-icon.png" : "assets/x-black-icon.png"
+                  }
                   alt="Ícone X"
                   className="header-grey-nav-icon"
                 />
                 <img
-                  src="assets/instagram-black-icon.png"
+                  src={
+                    isHomePage
+                      ? "assets/instagram-icon.png"
+                      : "assets/instagram-black-icon.png"
+                  }
                   alt="Ícone Instagram"
                   className="header-grey-nav-icon"
                 />
@@ -142,7 +160,11 @@ const HeaderGrey = () => {
                 onClick={toggleMenu}
               >
                 <img
-                  src="assets/sanduich-icon-grey.png"
+                  src={
+                    isHomePage
+                      ? "assets/sanduich-icon.png"
+                      : "assets/sanduich-icon-grey.png"
+                  }
                   alt="Menu"
                   className="header-grey-sanduich-icon"
                 />
