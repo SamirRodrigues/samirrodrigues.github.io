@@ -1,3 +1,4 @@
+// src/components/Footer.js
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./Footer.css";
@@ -6,7 +7,8 @@ const Footer = () => {
   return (
     <footer className="footer">
       <Container fluid className="footer-container">
-        <Row className="align-items-start">
+        {/* Logo para Desktop */}
+        <Row className="align-items-start d-none d-md-flex">
           <Col xs={12} md={12} lg={12} className="logo-container">
             <img
               src="/assets/logo-bs.png"
@@ -15,6 +17,20 @@ const Footer = () => {
             />
           </Col>
         </Row>
+
+        {/* Logo e Direitos Reservados para Mobile */}
+        <Row className="align-items-center logo-rights-row d-flex d-md-none">
+          <Col xs={12} className="logo-container-mobile">
+            <img
+              src="/assets/logo-bs.png"
+              alt="Baladeira Studio Logo"
+              className="footer-logo"
+            />
+          </Col>
+        </Row>
+
+        {/* Linha de separação para Mobile */}
+        <hr className="footer-split d-md-none" />
 
         {/* Links de navegação, redes sociais e contato */}
         <Row className="footer-links">
@@ -60,12 +76,10 @@ const Footer = () => {
                 <a href="#contato">Contato</a>
               </li>
               <li>
-                <a href="/privacypolicy">Política de Privacidade</a>{" "}
-                {/* Link adicionado */}
+                <a href="/privacypolicy">Política de Privacidade</a>
               </li>
               <li>
-                <a href="/termsconditions">Termos e Condições</a>{" "}
-                {/* Link adicionado */}
+                <a href="/termsconditions">Termos e Condições</a>
               </li>
             </ul>
           </Col>
@@ -83,10 +97,17 @@ const Footer = () => {
           </Col>
         </Row>
 
-        {/* Direitos reservados */}
-        <Row className="mt-4 footer-rights">
+        {/* Direitos reservados para Desktop */}
+        <Row className="footer-rights d-none d-md-flex">
           <Col>
             <p>Todos os direitos reservados.</p>
+          </Col>
+        </Row>
+
+        {/* Direitos reservados para Mobile, à direita */}
+        <Row className="footer-rights-row d-flex d-md-none">
+          <Col xs={12} className="footer-rights-mobile">
+            <p className="footer-rights-text">Todos os direitos reservados.</p>
           </Col>
         </Row>
       </Container>

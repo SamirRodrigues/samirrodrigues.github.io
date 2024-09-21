@@ -1,0 +1,117 @@
+/* src/components/PartnersSection.css */
+
+/* Seção de Patrocinadores */
+.partners-section {
+  padding: 40px 0;
+  background-color: var(--gray-color);
+}
+
+/* Estilos Comuns */
+.partner-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.partner-logo {
+  max-width: 300px; /* Aumenta o tamanho das logos */
+  width: 100%;
+  margin: 20px;
+  transition: transform 0.3s ease;
+}
+
+.partner-logo:hover {
+  transform: scale(1.05);
+}
+
+.split-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 30px 0 30px;
+}
+
+.split-image {
+  max-height: 100px;
+  margin: 0 10px;
+}
+
+/* Layout para Desktop */
+.partners-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.partners-logos .partner-item,
+.partners-logos .split-container {
+  flex: none;
+}
+
+/* Layout para Mobile */
+.partners-logos-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.partners-logos-mobile .partner-item {
+  margin-bottom: 20px;
+}
+
+.partner-row {
+  display: flex;
+  align-items: center;
+}
+
+.partner-row .partner-item {
+  flex: 1;
+}
+
+.partner-row .split-container {
+  margin: 0 10px;
+}
+
+.split-image {
+  max-height: 50px;
+}
+
+/* Controle de visibilidade */
+.desktop-only {
+  display: flex;
+}
+
+.mobile-only {
+  display: none;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 767.98px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: flex;
+  }
+
+  .partner-logo {
+    max-width: 160px; /* Ajuste para telas menores */
+    margin: 10px;
+  }
+
+  /* Aumentar a logo do GOV no mobile */
+  .gov-logo-mobile .gov-logo {
+    max-width: 300px; /* Tamanho maior para a logo do GOV no mobile */
+  }
+
+  .split-image {
+    max-height: 50px;
+  }
+
+  .partner-row {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}

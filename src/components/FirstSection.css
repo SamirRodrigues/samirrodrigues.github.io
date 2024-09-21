@@ -1,0 +1,114 @@
+/* src/components/FirstSection.css */
+
+/* Primeira Seção - Quem nós Somos */
+.first-section {
+  padding: var(--section-padding);
+  background-color: var(--white-color);
+  margin-top: 80px; /* Evita sobreposição com o header */
+}
+
+.first-title {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.first-section strong {
+  font-weight: 800;
+}
+
+.who-we-are .content-box {
+  background-color: var(--secondary-color);
+  border-radius: 30px;
+  padding: 40px;
+  color: white;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.box-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text-item {
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bs-logo {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.bs-logo:hover {
+  transform: scale(1.05);
+}
+
+.btn-know-more {
+  background-color: var(--white-color);
+  color: var(--secondary-color);
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: 2px solid var(--secondary-color);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-know-more:hover {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+}
+
+.btn-know-more:focus {
+  outline: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+  .first-title {
+    font-size: 1.8rem;
+  }
+
+  .content-box {
+    padding: 20px;
+  }
+
+  .box-text {
+    font-size: 0.9rem;
+  }
+
+  .text-item {
+    margin-bottom: 10px;
+  }
+
+  .box-text h3 {
+    font-size: 1.4rem;
+  }
+
+  .box-text p {
+    font-size: 0.9rem;
+  }
+
+  .btn-know-more {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .bs-logo {
+    max-width: 80px; /* Ajuste conforme necessário */
+  }
+}

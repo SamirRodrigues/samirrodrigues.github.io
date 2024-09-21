@@ -1,0 +1,135 @@
+/* src/components/LaunchSection.css */
+
+/* Segunda Seção - Lançamento */
+.launch-section {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 40px 0; /* Ajuste conforme necessário */
+}
+
+.launch-title {
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.launch-title strong {
+  font-weight: bold;
+}
+
+.launch-content {
+  background-color: var(--white-color);
+  color: var(--black-color);
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.launch-text {
+  flex: 1;
+  padding-right: 30px;
+  text-align: left;
+}
+
+.launch-subtitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.launch-btn {
+  background-color: #393645;
+  padding: 12px 30px;
+  margin-top: 40px;
+  border-radius: 12px;
+  border: 2px solid #393645;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.launch-btn:hover {
+  background-color: var(--white-color);
+  color: #393645;
+}
+
+.launch-logo {
+  flex: 1;
+  text-align: center;
+}
+
+.launch-logo img {
+  width: 100%;
+  max-width: 488px; /* Ajuste conforme necessário */
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.launch-logo img:hover {
+  transform: scale(1.05);
+}
+
+/* Controla a exibição no desktop e mobile */
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+  .launch-section {
+    padding: 40px 0; /* Reduz o espaço vertical */
+  }
+
+  .launch-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-align: center; /* Centraliza o título no mobile */
+  }
+
+  .launch-content {
+    padding: 20px;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens */
+    text-align: center; /* Centraliza o texto */
+  }
+
+  .launch-text {
+    padding-right: 0;
+  }
+
+  .launch-text p {
+    text-align: justify; /* Justifica o texto */
+  }
+
+  .launch-logo.desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .launch-logo.mobile-only img {
+    max-width: 200px; /* Ajuste conforme necessário */
+  }
+
+  .launch-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .launch-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+  }
+}
