@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { FaChevronRight } from "react-icons/fa";
+import { useNavigate } from "react-router-dom"; // Import para navegação
 import "./FirstSection.css";
 
 // Componente para o botão Saiba Mais
@@ -12,10 +13,10 @@ const KnowMoreButton = ({ onClick }) => (
 );
 
 const FirstSection = () => {
-  const [showMoreInfo, setShowMoreInfo] = useState(false);
+  const navigate = useNavigate(); // Hook para navegação
 
   const handleKnowMore = () => {
-    setShowMoreInfo(!showMoreInfo);
+    navigate("/about"); // Redireciona para a página 'Quem Somos'
   };
 
   return (
@@ -49,14 +50,6 @@ const FirstSection = () => {
                       <div className="text-item">
                         <KnowMoreButton onClick={handleKnowMore} />
                       </div>
-                      {showMoreInfo && (
-                        <div className="text-item extra-info">
-                          <p>
-                            Mais informações sobre nossa história, nossa missão
-                            e nossos valores.
-                          </p>
-                        </div>
-                      )}
                     </Col>
 
                     <Col xs={5} className="image-container">

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container, Row, Col } from "react-bootstrap";
-import { useLocation } from "react-router-dom"; // Importa useLocation
+import { useLocation, useNavigate } from "react-router-dom"; // Importa useNavigate
 import "./HeaderGrey.css";
 
 const HeaderGrey = () => {
@@ -12,10 +12,26 @@ const HeaderGrey = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const location = useLocation();
-  const isHomePage = location.pathname === "/"; // Ajuste conforme a rota da sua homepage
+  const navigate = useNavigate(); // Hook de navegação
+
+  // Definir a rota correta para selecionar o menu
+  useEffect(() => {
+    if (location.pathname === "/about") {
+      setActiveKey("#quemsomos");
+    } else if (location.pathname === "/") {
+      setActiveKey("#inicio");
+    }
+  }, [location.pathname]);
 
   const handleSelect = (selectedKey) => {
     setActiveKey(selectedKey);
+
+    // Navegar para as páginas corretas
+    if (selectedKey === "#quemsomos") {
+      navigate("/about");
+    } else if (selectedKey === "#inicio") {
+      navigate("/");
+    }
 
     // Fecha o menu ao clicar em um link no mobile/tablet
     if (isMobile || isTablet) {
@@ -45,7 +61,9 @@ const HeaderGrey = () => {
     <Navbar
       expand="lg"
       className={`header-grey ${
-        isHomePage && !isMobile && !isTablet ? "header-homepage" : ""
+        location.pathname === "/" && !isMobile && !isTablet
+          ? "header-homepage"
+          : ""
       }`}
       expanded={menuOpen}
     >
@@ -54,16 +72,21 @@ const HeaderGrey = () => {
           {/* Espaçamento esquerdo */}
           <Col xs={1} lg={2}></Col>
 
-          {/* Coluna da logo */}
+          {/* Coluna da logo - Clique agora navega para a home */}
           <Col
             xs="auto"
             lg={1}
             className="d-flex align-items-center justify-content-start"
           >
-            <Navbar.Brand href="#inicio">
+            <Navbar.Brand
+              onClick={() => navigate("/")} // Redireciona para a página inicial ao clicar na logo
+              style={{ cursor: "pointer" }} // Estilo de cursor para indicar que a logo é clicável
+            >
               <img
                 src={
-                  isHomePage ? "assets/logo-bs.png" : "assets/logo-bs-grey.png"
+                  location.pathname === "/"
+                    ? "assets/logo-bs.png"
+                    : "assets/logo-bs-grey.png"
                 }
                 alt="Baladeira Studio Logo"
                 className="header-grey-logo"
@@ -129,14 +152,16 @@ const HeaderGrey = () => {
               <div className="header-grey-nav-icons">
                 <img
                   src={
-                    isHomePage ? "assets/x-icon.png" : "assets/x-black-icon.png"
+                    location.pathname === "/"
+                      ? "assets/x-icon.png"
+                      : "assets/x-black-icon.png"
                   }
                   alt="Ícone X"
                   className="header-grey-nav-icon"
                 />
                 <img
                   src={
-                    isHomePage
+                    location.pathname === "/"
                       ? "assets/instagram-icon.png"
                       : "assets/instagram-black-icon.png"
                   }
@@ -161,7 +186,7 @@ const HeaderGrey = () => {
               >
                 <img
                   src={
-                    isHomePage
+                    location.pathname === "/"
                       ? "assets/sanduich-icon.png"
                       : "assets/sanduich-icon-grey.png"
                   }
@@ -183,7 +208,10 @@ const HeaderGrey = () => {
             className="header-grey-navbar-collapse"
           >
             <div className="header-grey-header-top">
-              <Navbar.Brand href="#inicio">
+              <Navbar.Brand
+                onClick={() => navigate("/")} // Adiciona navegação à home também no mobile
+                style={{ cursor: "pointer" }}
+              >
                 <img
                   src="assets/bs-icon.png"
                   alt="Baladeira Studio Logo"
@@ -212,6 +240,7 @@ const HeaderGrey = () => {
                 className={`header-grey-nav-link ${
                   activeKey === "#quemsomos" ? "active" : ""
                 }`}
+                onClick={() => navigate("/about")} // Garante a navegação
               >
                 QUEM SOMOS
               </Nav.Link>
