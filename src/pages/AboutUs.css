@@ -1,8 +1,7 @@
 /* src/pages/AboutUs.css */
-
 .about-us-page {
   padding: var(--section-padding);
-  background-color: var(--white-color);
+  background-color: #efefed;
   color: var(--primary-color);
 }
 
@@ -10,7 +9,6 @@
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
-  padding: 20px;
 }
 
 .about-us-content h1 {

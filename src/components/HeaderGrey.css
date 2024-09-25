@@ -12,9 +12,10 @@
 }
 
 .header-grey-logo {
-  max-height: 50px; /* Definir altura máxima */
-  width: auto; /* Manter proporções corretas */
-  transition: transform 0.3s ease-in-out; /* Transição para hover */
+  max-height: 50px; /* Altura máxima */
+  width: auto; /* Manter as proporções */
+  transition: transform 0.3s ease-in-out;
+  margin-left: -25px; /* Ajuste para mover a logo mais à esquerda */
 }
 
 .header-grey-logo:hover {
@@ -68,11 +69,13 @@
   max-height: 30px;
   margin: 10px;
   filter: grayscale(1);
-  transition: filter 0.3s ease-in-out; /* Transição suave para hover */
+  transition: transform 0.3s ease-in-out;
 }
 
 .header-grey-nav-icon:hover {
-  filter: grayscale(0); /* Remover efeito grayscale ao passar o mouse */
+  filter: grayscale(0);
+  transform: scale(1.1); /* Aumenta levemente o ícone */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19); /* Sombra suave */
 }
 
 /* ===================== Ajuste do ícone do menu hambúrguer ===================== */
@@ -85,7 +88,7 @@
 }
 
 .header-grey-toggler-col {
-  padding-right: 20px; /* Aumenta o espaçamento à direita */
+  padding-right: 0px; /* Aumenta o espaçamento à direita */
 }
 
 .header-grey-sanduich-icon {
@@ -247,7 +250,7 @@
   }
 
   .header-grey-navbar-collapse .header-grey-logo {
-    margin-left: 0;
+    margin-left: 0px;
     max-height: 40px;
   }
 
@@ -303,6 +306,7 @@
 @media (max-width: 1024px) {
   .header-grey .container-fluid {
     padding: 0;
+    justify-content: center;
   }
 }
 

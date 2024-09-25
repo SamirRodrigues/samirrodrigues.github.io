@@ -1,0 +1,70 @@
+/* Seção Quem Nós Somos */
+.who-we-are-section {
+  background-color: #efefed;
+  padding: 80px 0; /* Ajuste do padding */
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.who-we-are-container {
+  margin-top: 80px;
+}
+
+.who-we-are-logo img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease;
+}
+
+.who-we-are-logo img:hover {
+  transform: scale(1.05);
+}
+
+.who-we-are-text-card {
+  background-color: #ffffff;
+  color: #393645;
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centraliza o texto */
+}
+
+.who-we-are-text-card h3 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.who-we-are-text-card h3 strong {
+  font-weight: 800;
+}
+
+.who-we-are-text-card p {
+  margin-top: 20px;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+  .who-we-are-section {
+    padding: 20px;
+  }
+
+  .who-we-are-text-card {
+    padding: 20px;
+  }
+
+  .who-we-are-text-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .who-we-are-text-card p {
+    font-size: 0.9rem;
+  }
+
+  .who-we-are-logo {
+    margin-bottom: 20px;
+  }
+}

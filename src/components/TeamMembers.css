@@ -1,0 +1,74 @@
+/* Seção dos Membros da Equipe */
+.team-members-section {
+  background-color: #ed5424;
+  padding: 80px 0;
+  color: #ffffff;
+}
+
+.team-member-card {
+  background: transparent;
+}
+
+.card-image-wrapper {
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0 30px 0 0; /* Aplica 30px de raio apenas no canto superior direito */
+}
+
+.card-content {
+  padding-left: 10px; /* Aproxima o texto da imagem */
+}
+
+.card-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card-position {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Centraliza o conteúdo dos cards */
+.team-members-section .row.justify-content-center {
+  justify-content: center;
+}
+
+/* Ajustes para dispositivos médios */
+@media (min-width: 768px) {
+  .team-member-card {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+  .card-content {
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+
+  .card-name {
+    font-size: 1.2rem;
+  }
+
+  .card-position {
+    font-size: 1rem;
+  }
+
+  .card-description {
+    font-size: 0.9rem;
+  }
+}
