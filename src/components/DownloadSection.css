@@ -1,0 +1,75 @@
+/* src/components/DownloadSection.css */
+.download-section {
+  background-color: #ffffff;
+  padding: 50px 0;
+}
+
+.download-item {
+  position: relative;
+  width: 100%;
+  background-size: contain; /* Garante que a imagem cubra o card inteiro */
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 8px; /* Bordas arredondadas */
+  display: flex;
+  flex-direction: column; /* Alinha os itens na vertical */
+  justify-content: flex-end; /* Alinha o conteúdo ao final do card */
+  padding: 30px; /* Espaço interno para alinhamento do conteúdo */
+  color: #393645; /* Cor do texto */
+  min-height: 450px; /* Altura mínima */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para definir o card */
+  margin: 15px; /* Espaçamento entre cards */
+  overflow: hidden; /* Esconde qualquer overflow */
+}
+
+.download-content {
+  position: relative; /* Posiciona relativo ao card */
+  text-align: center; /* Centraliza o texto */
+}
+
+.download-content h3 {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 32px; /* Tamanho do título reduzido para adequar ao design */
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.download-content p {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 18px; /* Tamanho de fonte ajustado */
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 20px; /* Espaço antes do botão */
+}
+
+.download-button {
+  display: inline-block;
+  padding: 12px 24px; /* Padding do botão ajustado */
+  background-color: #393645;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px; /* Bordas do botão arredondadas */
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s; /* Transição suave de cor */
+}
+
+.download-button:hover {
+  background-color: #333333; /* Mudança de cor ao passar o mouse */
+}
+
+.download-button i {
+  margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+  .download-item {
+    max-width: 90%; /* Ajuste para telas menores */
+  }
+
+  .download-content h3,
+  .download-content p {
+    text-align: center; /* Garante centralização em telas menores */
+  }
+}

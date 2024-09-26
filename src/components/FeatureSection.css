@@ -1,0 +1,53 @@
+/* src/components/FeatureSection.css */
+.feature-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-item {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  width: 100vw; /* Preenche a tela de ponta a ponta */
+  margin-left: calc(-50vw + 50%);
+}
+
+.feature-inner {
+  max-width: 1000px; /* Largura máxima aproximada para centralizar conteúdo */
+  margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+.feature-image {
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 63.57px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+p {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .feature-content {
+    text-align: left;
+  }
+
+  .feature-image {
+    margin-bottom: 0;
+  }
+}

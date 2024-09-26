@@ -1,0 +1,61 @@
+/* src/components/Refugio.css */
+.refugio-section {
+  background-color: #efefed;
+  padding-top: 100px;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.refugio-image-wrapper {
+  width: 100%;
+}
+
+.refugio-banner-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.refugio-content {
+  text-align: center;
+  margin: 40px auto;
+  color: #393645;
+}
+
+.refugio-content h3 {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 63.57px;
+  padding-bottom: 30px;
+  text-align: center;
+  color: #393645;
+  transition: color 0.3s ease;
+}
+
+.refugio-content p {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: center;
+  color: #393645;
+  transition: color 0.3s ease;
+}
+
+.refugio-content:hover h3,
+.refugio-content:hover p {
+  color: #000000; /* Muda a cor para preto no hover */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .refugio-content h3 {
+    font-size: 48px; /* Ajuste para telas menores */
+    line-height: 50px;
+  }
+
+  .refugio-content p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}

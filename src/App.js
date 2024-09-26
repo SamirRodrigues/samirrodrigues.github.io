@@ -5,7 +5,8 @@ import HomePage from "./pages/HomePage";
 import DetailsPage from "./pages/DetailsPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
-import AboutUs from "./pages/AboutUs"; // Importa a nova página
+import AboutUs from "./pages/AboutUs";
+import GamesPage from "./pages/GamesPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} /> {/* Nova rota */}
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           <Route path="/termsconditions" element={<TermsConditions />} />
+          <Route path="/jogos" element={<GamesPage />} />
         </Routes>
       </div>
     </Router>
