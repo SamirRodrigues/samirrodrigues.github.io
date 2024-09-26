@@ -31,7 +31,7 @@ const LaunchSection = () => {
                 </Button>
               </div>
               {/* Logo exibida apenas no desktop */}
-              <div className="launch-logo desktop-only">
+              <div className="launch-logo desktop-only justify-content-center">
                 <img src="/assets/banzé.png" alt="Refúgio do Banzé" />
               </div>
             </div>

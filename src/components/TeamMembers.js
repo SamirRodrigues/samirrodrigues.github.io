@@ -57,12 +57,21 @@ const TeamMembers = () => {
   return (
     <section className="team-members-section">
       <Container>
+        <Row>
+          <Col>
+            <div className="title-team">
+              <h3>
+                Conheça nosso <strong>TIME!</strong>
+              </h3>
+            </div>
+          </Col>
+        </Row>
         <Row className="justify-content-center">
           {teamMembers.map((member) => (
             <Col xs={12} md={6} lg={5} key={member.id} className="mb-4">
               <div className="team-member-card">
-                <Row className="align-items-center no-gutters">
-                  <Col xs={4} className="image-col">
+                <Row className="align-items-start no-gutters">
+                  <Col xs={12} md={4} className="image-col">
                     <div className="card-image-wrapper">
                       <img
                         src={member.image}
@@ -71,7 +80,7 @@ const TeamMembers = () => {
                       />
                     </div>
                   </Col>
-                  <Col xs={8}>
+                  <Col xs={12} md={8} className="text-col">
                     <div className="card-content">
                       <h5 className="card-name">{member.name}</h5>
                       <p className="card-position">{member.position}</p>

@@ -1,7 +1,7 @@
-/* Seção Quem Nós Somos */
+/* Who We Are Section */
 .who-we-are-section {
   background-color: #efefed;
-  padding: 80px 0; /* Ajuste do padding */
+  padding: 80px 0;
   font-family: "Red Hat Display", sans-serif;
 }
 
@@ -10,11 +10,9 @@
 }
 
 .who-we-are-logo img {
-  max-width: 100%;
+  max-width: 230px;
   height: auto;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
   transition: transform 0.3s ease;
 }
 
@@ -25,15 +23,25 @@
 .who-we-are-text-card {
   background-color: #ffffff;
   color: #393645;
-  padding: 40px;
+  padding: 60px;
   border-radius: 30px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center; /* Centraliza o texto */
+  text-align: left;
+  min-height: 500px;
+  transition: transform 0.3s ease;
+}
+
+.who-we-are-text-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.433);
 }
 
 .who-we-are-text-card h3 {
-  font-size: 2rem;
-  font-weight: 500;
+  font-family: "Red Hat Display";
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 47.68px;
+  text-align: left;
 }
 
 .who-we-are-text-card h3 strong {
@@ -42,11 +50,14 @@
 
 .who-we-are-text-card p {
   margin-top: 20px;
-  text-align: justify;
-  line-height: 1.6;
+  font-family: "Red Hat Display";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: left;
 }
 
-/* Ajustes para dispositivos móveis */
+/* Adjustments for mobile devices */
 @media (max-width: 768px) {
   .who-we-are-section {
     padding: 20px;
@@ -54,6 +65,7 @@
 
   .who-we-are-text-card {
     padding: 20px;
+    min-height: auto;
   }
 
   .who-we-are-text-card h3 {

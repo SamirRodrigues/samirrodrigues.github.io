@@ -98,18 +98,18 @@ const Footer = () => {
         </Row>
 
         {/* Direitos reservados para Desktop */}
-        <Row className="footer-rights d-none d-md-flex">
+        {/* <Row className="footer-rights d-none d-md-flex">
           <Col>
             <p>Todos os direitos reservados.</p>
           </Col>
-        </Row>
+        </Row> */}
 
-        {/* Direitos reservados para Mobile, à direita */}
+        {/* Direitos reservados para Mobile, à direita
         <Row className="footer-rights-row d-flex d-md-none">
           <Col xs={12} className="footer-rights-mobile">
             <p className="footer-rights-text">Todos os direitos reservados.</p>
           </Col>
-        </Row>
+        </Row> */}
       </Container>
     </footer>
   );

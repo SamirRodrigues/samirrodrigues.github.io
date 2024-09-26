@@ -65,7 +65,7 @@
 
 .launch-logo img {
   width: 100%;
-  max-width: 488px; /* Ajuste conforme necessário */
+  max-width: 400px; /* Ajuste conforme necessário */
   height: auto;
   transition: transform 0.3s ease;
 }
@@ -97,6 +97,7 @@
 
   .launch-content {
     padding: 20px;
+    margin: 15px;
     flex-direction: column;
     align-items: center; /* Centraliza os itens */
     text-align: center; /* Centraliza o texto */
