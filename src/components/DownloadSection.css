@@ -1,24 +1,22 @@
 /* src/components/DownloadSection.css */
 .download-section {
-  background-color: #ffffff;
+  background-color: #efefed;
   padding: 50px 0;
 }
 
 .download-item {
-  position: relative;
   width: 100%;
   background-size: contain; /* Garante que a imagem cubra o card inteiro */
   background-repeat: no-repeat;
   background-position: center;
+  min-width: 400px;
   border-radius: 8px; /* Bordas arredondadas */
   display: flex;
+  text-align: center;
   flex-direction: column; /* Alinha os itens na vertical */
   justify-content: flex-end; /* Alinha o conteúdo ao final do card */
   padding: 30px; /* Espaço interno para alinhamento do conteúdo */
   color: #393645; /* Cor do texto */
-  min-height: 450px; /* Altura mínima */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para definir o card */
-  margin: 15px; /* Espaçamento entre cards */
   overflow: hidden; /* Esconde qualquer overflow */
 }
 
@@ -28,6 +26,7 @@
 }
 
 .download-content h3 {
+  text-align: center; /* Garante centralização em telas menores */
   font-family: "Red Hat Display", sans-serif;
   font-size: 32px; /* Tamanho do título reduzido para adequar ao design */
   font-weight: 900;
@@ -36,6 +35,7 @@
 }
 
 .download-content p {
+  text-align: center; /* Garante centralização em telas menores */
   font-family: "Red Hat Display", sans-serif;
   font-size: 18px; /* Tamanho de fonte ajustado */
   font-weight: 400;
@@ -49,7 +49,7 @@
   background-color: #393645;
   color: #ffffff;
   text-decoration: none;
-  border-radius: 5px; /* Bordas do botão arredondadas */
+  border-radius: 16px; /* Bordas do botão arredondadas */
   font-size: 16px;
   text-align: center;
   transition: background-color 0.3s; /* Transição suave de cor */
