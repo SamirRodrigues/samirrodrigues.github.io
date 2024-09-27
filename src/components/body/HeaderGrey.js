@@ -22,6 +22,8 @@ const HeaderGrey = () => {
       setActiveKey("#inicio");
     } else if (location.pathname === "/jogos") {
       setActiveKey("#jogos");
+    } else if (location.pathname === "/contato") {
+      setActiveKey("#contato");
     } else {
       // Pode definir uma lógica padrão ou manter uma chave inativa
       setActiveKey(null);
@@ -39,7 +41,7 @@ const HeaderGrey = () => {
     } else if (selectedKey === "#jogos") {
       navigate("/jogos"); // Adiciona navegação para a página de jogos
     } else if (selectedKey === "#contato") {
-      navigate("/contact"); // Ajuste a rota conforme necessário para contato
+      navigate("/contato"); // Ajuste a rota conforme necessário para contato
     }
 
     // Fecha o menu ao clicar em um link no mobile/tablet

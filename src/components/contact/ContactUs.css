@@ -1,0 +1,115 @@
+/* Estilos para o container principal */
+.contact-us {
+  background-color: #ffffff; /* Alterado para branco */
+  padding: 80px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Suavizado */
+}
+
+/* Centralização vertical do texto */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Estilos para o título */
+.contact-info h3 {
+  color: #ed5424;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* Estilos para o parágrafo */
+.contact-info p {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* Destaque em negrito */
+.contact-info p strong {
+  font-weight: 700;
+}
+
+/* Estilos para o formulário */
+.contact-form form {
+  margin-top: 20px;
+}
+
+/* Labels alinhados à esquerda */
+.contact-form label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+/* Espaçamento entre os grupos de formulário */
+.contact-form .form-group {
+  margin-bottom: 15px;
+}
+
+/* Estilos para o container do input */
+.input-container {
+  position: relative;
+}
+
+.input-container .form-control {
+  padding-left: 40px; /* Espaço para o ícone */
+}
+
+.input-container .input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 20px;
+}
+
+/* Ajuste especial para textarea */
+.input-container .textarea-icon {
+  top: 15px;
+  transform: none;
+}
+
+/* Estilos para o botão */
+.contact-form button {
+  background-color: #393645;
+  border: none;
+  color: #ffffff;
+}
+
+/* Hover do botão */
+.contact-form button:hover {
+  background-color: #292c37;
+}
+
+/* Margem superior do botão */
+.submit-btn {
+  margin-top: 15px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .contact-info h3 {
+    font-size: 36px;
+  }
+
+  .contact-info p {
+    font-size: 18px;
+  }
+
+  .contact-us {
+    padding: 50px 20px; /* Reduz o padding em telas menores */
+  }
+}

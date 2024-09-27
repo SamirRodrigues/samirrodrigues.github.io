@@ -1,0 +1,16 @@
+/* Variáveis CSS */
+:root {
+  --primary-color: #f04b23;
+  --secondary-color: #292c37;
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --gray-color: #f8f4f2;
+}
+
+/* Estilos Gerais */
+.contact-page {
+  font-family: "Red Hat Display", sans-serif;
+  margin: 0;
+  background-color: #efefed;
+  padding: 120px 10%;
+}
