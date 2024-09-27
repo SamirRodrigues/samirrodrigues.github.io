@@ -1,8 +1,8 @@
 import React from "react";
-import HeaderGrey from "../components/HeaderGrey";
-import WhoWeAre from "../components/WhoWeAre";
-import TeamMembers from "../components/TeamMembers"; // Importação do novo componente
-import Footer from "../components/Footer";
+import HeaderGrey from "../components/body/HeaderGrey";
+import WhoWeAre from "../components/about/WhoWeAre";
+import TeamMembers from "../components/about/TeamMembers"; // Importação do novo componente
+import Footer from "../components/body/Footer";
 
 const AboutUs = () => {
   return (

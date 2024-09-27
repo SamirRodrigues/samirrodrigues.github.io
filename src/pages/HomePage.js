@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { FaChevronDown } from "react-icons/fa";
 import { useNavigate } from "react-router-dom"; // Importa useNavigate
-import HeaderGrey from "../components/HeaderGrey"; // Importa o HeaderGrey
+import HeaderGrey from "../components/body/HeaderGrey"; // Importa o HeaderGrey
 import "./HomePage.css";
 
 const HomePage = () => {

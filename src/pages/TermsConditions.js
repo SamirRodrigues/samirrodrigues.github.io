@@ -1,7 +1,7 @@
 import React from "react";
 import "./TermsConditions.css"; // Importa o CSS
-import HeaderGrey from "../components/HeaderGrey"; // Importa o Header
-import Footer from "../components/Footer"; // Importa o Footer
+import HeaderGrey from "../components/body/HeaderGrey"; // Importa o Header
+import Footer from "../components/body/Footer"; // Importa o Footer
 
 const TermsConditions = () => {
   return (

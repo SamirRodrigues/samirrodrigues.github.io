@@ -1,11 +1,11 @@
 // src/pages/GamesPage.js
 import React from "react";
-import HeaderGrey from "../components/HeaderGrey";
-import Footer from "../components/Footer";
-import Refugio from "../components/Refugio";
-import PartnersSection from "../components/PartnersSection";
-import FeatureSection from "../components/FeatureSection";
-import DownloadSection from "../components/DownloadSection";
+import HeaderGrey from "../components/body/HeaderGrey";
+import Footer from "../components/body/Footer";
+import Refugio from "../components/games/Refugio";
+import PartnersSection from "../components/inicio/PartnersSection";
+import FeatureSection from "../components/games/FeatureSection";
+import DownloadSection from "../components/games/DownloadSection";
 import "./GamerPage.css";
 const GamesPage = () => {
   return (
