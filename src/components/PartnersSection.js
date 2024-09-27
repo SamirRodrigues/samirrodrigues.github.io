@@ -27,7 +27,7 @@ const PartnersSection = () => {
               </div>
               <div className="partner-item">
                 <img
-                  src="/assets/Natal.png"
+                  src="/assets/natal.png"
                   alt="Logo Natal"
                   className="partner-logo"
                 />
@@ -41,7 +41,7 @@ const PartnersSection = () => {
               </div>
               <div className="partner-item">
                 <img
-                  src="/assets/Capangas.png"
+                  src="/assets/capangas.png"
                   alt="Logo Capangas"
                   className="partner-logo"
                 />
@@ -61,7 +61,7 @@ const PartnersSection = () => {
               <div className="partner-row">
                 <div className="partner-item">
                   <img
-                    src="/assets/Natal.png"
+                    src="/assets/natal.png"
                     alt="Logo Natal"
                     className="partner-logo"
                   />
@@ -75,7 +75,7 @@ const PartnersSection = () => {
                 </div>
                 <div className="partner-item">
                   <img
-                    src="/assets/Capangas.png"
+                    src="/assets/capangas.png"
                     alt="Logo Capangas"
                     className="partner-logo"
                   />

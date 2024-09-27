@@ -39,6 +39,10 @@
   letter-spacing: 0.05rem;
 }
 
+.header-grey-nav-link:hover {
+  font-weight: bold;
+}
+
 .header-grey-nav-link.active {
   font-weight: 700;
   color: #393645;

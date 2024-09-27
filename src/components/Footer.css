@@ -64,11 +64,13 @@
 footer p {
   margin: 0;
   text-align: left;
+  font-size: 15px;
 }
 
 footer a {
   color: white;
   text-decoration: none;
+  font-size: 15px;
 }
 
 footer h5 {
@@ -129,6 +131,10 @@ footer h5 {
 
   .footer-links > .col {
     text-align: left;
+  }
+  footer p {
+    text-align: left;
+    font-size: 14px;
   }
 
   .footer-links h5 {

@@ -18,8 +18,13 @@ const HeaderGrey = () => {
   useEffect(() => {
     if (location.pathname === "/about") {
       setActiveKey("#quemsomos");
-    } else if (location.pathname === "/") {
+    } else if (location.pathname === "/" || location.pathname === "/details") {
       setActiveKey("#inicio");
+    } else if (location.pathname === "/jogos") {
+      setActiveKey("#jogos");
+    } else {
+      // Pode definir uma lógica padrão ou manter uma chave inativa
+      setActiveKey(null);
     }
   }, [location.pathname]);
 
@@ -31,6 +36,10 @@ const HeaderGrey = () => {
       navigate("/about");
     } else if (selectedKey === "#inicio") {
       navigate("/");
+    } else if (selectedKey === "#jogos") {
+      navigate("/jogos"); // Adiciona navegação para a página de jogos
+    } else if (selectedKey === "#contato") {
+      navigate("/contact"); // Ajuste a rota conforme necessário para contato
     }
 
     // Fecha o menu ao clicar em um link no mobile/tablet

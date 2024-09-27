@@ -21,12 +21,6 @@
 
 /* Media Queries */
 @media (max-width: 768px) {
-  .first-title,
-  .launch-title {
-    font-size: 2rem;
-    text-align: center;
-  }
-
   .who-we-are .content-box,
   .launch-content {
     flex-direction: column;

@@ -34,7 +34,7 @@ const FirstSection = () => {
               <Col xs={12} md={8} className="who-we-are">
                 <div className="content-box">
                   <Row className="align-items-center">
-                    <Col xs={7} className="box-text">
+                    <Col xs={8} className="box-text">
                       <div className="text-item">
                         <h3>
                           Quem nós <strong>Somos?</strong>
@@ -52,7 +52,7 @@ const FirstSection = () => {
                       </div>
                     </Col>
 
-                    <Col xs={5} className="image-container">
+                    <Col xs={4} className="image-container">
                       <img
                         src="/assets/logo-bs-white.png"
                         alt="Baladeira Studio Logo"

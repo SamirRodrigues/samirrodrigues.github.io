@@ -24,7 +24,7 @@
   margin-bottom: 20px;
 }
 
-h3 {
+.feature-section h3 {
   font-family: "Red Hat Display", sans-serif;
   font-size: 64px;
   font-weight: 900;
@@ -33,7 +33,7 @@ h3 {
   margin-bottom: 20px;
 }
 
-p {
+.feature-section p {
   font-family: "Red Hat Display", sans-serif;
   font-size: 24px;
   font-weight: 400;
