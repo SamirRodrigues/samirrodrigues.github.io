@@ -110,7 +110,7 @@ footer h5 {
     font-size: 0.8rem;
     align-self: flex-end; /* Coloca o texto "Todos os direitos reservados" no final da div */
     text-align: right;
-    position: absolute;
+    position: block;
     color: #898989;
     bottom: -10px; /* Coloca o texto na parte inferior */
     right: 14px; /* Mantém ele alinhado à direita */

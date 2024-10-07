@@ -1,4 +1,4 @@
-/* Who We Are Section */
+/* Seção Quem Somos */
 .who-we-are-section {
   background-color: #efefed;
   padding: 80px 0;
@@ -57,15 +57,28 @@
   text-align: left;
 }
 
-/* Adjustments for mobile devices */
+/* Mobile adjustments */
 @media (max-width: 768px) {
   .who-we-are-section {
     padding: 20px;
   }
 
+  .who-we-are-logo-container {
+    position: relative;
+  }
+
+  .who-we-are-logo {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    z-index: 1;
+    max-width: 80px;
+  }
+
   .who-we-are-text-card {
     padding: 20px;
     min-height: auto;
+    position: relative;
   }
 
   .who-we-are-text-card h3 {
@@ -74,9 +87,31 @@
 
   .who-we-are-text-card p {
     font-size: 0.9rem;
+    line-height: 24px;
+  }
+}
+
+/* Responsividade para Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .who-we-are-section {
+    padding: 40px 0;
   }
 
-  .who-we-are-logo {
-    margin-bottom: 20px;
+  .who-we-are-logo img {
+    max-width: 150px;
+  }
+
+  .who-we-are-text-card {
+    padding: 40px;
+    min-height: 400px;
+  }
+
+  .who-we-are-text-card h3 {
+    font-size: 32px;
+  }
+
+  .who-we-are-text-card p {
+    font-size: 18px;
+    line-height: 30px;
   }
 }

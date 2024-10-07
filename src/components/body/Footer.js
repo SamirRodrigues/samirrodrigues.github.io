@@ -19,7 +19,7 @@ const Footer = () => {
         </Row>
 
         {/* Logo e Direitos Reservados para Mobile */}
-        <Row className="align-items-center logo-rights-row d-flex d-md-none">
+        <Row className="align-items-left logo-rights-row d-flex d-md-none">
           <Col xs={12} className="logo-container-mobile">
             <img
               src="/assets/logo-bs.png"
@@ -97,19 +97,17 @@ const Footer = () => {
           </Col>
         </Row>
 
-        {/* Direitos reservados para Desktop */}
-        {/* <Row className="footer-rights d-none d-md-flex">
+        <Row className="footer-rights d-none d-md-flex">
           <Col>
             <p>Todos os direitos reservados.</p>
           </Col>
-        </Row> */}
+        </Row>
 
-        {/* Direitos reservados para Mobile, à direita
         <Row className="footer-rights-row d-flex d-md-none">
           <Col xs={12} className="footer-rights-mobile">
             <p className="footer-rights-text">Todos os direitos reservados.</p>
           </Col>
-        </Row> */}
+        </Row>
       </Container>
     </footer>
   );
