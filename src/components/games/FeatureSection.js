@@ -16,14 +16,14 @@ const FeatureSection = () => {
       >
         <div className="feature-inner container">
           <div className="row align-items-center">
-            <div className="col-12 col-md-4 text-center">
+            <div className="col-auto text-center">
               <img
                 src="assets/feature1-img.png"
                 alt="Características do período escravocrata"
                 className="feature-image"
               />
             </div>
-            <div className="col-12 col-md-8 text-center text-md-left">
+            <div className="col text-left">
               <h3>Características do período escravocrata</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -43,7 +43,7 @@ const FeatureSection = () => {
       >
         <div className="feature-inner container">
           <div className="row align-items-center">
-            <div className="col-12 col-md-8 text-center text-md-left">
+            <div className="col text-left">
               <h3>Administração na prática</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -52,7 +52,7 @@ const FeatureSection = () => {
                 nisi ut aliquip ex ea commodo consequat.
               </p>
             </div>
-            <div className="col-12 col-md-4 text-center">
+            <div className="col-auto text-center">
               <img
                 src="assets/feature2-img.png"
                 alt="Administração na prática"
@@ -73,14 +73,14 @@ const FeatureSection = () => {
       >
         <div className="feature-inner container">
           <div className="row align-items-center">
-            <div className="col-12 col-md-4 text-center">
+            <div className="col-auto text-center">
               <img
                 src="assets/feature3-img.png"
                 alt="Estruture táticas e proteja o quilombo"
                 className="feature-image"
               />
             </div>
-            <div className="col-12 col-md-8 text-center text-md-left">
+            <div className="col text-left">
               <h3>Estruture táticas e proteja o quilombo</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

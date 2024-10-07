@@ -126,28 +126,38 @@
 @media (max-width: 767.98px) {
   .title-team h3 {
     font-size: 36px;
-    margin-left: 30px;
+    margin-left: 10px;
   }
 
   .card-image-wrapper {
-    width: 100%; /* Imagem ocupa a largura total em dispositivos móveis */
+    width: 150px; /* Ajuste da largura da imagem para dispositivos móveis */
     height: auto;
   }
 
-  .card-image {
-    width: 100%;
-    height: auto;
+  .team-member-card {
+    display: flex;
+    flex-direction: row; /* Mantém a imagem ao lado do texto */
+    align-items: flex-start;
+    max-width: 100%;
+  }
+
+  .image-col {
+    flex: 0 0 150px; /* Ajusta a largura da coluna da imagem */
+  }
+
+  .text-col {
+    flex: 1;
   }
 
   .card-name {
-    font-size: 20px;
+    font-size: 22px; /* Ajusta o tamanho do texto para dispositivos móveis */
   }
 
   .card-position {
-    font-size: 16px;
+    font-size: 18px; /* Ajusta o tamanho do texto */
   }
 
   .card-description {
-    font-size: 14px;
+    font-size: 16px; /* Ajusta o tamanho da descrição */
   }
 }

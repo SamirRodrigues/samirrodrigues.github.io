@@ -1,4 +1,4 @@
-/* src/components/FeatureSection.css */
+/* Seção de Destaques */
 .feature-section {
   display: flex;
   flex-direction: column;
@@ -8,9 +8,8 @@
   position: relative;
   background-size: cover;
   background-position: center;
-  padding: 80px 0;
+  padding: 40px 0;
   width: 100vw; /* Preenche a tela de ponta a ponta */
-  margin-left: calc(-50vw + 50%);
 }
 
 .feature-inner {
@@ -19,35 +18,86 @@
 }
 
 .feature-image {
-  max-width: 200px;
+  max-width: 150px; /* Ajuste o tamanho da imagem para manter a proporção */
   height: auto;
-  margin-bottom: 20px;
+  margin-right: 10px;
+  margin-bottom: 0; /* Remove o espaçamento inferior da imagem */
 }
 
 .feature-section h3 {
   font-family: "Red Hat Display", sans-serif;
-  font-size: 64px;
+  font-size: 36px; /* Ajuste para um tamanho menor de título */
   font-weight: 900;
-  line-height: 63.57px;
+  line-height: 1.2;
   text-align: left;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .feature-section p {
   font-family: "Red Hat Display", sans-serif;
-  font-size: 24px;
+  font-size: 16px; /* Reduzido para se ajustar melhor em telas menores */
   font-weight: 400;
-  line-height: 36px;
+  line-height: 1.4;
   text-align: left;
   margin-bottom: 0;
 }
 
+/* Ajustes para dispositivos médios e maiores */
 @media (min-width: 768px) {
   .feature-content {
     text-align: left;
   }
 
   .feature-image {
-    margin-bottom: 0;
+    max-width: 200px; /* Ajusta o tamanho da imagem para tablets */
+  }
+
+  .feature-section h3 {
+    font-size: 48px; /* Tamanho do título para dispositivos maiores */
+  }
+
+  .feature-section p {
+    font-size: 20px; /* Tamanho do texto para dispositivos maiores */
+  }
+}
+
+/* Ajustes para dispositivos pequenos (mobile) */
+@media (max-width: 767.98px) {
+  .feature-item {
+    padding: 20px 0;
+    background-position: 25% center;
+  }
+
+  .feature-inner {
+    padding: 0 15px; /* Adiciona espaçamento lateral para o conteúdo */
+  }
+
+  .feature-image {
+    max-width: 120px; /* Diminui o tamanho da imagem no mobile */
+    height: auto;
+  }
+
+  .feature-section h3 {
+    font-size: 24px; /* Ajusta o tamanho do título no mobile */
+    line-height: 1.2;
+    margin-bottom: 8px; /* Reduz o espaçamento inferior */
+  }
+
+  .feature-section p {
+    font-size: 14px; /* Ajusta o tamanho do parágrafo no mobile */
+    line-height: 1.3;
+  }
+
+  .feature-item .row {
+    flex-direction: row; /* Garante que o layout continue lado a lado */
+    align-items: center;
+  }
+
+  .feature-item .col-12.col-md-4 {
+    flex: 0 0 auto; /* Mantém o tamanho da coluna de imagem fixo */
+  }
+
+  .feature-item .col-12.col-md-8 {
+    flex: 1; /* O conteúdo de texto preenche o restante do espaço */
   }
 }
