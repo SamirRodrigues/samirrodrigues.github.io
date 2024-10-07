@@ -1,4 +1,3 @@
-/* src/components/DownloadSection.css */
 .download-section {
   background-color: #efefed;
   padding: 50px 0;
@@ -6,57 +5,55 @@
 
 .download-item {
   width: 100%;
-  background-size: contain; /* Garante que a imagem cubra o card inteiro */
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  min-width: 400px;
-  border-radius: 8px; /* Bordas arredondadas */
+  min-width: 350px; /* Diminuído para garantir proporção adequada */
+  border-radius: 8px;
   display: flex;
   text-align: center;
-  flex-direction: column; /* Alinha os itens na vertical */
-  justify-content: flex-end; /* Alinha o conteúdo ao final do card */
-  padding: 30px; /* Espaço interno para alinhamento do conteúdo */
-  color: #393645; /* Cor do texto */
-  overflow: hidden; /* Esconde qualquer overflow */
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+  color: #393645;
+  overflow: hidden;
 }
 
 .download-content {
-  position: relative; /* Posiciona relativo ao card */
-  text-align: center; /* Centraliza o texto */
+  position: relative;
+  text-align: center;
 }
 
 .download-content h3 {
-  text-align: center; /* Garante centralização em telas menores */
   font-family: "Red Hat Display", sans-serif;
-  font-size: 32px; /* Tamanho do título reduzido para adequar ao design */
+  font-size: 28px; /* Tamanho do título reduzido para proporcionalidade */
   font-weight: 900;
   line-height: 1.2;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .download-content p {
-  text-align: center; /* Garante centralização em telas menores */
   font-family: "Red Hat Display", sans-serif;
-  font-size: 18px; /* Tamanho de fonte ajustado */
+  font-size: 16px; /* Tamanho do texto reduzido */
   font-weight: 400;
   line-height: 1.5;
-  margin-bottom: 20px; /* Espaço antes do botão */
+  margin-bottom: 15px;
 }
 
 .download-button {
   display: inline-block;
-  padding: 12px 24px; /* Padding do botão ajustado */
+  padding: 10px 20px; /* Padding ajustado */
   background-color: #393645;
   color: #ffffff;
   text-decoration: none;
-  border-radius: 16px; /* Bordas do botão arredondadas */
-  font-size: 16px;
+  border-radius: 16px;
+  font-size: 14px; /* Tamanho de fonte reduzido */
   text-align: center;
-  transition: background-color 0.3s; /* Transição suave de cor */
+  transition: background-color 0.3s;
 }
 
 .download-button:hover {
-  background-color: #333333; /* Mudança de cor ao passar o mouse */
+  background-color: #333333;
 }
 
 .download-button i {
@@ -65,11 +62,34 @@
 
 @media (max-width: 768px) {
   .download-item {
-    max-width: 90%; /* Ajuste para telas menores */
+    max-width: 100%;
+    background-image: url("/public/assets/download1.png") !important;
   }
 
-  .download-content h3,
+  .download-content h3 {
+    font-size: 24px; /* Reduzido para melhor ajuste no mobile */
+  }
+
   .download-content p {
-    text-align: center; /* Garante centralização em telas menores */
+    font-size: 14px; /* Reduzido para melhor ajuste no mobile */
+  }
+
+  .download-button {
+    font-size: 12px; /* Reduzido para melhor ajuste no mobile */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .download-item {
+    min-width: 100%;
+    margin-bottom: 20px; /* Espaçamento entre os itens no tablet */
+  }
+
+  .download-content h3 {
+    font-size: 26px; /* Ajuste do título no tablet */
+  }
+
+  .download-content p {
+    font-size: 16px; /* Ajuste do texto no tablet */
   }
 }
