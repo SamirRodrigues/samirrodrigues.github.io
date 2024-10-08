@@ -10,12 +10,15 @@
   z-index: 1000;
   transition: background-color 0.3s ease-in-out; /* Transição suave ao mudar de cor */
 }
-
+.container-fluid {
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
 .header-grey-logo {
   max-height: 50px; /* Altura máxima */
   width: auto; /* Manter as proporções */
   transition: transform 0.3s ease-in-out;
-  margin-left: -25px; /* Ajuste para mover a logo mais à esquerda */
 }
 
 .header-grey-logo:hover {
@@ -107,7 +110,10 @@
 /* ===================== Estilos para Desktop (a partir de 1025px) ===================== */
 @media (min-width: 1025px) {
   .header-grey-logo-container {
-    justify-content: center;
+    justify-content: start;
+  }
+  .header-grey-logo {
+    margin-left: -5px; /* Ajuste para mover a logo mais à esquerda */
   }
 
   .header-grey-toggler {
@@ -224,6 +230,7 @@
 
   .header-grey-logo {
     max-height: 40px;
+    margin-left: -35px;
   }
 
   .header-grey-toggler {
