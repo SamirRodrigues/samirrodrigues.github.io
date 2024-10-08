@@ -1,3 +1,4 @@
+// src/components/HeaderGrey.js
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container, Row, Col } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom"; // Importa useNavigate
@@ -161,24 +162,36 @@ const HeaderGrey = () => {
               className="d-flex justify-content-right align-items-center"
             >
               <div className="header-grey-nav-icons">
-                <img
-                  src={
-                    location.pathname === "/"
-                      ? "assets/x-icon.png"
-                      : "assets/x-black-icon.png"
-                  }
-                  alt="Ícone X"
-                  className="header-grey-nav-icon"
-                />
-                <img
-                  src={
-                    location.pathname === "/"
-                      ? "assets/instagram-icon.png"
-                      : "assets/instagram-black-icon.png"
-                  }
-                  alt="Ícone Instagram"
-                  className="header-grey-nav-icon"
-                />
+                <a
+                  href="https://x.com/baladeirastudio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={
+                      location.pathname === "/"
+                        ? "assets/x-icon.png"
+                        : "assets/x-black-icon.png"
+                    }
+                    alt="Ícone X"
+                    className="header-grey-nav-icon"
+                  />
+                </a>
+                <a
+                  href="https://instagram.com/baladeirastudio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={
+                      location.pathname === "/"
+                        ? "assets/instagram-icon.png"
+                        : "assets/instagram-black-icon.png"
+                    }
+                    alt="Ícone Instagram"
+                    className="header-grey-nav-icon"
+                  />
+                </a>
               </div>
             </Col>
           )}
@@ -273,16 +286,28 @@ const HeaderGrey = () => {
               </Nav.Link>
             </Nav>
             <div className="header-grey-nav-icons d-flex justify-content-center mt-4">
-              <img
-                src="assets/x-black-icon.png"
-                alt="Ícone X"
-                className="header-grey-nav-icon"
-              />
-              <img
-                src="assets/instagram-black-icon.png"
-                alt="Ícone Instagram"
-                className="header-grey-nav-icon"
-              />
+              <a
+                href="https://x.com/baladeirastudio"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="assets/x-black-icon.png"
+                  alt="Ícone X"
+                  className="header-grey-nav-icon"
+                />
+              </a>
+              <a
+                href="https://instagram.com/baladeirastudio"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="assets/instagram-black-icon.png"
+                  alt="Ícone Instagram"
+                  className="header-grey-nav-icon"
+                />
+              </a>
             </div>
           </Navbar.Collapse>
         )}
