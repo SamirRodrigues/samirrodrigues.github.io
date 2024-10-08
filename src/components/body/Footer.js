@@ -1,9 +1,17 @@
 // src/components/Footer.js
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
 import "./Footer.css";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const handleNavigation = (path) => {
+    navigate(path);
+    window.scrollTo(0, 0); // Rola a página para o topo ao mudar de rota
+  };
+
   return (
     <footer className="footer">
       <Container fluid className="footer-container">
@@ -64,22 +72,43 @@ const Footer = () => {
             <h5>INSTITUCIONAL</h5>
             <ul className="footer-menu">
               <li>
-                <a href="#inicio">Início</a>
+                <Link to="/" onClick={() => handleNavigation("/")}>
+                  Início
+                </Link>
               </li>
               <li>
-                <a href="#quemsomos">Quem somos</a>
+                <Link to="/about" onClick={() => handleNavigation("/about")}>
+                  Quem somos
+                </Link>
               </li>
               <li>
-                <a href="#jogos">Jogos</a>
+                <Link to="/jogos" onClick={() => handleNavigation("/jogos")}>
+                  Jogos
+                </Link>
               </li>
               <li>
-                <a href="#contato">Contato</a>
+                <Link
+                  to="/contato"
+                  onClick={() => handleNavigation("/contato")}
+                >
+                  Contato
+                </Link>
               </li>
               <li>
-                <a href="/privacypolicy">Política de Privacidade</a>
+                <Link
+                  to="/privacypolicy"
+                  onClick={() => handleNavigation("/privacypolicy")}
+                >
+                  Política de Privacidade
+                </Link>
               </li>
               <li>
-                <a href="/termsconditions">Termos e Condições</a>
+                <Link
+                  to="/termsconditions"
+                  onClick={() => handleNavigation("/termsconditions")}
+                >
+                  Termos e Condições
+                </Link>
               </li>
             </ul>
           </Col>
