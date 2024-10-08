@@ -79,7 +79,6 @@
 .header-grey-nav-icon:hover {
   filter: grayscale(0);
   transform: scale(1.1); /* Aumenta levemente o ícone */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19); /* Sombra suave */
 }
 
 /* ===================== Ajuste do ícone do menu hambúrguer ===================== */
