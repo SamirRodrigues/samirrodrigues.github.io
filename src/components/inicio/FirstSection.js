@@ -1,3 +1,4 @@
+// src/components/FirstSection.js
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { FaChevronRight } from "react-icons/fa";
@@ -16,7 +17,8 @@ const FirstSection = () => {
   const navigate = useNavigate(); // Hook para navegação
 
   const handleKnowMore = () => {
-    navigate("/about"); // Redireciona para a página 'Quem Somos'
+    navigate("/about");
+    window.scrollTo(0, 0); // Rola a página para o topo
   };
 
   return (
