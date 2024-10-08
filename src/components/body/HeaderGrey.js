@@ -90,8 +90,8 @@ const HeaderGrey = () => {
             className="d-flex align-items-center justify-content-start"
           >
             <Navbar.Brand
-              onClick={() => navigate("/")} // Redireciona para a página inicial ao clicar na logo
-              style={{ cursor: "pointer" }} // Estilo de cursor para indicar que a logo é clicável
+              onClick={() => navigate("/")}
+              style={{ cursor: "pointer" }}
             >
               <img
                 src={
@@ -139,7 +139,7 @@ const HeaderGrey = () => {
                     activeKey === "#jogos" ? "active" : ""
                   }`}
                 >
-                  JOGOS
+                  BANZÉ
                 </Nav.Link>
                 <Nav.Link
                   href="#contato"
@@ -158,7 +158,7 @@ const HeaderGrey = () => {
             <Col
               xs="auto"
               lg={1}
-              className="d-flex justify-content-center align-items-center"
+              className="d-flex justify-content-right align-items-center"
             >
               <div className="header-grey-nav-icons">
                 <img
@@ -261,7 +261,7 @@ const HeaderGrey = () => {
                   activeKey === "#jogos" ? "active" : ""
                 }`}
               >
-                JOGOS
+                BANZÉ
               </Nav.Link>
               <Nav.Link
                 href="#contato"
