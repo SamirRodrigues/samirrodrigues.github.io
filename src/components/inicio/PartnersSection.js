@@ -12,11 +12,17 @@ const PartnersSection = () => {
             {/* Layout para Desktop */}
             <div className="partners-logos desktop-only">
               <div className="partner-item">
-                <img
-                  src="/assets/GOV.png"
-                  alt="Logo GOV"
-                  className="partner-logo"
-                />
+                <a
+                  href="https://www.gov.br/secom/pt-br/acesso-a-informacao/comunicabr/lista-de-acoes-e-programas/lei-paulo-gustavo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/assets/GOV.png"
+                    alt="Logo GOV"
+                    className="partner-logo"
+                  />
+                </a>
               </div>
               <div className="split-container">
                 <img
@@ -26,11 +32,17 @@ const PartnersSection = () => {
                 />
               </div>
               <div className="partner-item">
-                <img
-                  src="/assets/natal.png"
-                  alt="Logo Natal"
-                  className="partner-logo"
-                />
+                <a
+                  href="https://www.natal.rn.gov.br/secult"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/assets/natal.png"
+                    alt="Logo Natal"
+                    className="partner-logo"
+                  />
+                </a>
               </div>
               <div className="split-container">
                 <img
@@ -40,31 +52,49 @@ const PartnersSection = () => {
                 />
               </div>
               <div className="partner-item">
-                <img
-                  src="/assets/capangas.png"
-                  alt="Logo Capangas"
-                  className="partner-logo"
-                />
+                <a
+                  href="https://www.instagram.com/capangasrn/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/assets/capangas.png"
+                    alt="Logo Capangas"
+                    className="partner-logo"
+                  />
+                </a>
               </div>
             </div>
             {/* Layout para Mobile */}
             <div className="partners-logos-mobile mobile-only">
               {/* Logo GOV maior no mobile */}
               <div className="partner-item gov-logo-mobile">
-                <img
-                  src="/assets/GOV.png"
-                  alt="Logo GOV"
-                  className="partner-logo gov-logo"
-                />
+                <a
+                  href="https://www.gov.br/secom/pt-br/acesso-a-informacao/comunicabr/lista-de-acoes-e-programas/lei-paulo-gustavo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/assets/GOV.png"
+                    alt="Logo GOV"
+                    className="partner-logo gov-logo"
+                  />
+                </a>
               </div>
               {/* Logos Natal e Capangas com split entre elas */}
               <div className="partner-row">
                 <div className="partner-item">
-                  <img
-                    src="/assets/natal.png"
-                    alt="Logo Natal"
-                    className="partner-logo"
-                  />
+                  <a
+                    href="https://www.natal.rn.gov.br/secult"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src="/assets/natal.png"
+                      alt="Logo Natal"
+                      className="partner-logo"
+                    />
+                  </a>
                 </div>
                 <div className="split-container">
                   <img
@@ -74,11 +104,17 @@ const PartnersSection = () => {
                   />
                 </div>
                 <div className="partner-item">
-                  <img
-                    src="/assets/capangas.png"
-                    alt="Logo Capangas"
-                    className="partner-logo"
-                  />
+                  <a
+                    href="https://www.instagram.com/capangasrn/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src="/assets/capangas.png"
+                      alt="Logo Capangas"
+                      className="partner-logo"
+                    />
+                  </a>
                 </div>
               </div>
             </div>
