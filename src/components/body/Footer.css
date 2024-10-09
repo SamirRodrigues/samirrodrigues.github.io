@@ -1,5 +1,3 @@
-/* src/components/Footer.css */
-
 .footer {
   background-color: #393645;
   color: white;
@@ -94,32 +92,33 @@ footer h5 {
     max-width: 100%;
   }
 
+  .footer {
+    padding: 0px;
+  }
+
   .footer-logo {
+    justify-content: center;
     max-width: 120px; /* Ajuste para logo no mobile */
+    margin: 20px 0 0 20px;
   }
 
-  .logo-rights-row {
+  .logo-rights-row .d-flex {
     display: flex;
+    align-items: flex-end; /* Alinha conteúdo na base */
     justify-content: space-between;
-    align-items: flex-start; /* Alinha conteúdo no topo */
-    position: relative;
-    height: 100px; /* Define altura fixa para garantir que o texto fique embaixo */
   }
 
-  .footer-rights-text {
+  .logo-rights-row .footer-rights-text {
     font-size: 0.8rem;
-    align-self: flex-end; /* Coloca o texto "Todos os direitos reservados" no final da div */
-    text-align: right;
-    position: block;
     color: #898989;
-    bottom: -10px; /* Coloca o texto na parte inferior */
-    right: 14px; /* Mantém ele alinhado à direita */
+    margin: 0 13px -5px 0;
+    align-self: flex-end;
   }
 
   .footer-split {
     border: 0;
-    border-top: 1px solid #fba42b;
-    margin: 20px 0;
+    border-top: 1px solid #ffffff;
+    margin: 25px 12px;
   }
 
   .footer-links {
@@ -127,11 +126,13 @@ footer h5 {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-left: 10px;
+    padding-bottom: 30px;
   }
-
   .footer-links > .col {
     text-align: left;
   }
+
   footer p {
     text-align: left;
     font-size: 14px;

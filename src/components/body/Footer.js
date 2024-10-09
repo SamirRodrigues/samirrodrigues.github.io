@@ -1,4 +1,3 @@
-// src/components/Footer.js
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
@@ -27,13 +26,16 @@ const Footer = () => {
         </Row>
 
         {/* Logo e Direitos Reservados para Mobile */}
-        <Row className="align-items-left logo-rights-row d-flex d-md-none">
-          <Col xs={12} className="logo-container-mobile">
+        <Row className="logo-rights-row d-flex d-md-none">
+          <Col xs={12} className="d-flex justify-content-between">
             <img
               src="/assets/logo-bs.png"
               alt="Baladeira Studio Logo"
               className="footer-logo"
             />
+            <p className="footer-rights-text align-self-end">
+              Todos os direitos reservados.
+            </p>
           </Col>
         </Row>
 
@@ -126,15 +128,10 @@ const Footer = () => {
           </Col>
         </Row>
 
+        {/* Direitos Reservados para Desktop */}
         <Row className="footer-rights d-none d-md-flex">
           <Col>
             <p>Todos os direitos reservados.</p>
-          </Col>
-        </Row>
-
-        <Row className="footer-rights-row d-flex d-md-none">
-          <Col xs={12} className="footer-rights-mobile">
-            <p className="footer-rights-text">Todos os direitos reservados.</p>
           </Col>
         </Row>
       </Container>
