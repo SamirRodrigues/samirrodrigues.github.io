@@ -1,20 +1,20 @@
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { FaChevronDown } from "react-icons/fa";
-import { useNavigate } from "react-router-dom"; // Importa useNavigate
-import HeaderGrey from "../components/body/HeaderGrey"; // Importa o HeaderGrey
+import { useNavigate } from "react-router-dom";
+import HeaderGrey from "../components/body/HeaderGrey";
 import "./HomePage.css";
 
 const HomePage = () => {
-  const navigate = useNavigate(); // Inicializa a função navigate
+  const navigate = useNavigate();
 
   const handleVerMaisClick = () => {
-    navigate("/details"); // Navega para a página de detalhes
+    navigate("/details");
   };
 
   return (
     <div className="homepage">
-      <HeaderGrey /> {/* Adiciona o HeaderGrey */}
+      <HeaderGrey />
       <Container fluid className="text-center hero-section">
         <Row>
           <Col>
@@ -27,7 +27,7 @@ const HomePage = () => {
             <Button
               variant="outline-light"
               className="mt-4 btn-hero"
-              onClick={handleVerMaisClick} // Anexa o manipulador de clique
+              onClick={handleVerMaisClick}
             >
               <FaChevronDown className="mr-2" /> Ver mais
             </Button>

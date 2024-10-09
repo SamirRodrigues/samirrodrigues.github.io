@@ -3,6 +3,7 @@
   background-color: #efefed;
   padding-top: 100px;
   font-family: "Red Hat Display", sans-serif;
+  overflow: hidden;
 }
 
 .refugio-image-wrapper {
@@ -13,6 +14,7 @@
   width: 100%;
   height: auto;
   object-fit: cover;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .refugio-content {
@@ -25,7 +27,7 @@
   font-family: "Red Hat Display", sans-serif;
   font-size: 64px;
   font-weight: 900;
-  line-height: 1.1; /* Ajuste para melhor espaçamento */
+  line-height: 1.1;
   padding-bottom: 30px;
   color: #393645;
   transition: color 0.3s ease;
@@ -42,7 +44,31 @@
 
 .refugio-content:hover h3,
 .refugio-content:hover p {
-  color: #000000; /* Muda a cor para preto no hover */
+  color: #000000;
+}
+
+/* Estilo da imagem do Google Play Badge */
+.google-play-badge {
+  margin-top: 20px;
+  width: 200px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.google-play-badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animação de FadeIn */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Responsividade para telas menores */
@@ -107,5 +133,113 @@
   .refugio-content p {
     font-size: 14px;
     line-height: 22px;
+  }
+}
+
+/* Estilos existentes */
+
+/* Estilos existentes */
+
+/* Estilos para a tela de redirecionamento */
+.redirect-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px; /* Evita overflow em telas pequenas */
+}
+
+.message-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+.typing-text {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 20px; /* Aumenta o tamanho do texto */
+  color: #393645;
+  margin-bottom: 20px;
+  white-space: pre-wrap; /* Permite quebra de linha */
+  word-wrap: break-word;
+}
+
+.typewriter-text {
+  display: inline;
+}
+
+/* Estilos personalizados para a barra de progresso */
+.progress-bar-custom {
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-custom .progress-bar {
+  background-image: linear-gradient(45deg, #ff8100 0%, #0092a2 100%);
+  background-size: 200% 200%;
+  animation: gradientAnimation 4s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .refugio-content {
+    padding: 0 15px;
+  }
+
+  .message-container {
+    padding: 20px;
+  }
+
+  .typing-text {
+    font-size: 18px;
+  }
+
+  .refugio-content h3 {
+    font-size: 32px;
+  }
+
+  .refugio-content p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .message-container {
+    padding: 15px;
+  }
+
+  .typing-text {
+    font-size: 16px;
+  }
+
+  .refugio-content h3 {
+    font-size: 28px;
+  }
+
+  .refugio-content p {
+    font-size: 14px;
   }
 }
