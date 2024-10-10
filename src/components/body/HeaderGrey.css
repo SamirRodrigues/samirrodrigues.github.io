@@ -108,12 +108,12 @@
 }
 
 /* ===================== Estilos para Desktop (a partir de 1025px) ===================== */
-@media (min-width: 1025px) {
+@media (min-width: 991px) {
   .header-grey-logo-container {
     justify-content: start;
   }
   .header-grey-logo {
-    margin-left: -5px; /* Ajuste para mover a logo mais à esquerda */
+    margin-left: -35px; /* Ajuste para mover a logo mais à esquerda */
   }
 
   .header-grey-toggler {
@@ -134,7 +134,7 @@
 }
 
 /* ===================== Estilos para Tablets (768px - 1024px) ===================== */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .header-grey {
     padding: 15px 30px;
   }
@@ -321,7 +321,7 @@
 }
 
 /* ===================== Estilos Específicos para a Homepage no Desktop ===================== */
-@media (min-width: 1025px) {
+@media (min-width: 991px) {
   .header-homepage .header-grey-nav-link {
     color: white;
   }
