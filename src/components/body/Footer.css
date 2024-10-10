@@ -89,52 +89,52 @@ footer h5 {
 /* Estilos para telas de tamanho médio (entre 768px e 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
   .footer-container {
-    max-width: 80%; /* Ajuste a largura do container */
+    max-width: 80%;
   }
 
   .logo-container {
-    text-align: center; /* Centraliza o logo */
-    margin-bottom: 30px; /* Aumenta o espaço para melhorar a apresentação */
+    text-align: center;
+    margin-bottom: 30px;
   }
 
   .footer-logo {
-    max-width: 130px; /* Ajuste o tamanho da logo */
-    margin: 0 auto; /* Centraliza a logo */
+    max-width: 130px;
+    margin: 0 auto;
   }
 
   .footer-links {
-    margin-top: 25px; /* Ajusta o espaçamento entre os links */
+    margin-top: 25px;
     display: flex;
-    justify-content: space-between; /* Distribui o conteúdo uniformemente */
+    justify-content: space-between;
   }
 
   .footer-links h5 {
-    font-size: 14px; /* Ajusta o tamanho da fonte dos títulos */
-    margin-bottom: 15px; /* Ajuste de espaçamento */
+    font-size: 14px;
+    margin-bottom: 15px;
   }
 
   .footer-menu {
     text-align: left;
-    padding: 0 10px; /* Adiciona um espaçamento interno */
+    padding: 0 10px;
   }
 
   .footer-menu li a {
-    font-size: 14px; /* Ajusta o tamanho da fonte dos links */
+    font-size: 14px;
   }
 
   .footer-rights {
-    margin-top: 20px; /* Ajuste o espaçamento da seção de direitos reservados */
-    font-size: 0.9rem; /* Ajuste o tamanho da fonte para melhor legibilidade */
-    text-align: center; /* Centraliza o texto */
+    margin-top: 20px;
+    font-size: 0.9rem;
+    text-align: center;
   }
 
   .social-icons {
-    justify-content: flex-start; /* Alinha os ícones sociais à esquerda */
-    gap: 10px; /* Ajusta o espaçamento entre os ícones sociais */
+    justify-content: flex-start;
+    gap: 10px;
   }
 
   .social-icon {
-    width: 22px; /* Redimensiona os ícones sociais */
+    width: 22px;
     height: 22px;
   }
 }
@@ -151,13 +151,13 @@ footer h5 {
 
   .footer-logo {
     justify-content: center;
-    max-width: 120px; /* Ajuste para logo no mobile */
+    max-width: 120px;
     margin: 20px 0 0 20px;
   }
 
   .logo-rights-row .d-flex {
     display: flex;
-    align-items: flex-end; /* Alinha conteúdo na base */
+    align-items: flex-end;
     justify-content: space-between;
   }
 
