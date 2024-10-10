@@ -1,4 +1,3 @@
-/* Seção de Destaques */
 .feature-section {
   display: flex;
   flex-direction: column;
@@ -9,24 +8,25 @@
   background-size: cover;
   background-position: center;
   padding: 40px 0;
-  width: 100vw; /* Preenche a tela de ponta a ponta */
+  width: 100vw;
 }
 
 .feature-inner {
-  max-width: 1000px; /* Largura máxima aproximada para centralizar conteúdo */
-  margin: 0 auto; /* Centraliza o conteúdo */
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .feature-image {
-  max-width: 150px; /* Ajuste o tamanho da imagem para manter a proporção */
+  max-width: 150px;
   height: auto;
   margin-right: 10px;
-  margin-bottom: 0; /* Remove o espaçamento inferior da imagem */
+  margin-bottom: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .feature-section h3 {
   font-family: "Red Hat Display", sans-serif;
-  font-size: 36px; /* Ajuste para um tamanho menor de título */
+  font-size: 36px;
   font-weight: 900;
   line-height: 1.2;
   text-align: left;
@@ -35,33 +35,31 @@
 
 .feature-section p {
   font-family: "Red Hat Display", sans-serif;
-  font-size: 16px; /* Reduzido para se ajustar melhor em telas menores */
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
   text-align: left;
   margin-bottom: 0;
 }
 
-/* Ajustes para dispositivos médios e maiores */
 @media (min-width: 768px) {
   .feature-content {
     text-align: left;
   }
 
   .feature-image {
-    max-width: 200px; /* Ajusta o tamanho da imagem para tablets */
+    max-width: 200px;
   }
 
   .feature-section h3 {
-    font-size: 48px; /* Tamanho do título para dispositivos maiores */
+    font-size: 48px;
   }
 
   .feature-section p {
-    font-size: 20px; /* Tamanho do texto para dispositivos maiores */
+    font-size: 20px;
   }
 }
 
-/* Ajustes para dispositivos pequenos (mobile) */
 @media (max-width: 767.98px) {
   .feature-item {
     padding: 20px 0;
@@ -69,35 +67,41 @@
   }
 
   .feature-inner {
-    padding: 0 15px; /* Adiciona espaçamento lateral para o conteúdo */
+    padding: 0 15px;
   }
 
   .feature-image {
-    max-width: 120px; /* Diminui o tamanho da imagem no mobile */
+    max-width: 120px;
     height: auto;
   }
 
   .feature-section h3 {
-    font-size: 24px; /* Ajusta o tamanho do título no mobile */
+    font-size: 24px;
     line-height: 1.2;
-    margin-bottom: 8px; /* Reduz o espaçamento inferior */
+    margin-bottom: 8px;
   }
 
   .feature-section p {
-    font-size: 14px; /* Ajusta o tamanho do parágrafo no mobile */
+    font-size: 14px;
     line-height: 1.3;
   }
 
   .feature-item .row {
-    flex-direction: row; /* Garante que o layout continue lado a lado */
+    flex-direction: row;
     align-items: center;
   }
 
   .feature-item .col-12.col-md-4 {
-    flex: 0 0 auto; /* Mantém o tamanho da coluna de imagem fixo */
+    flex: 0 0 auto;
   }
 
   .feature-item .col-12.col-md-8 {
-    flex: 1; /* O conteúdo de texto preenche o restante do espaço */
+    flex: 1;
   }
+}
+
+/* Efeito hover para feature-image */
+.feature-image:hover {
+  transform: scale(1.3);
+  opacity: 0.95;
 }
