@@ -8,7 +8,7 @@ const HeaderGrey = () => {
   const [activeKey, setActiveKey] = useState("#inicio");
   const [menuOpen, setMenuOpen] = useState(false);
   const [isTablet, setIsTablet] = useState(
-    window.innerWidth >= 768 && window.innerWidth <= 1024
+    window.innerWidth >= 768 && window.innerWidth <= 991
   );
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
@@ -59,7 +59,7 @@ const HeaderGrey = () => {
 
   const updateViewPort = () => {
     setIsMobile(window.innerWidth < 768);
-    setIsTablet(window.innerWidth >= 768 && window.innerWidth <= 1024);
+    setIsTablet(window.innerWidth >= 768 && window.innerWidth <= 991);
   };
 
   useEffect(() => {
