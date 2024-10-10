@@ -14,7 +14,6 @@
 }
 
 .partner-logo {
-  max-width: 250px; /* Aumenta o tamanho das logos */
   width: 100%;
   margin: 20px;
   transition: transform 0.3s ease;
@@ -48,6 +47,20 @@
   flex: none;
 }
 
+/* Definir tamanhos individuais das logos */
+.gov-logo {
+  max-width: 350px; /* Tamanho maior para o GOV */
+}
+
+.natal-logo {
+  max-width: 190px; /* Tamanho menor para Natal */
+}
+
+.capangas-logo {
+  max-width: 200px; /* Tamanho menor para Capangas */
+  margin-bottom: 25px;
+}
+
 /* Layout para Mobile */
 .partners-logos-mobile {
   display: flex;
@@ -56,7 +69,7 @@
 }
 
 .partners-logos-mobile .partner-item {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .partner-row {
@@ -69,7 +82,7 @@
 }
 
 .partner-row .split-container {
-  margin: 0 10px;
+  margin: 0 0 10px;
 }
 
 .split-image {
@@ -93,6 +106,14 @@
 
   .mobile-only {
     display: flex;
+  }
+  .capangas-logo {
+    max-width: 200px; /* Tamanho menor para Capangas */
+    margin-bottom: 0px;
+  }
+  .partners-section {
+    padding: 10px 0;
+    background-color: white;
   }
 
   .partner-logo {
