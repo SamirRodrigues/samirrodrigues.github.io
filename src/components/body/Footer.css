@@ -86,6 +86,59 @@ footer h5 {
   font-size: 0.8rem;
 }
 
+/* Estilos para telas de tamanho médio (entre 768px e 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .footer-container {
+    max-width: 80%; /* Ajuste a largura do container */
+  }
+
+  .logo-container {
+    text-align: center; /* Centraliza o logo */
+    margin-bottom: 30px; /* Aumenta o espaço para melhorar a apresentação */
+  }
+
+  .footer-logo {
+    max-width: 130px; /* Ajuste o tamanho da logo */
+    margin: 0 auto; /* Centraliza a logo */
+  }
+
+  .footer-links {
+    margin-top: 25px; /* Ajusta o espaçamento entre os links */
+    display: flex;
+    justify-content: space-between; /* Distribui o conteúdo uniformemente */
+  }
+
+  .footer-links h5 {
+    font-size: 14px; /* Ajusta o tamanho da fonte dos títulos */
+    margin-bottom: 15px; /* Ajuste de espaçamento */
+  }
+
+  .footer-menu {
+    text-align: left;
+    padding: 0 10px; /* Adiciona um espaçamento interno */
+  }
+
+  .footer-menu li a {
+    font-size: 14px; /* Ajusta o tamanho da fonte dos links */
+  }
+
+  .footer-rights {
+    margin-top: 20px; /* Ajuste o espaçamento da seção de direitos reservados */
+    font-size: 0.9rem; /* Ajuste o tamanho da fonte para melhor legibilidade */
+    text-align: center; /* Centraliza o texto */
+  }
+
+  .social-icons {
+    justify-content: flex-start; /* Alinha os ícones sociais à esquerda */
+    gap: 10px; /* Ajusta o espaçamento entre os ícones sociais */
+  }
+
+  .social-icon {
+    width: 22px; /* Redimensiona os ícones sociais */
+    height: 22px;
+  }
+}
+
 /* Estilos para Mobile */
 @media (max-width: 767px) {
   .footer-container {
