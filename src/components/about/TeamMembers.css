@@ -46,10 +46,10 @@
 
 .card-image {
   width: 100%; /* A imagem ocupará toda a largura do contêiner */
-  height: auto; /* Altura automática para manter a proporção */
+  height: 300px; /* Altura automática para manter a proporção */
   object-fit: cover; /* Mantém a proporção da imagem e cobre o contêiner */
   object-position: top; /* Alinha a imagem no topo */
-  border-radius: 8px;
+  border-radius: 2px 30px 4px 4px;
 }
 
 .card-content {

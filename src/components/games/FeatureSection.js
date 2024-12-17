@@ -24,12 +24,12 @@ const FeatureSection = () => {
               />
             </div>
             <div className="col text-left">
-              <h3>Características do período escravocrata</h3>
+              <h3>Explore o período escravocrata</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                Mergulhe em uma jornada histórica que destaca as principais
+                características do período escravocrata. Aprenda sobre os
+                desafios enfrentados e a resistência do povo quilombola em busca
+                de liberdade e dignidade.
               </p>
             </div>
           </div>
@@ -44,12 +44,12 @@ const FeatureSection = () => {
         <div className="feature-inner container">
           <div className="row align-items-center">
             <div className="col text-left">
-              <h3>Administração na prática</h3>
+              <h3>Administre com estratégia</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                Desenvolva suas habilidades de gestão e liderança ao administrar
+                recursos, tomar decisões e proteger a comunidade. Coloque a
+                teoria em prática e fortaleça o quilombo com escolhas
+                estratégicas.
               </p>
             </div>
             <div className="col-auto text-center">
@@ -83,10 +83,9 @@ const FeatureSection = () => {
             <div className="col text-left">
               <h3>Estruture táticas e proteja o quilombo</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                Planeje e implemente táticas defensivas para proteger o
+                quilombo. Enfrente desafios, resista às adversidades e garanta a
+                sobrevivência e prosperidade da comunidade.
               </p>
             </div>
           </div>

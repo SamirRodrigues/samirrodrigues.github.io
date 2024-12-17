@@ -8,7 +8,7 @@ const downloads = [
     id: 1,
     title: "Acesse nossas pesquisas",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Explore estudos sobre a cultura quilombola e sua resistência histórica, preservando memórias e saberes.",
     image: "assets/download1.png",
     link: "#",
   },
@@ -16,7 +16,7 @@ const downloads = [
     id: 2,
     title: "Baixe nosso plano de aulas",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Tenha acesso aos materiais didáticos para ensinar a história dos quilombos de forma dinâmica e inspiradora.",
     image: "assets/download2.png",
     link: "#",
   },

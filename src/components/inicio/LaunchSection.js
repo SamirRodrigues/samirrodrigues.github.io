@@ -29,8 +29,16 @@ const LaunchSection = () => {
               <div className="launch-text">
                 <h3 className="launch-subtitle">O Refúgio do Banzé</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  "Refúgio do Banzé" é mais do que um jogo. É uma celebração da
+                  cultura, história e resistência quilombola. Desenvolvido pela
+                  <strong> Baladeira Studio</strong>, o jogo convida você a
+                  explorar narrativas imersivas e emocionantes que resgatam a
+                  luta pela liberdade e dignidade.
+                </p>
+                <p>
+                  Unimos educação e entretenimento em uma experiência única,
+                  onde cada detalhe traz vida à diversidade e riqueza cultural
+                  do povo quilombola.
                 </p>
                 {/* Botão que redireciona para a página de jogos */}
                 <Button

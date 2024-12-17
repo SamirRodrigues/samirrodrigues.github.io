@@ -51,14 +51,16 @@ const WhoWeAre = () => {
                   Quem nós <strong>SOMOS?</strong>
                 </h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
+                  A <strong>Baladeira Studio</strong> é um estúdio de jogos
+                  sérios dedicado a criar experiências educativas e imersivas.
+                  Nosso foco está em unir cultura, inovação e entretenimento,
+                  abordando temas sociais, históricos e educacionais de forma
+                  dinâmica e envolvente.
+                </p>
+                <p>
+                  Com raízes em <strong>Natal</strong> e um olhar global, nossa
+                  missão é transformar narrativas importantes em jogos que
+                  emocionam, inspiram e ensinam.
                 </p>
               </div>
             </Col>
