@@ -38,7 +38,7 @@ const teamMembers = [
   {
     id: 5,
     name: "Luan Messias",
-    position: "Desenvolvedor Web",
+    position: "Designer",
     description:
       "Designer que vive para criar identidades visuais marcantes e interfaces que conquistam à primeira vista, além de ser apaixonado por compor trilhas sonoras que dão alma a experiências criativas e imersivas.",
     image: "assets/Perfil5.jpeg",
