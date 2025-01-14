@@ -35,6 +35,30 @@ const teamMembers = [
       "Desenvolvedor web apaixonado por criar soluções eficientes e inovadoras para o mundo digital.",
     image: "assets/Perfil4.jpg",
   },
+  {
+    id: 5,
+    name: "Luan Messias",
+    position: "Desenvolvedor Web",
+    description:
+      "Designer que vive para criar identidades visuais marcantes e interfaces que conquistam à primeira vista, além de ser apaixonado por compor trilhas sonoras que dão alma a experiências criativas e imersivas.",
+    image: "assets/Perfil5.jpeg",
+  },
+  {
+    id: 6,
+    name: "Gabriel D. Oliveira",
+    position: "Game Designer",
+    description:
+      "Profissional com foco no desenvolvimento de jogos em busca da diversão.",
+    image: "assets/Perfil6.jpeg",
+  },
+  {
+    id: 7,
+    name: "Jonas Sena",
+    position: "Programador",
+    description:
+      "Programador comprometido em criar jogos que proporcionam momentos de diversão, conexão e aprendizado.",
+    image: "assets/Perfil7.jpg",
+  },
 ];
 
 const TeamMembers = () => {
