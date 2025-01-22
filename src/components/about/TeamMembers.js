@@ -24,7 +24,7 @@ const teamMembers = [
     name: "Ecto",
     position: "Artista",
     description:
-      "Artista dedicado a criar visuais envolventes e expressivos que dão vida aos projetos.",
+      "Artista que se dedica a criar visuais envolventes e expressivos que dão vida aos projetos.",
     image: "assets/Perfil3.jpg",
   },
   {

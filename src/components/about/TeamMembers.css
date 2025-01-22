@@ -91,8 +91,15 @@
     margin: 0 auto;
   }
 
+  .card-image-wrapper {
+    width: 180px; /* Largura fixa para a imagem */
+    height: auto; /* Altura automática */
+    overflow: hidden; /* Esconde qualquer parte que ultrapassar */
+    margin-bottom: 20px;
+  }
+
   .image-col {
-    flex: 0 0 250px; /* Largura fixa para a coluna da imagem */
+    flex: 0 0 180px; /* Largura fixa para a coluna da imagem */
     margin-right: 20px;
     margin-bottom: 0;
   }
@@ -130,8 +137,8 @@
   }
 
   .card-image-wrapper {
-    width: 150px; /* Ajuste da largura da imagem para dispositivos móveis */
-    height: auto;
+    width: 250px; /* Ajuste da largura da imagem para dispositivos móveis */
+    height: 100%;
   }
 
   .team-member-card {
