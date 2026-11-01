@@ -78,7 +78,11 @@ game's card/page. Brand tokens (orange, ink, paper) stay constant around it.
 |---|---|---|---|---|
 | Refúgio do Banzé | `#FF8C00` (amber) **(inferred)** | `#8B0000` (maroon) **(inferred)** | `#F2E8DA` (sand) **(inferred)** | `FeatureSection` bands |
 
-Confirm exact hex values with the artist before shipping; sample them from the art.
+| Brilhante Folclore | `#965529` madeira, `#399FB8` céu | `#592511` madeira escura, `#42210B` contorno | `#FBECD5` creme | `docs/arte/guia-de-estilo.md` do jogo (valores medidos nos sprites) |
+
+The Brilhante Folclore page (`src/components/games/brilhante/`) does not follow the site's light/dark theme: it is the game's world, built only from the game's own sprites (`public/assets/brilhante/`), its fonts (Darumadrop One for display, Nunito for text) and its UI rules (thick `#42210B` outline, cream paper, wooden signs). Its header uses `tone="wood"`.
+
+Confirm exact hex values for Banzé with the artist before shipping; sample them from the art.
 
 ## 8. Quality floor (from Web Interface Guidelines)
 

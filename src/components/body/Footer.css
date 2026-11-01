@@ -1,4 +1,5 @@
 .footer {
+  overflow-x: clip; /* the mobile columns were 12px wider than the screen */
   background-color: var(--bl-footer);
   color: white;
   font-size: 15px;

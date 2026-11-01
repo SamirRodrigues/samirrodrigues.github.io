@@ -144,3 +144,8 @@
     transform: none;
   }
 }
+
+.game-status {
+  font-weight: 700;
+  color: var(--bl-text);
+}
