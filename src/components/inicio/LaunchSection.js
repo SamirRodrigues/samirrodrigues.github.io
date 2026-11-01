@@ -9,7 +9,7 @@ const LaunchSection = () => {
   const navigate = useNavigate();
 
   const handleNavigation = () => {
-    navigate("/jogos");
+    navigate("/games");
     window.scrollTo(0, 0); // Rola a página para o topo
   };
 

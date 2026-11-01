@@ -21,9 +21,9 @@ const HeaderGrey = () => {
       setActiveKey("#quemsomos");
     } else if (location.pathname === "/" || location.pathname === "/details") {
       setActiveKey("#inicio");
-    } else if (location.pathname === "/jogos") {
+    } else if (location.pathname.startsWith("/games")) {
       setActiveKey("#jogos");
-    } else if (location.pathname === "/contato") {
+    } else if (location.pathname === "/contact") {
       setActiveKey("#contato");
     } else {
       // Pode definir uma lógica padrão ou manter uma chave inativa
@@ -40,9 +40,9 @@ const HeaderGrey = () => {
     } else if (selectedKey === "#inicio") {
       navigate("/");
     } else if (selectedKey === "#jogos") {
-      navigate("/jogos"); // Adiciona navegação para a página de jogos
+      navigate("/games"); // Adiciona navegação para a página de jogos
     } else if (selectedKey === "#contato") {
-      navigate("/contato"); // Ajuste a rota conforme necessário para contato
+      navigate("/contact"); // Ajuste a rota conforme necessário para contato
     }
 
     // Fecha o menu ao clicar em um link no mobile/tablet
@@ -97,8 +97,8 @@ const HeaderGrey = () => {
               <img
                 src={
                   location.pathname === "/"
-                    ? "assets/logo-bs.png"
-                    : "assets/logo-bs-grey.png"
+                    ? "/assets/logo-bs.png"
+                    : "/assets/logo-bs-grey.png"
                 }
                 alt="Baladeira Studio Logo"
                 className="header-grey-logo"
@@ -170,8 +170,8 @@ const HeaderGrey = () => {
                   <img
                     src={
                       location.pathname === "/"
-                        ? "assets/x-icon.png"
-                        : "assets/x-black-icon.png"
+                        ? "/assets/x-icon.png"
+                        : "/assets/x-black-icon.png"
                     }
                     alt="Ícone X"
                     className="header-grey-nav-icon"
@@ -185,8 +185,8 @@ const HeaderGrey = () => {
                   <img
                     src={
                       location.pathname === "/"
-                        ? "assets/instagram-icon.png"
-                        : "assets/instagram-black-icon.png"
+                        ? "/assets/instagram-icon.png"
+                        : "/assets/instagram-black-icon.png"
                     }
                     alt="Ícone Instagram"
                     className="header-grey-nav-icon"
@@ -211,8 +211,8 @@ const HeaderGrey = () => {
                 <img
                   src={
                     location.pathname === "/"
-                      ? "assets/sanduich-icon.png"
-                      : "assets/sanduich-icon-grey.png"
+                      ? "/assets/sanduich-icon.png"
+                      : "/assets/sanduich-icon-grey.png"
                   }
                   alt="Menu"
                   className="header-grey-sanduich-icon"
@@ -237,13 +237,13 @@ const HeaderGrey = () => {
                 style={{ cursor: "pointer" }}
               >
                 <img
-                  src="assets/bs-icon.png"
+                  src="/assets/bs-icon.png"
                   alt="Baladeira Studio Logo"
                   className="header-grey-logo"
                 />
               </Navbar.Brand>
               <button className="header-grey-close-btn" onClick={toggleMenu}>
-                <img src="assets/close.png" alt="Fechar" />
+                <img src="/assets/close.png" alt="Fechar" />
               </button>
             </div>
             <Nav
@@ -292,7 +292,7 @@ const HeaderGrey = () => {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="assets/x-black-icon.png"
+                  src="/assets/x-black-icon.png"
                   alt="Ícone X"
                   className="header-grey-nav-icon"
                 />
@@ -303,7 +303,7 @@ const HeaderGrey = () => {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="assets/instagram-black-icon.png"
+                  src="/assets/instagram-black-icon.png"
                   alt="Ícone Instagram"
                   className="header-grey-nav-icon"
                 />

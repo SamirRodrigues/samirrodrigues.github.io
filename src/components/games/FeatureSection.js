@@ -10,7 +10,7 @@ const FeatureSection = () => {
       <div
         className="feature-item"
         style={{
-          backgroundImage: "url('assets/feature1-bg.png')",
+          backgroundImage: "url('/assets/feature1-bg.png')",
           color: "#393645",
         }}
       >
@@ -18,7 +18,7 @@ const FeatureSection = () => {
           <div className="row align-items-center">
             <div className="col-auto text-center">
               <img
-                src="assets/feature1-img.png"
+                src="/assets/feature1-img.png"
                 alt="Características do período escravocrata"
                 className="feature-image"
               />
@@ -54,7 +54,7 @@ const FeatureSection = () => {
             </div>
             <div className="col-auto text-center">
               <img
-                src="assets/feature2-img.png"
+                src="/assets/feature2-img.png"
                 alt="Administração na prática"
                 className="feature-image"
               />
@@ -67,7 +67,7 @@ const FeatureSection = () => {
       <div
         className="feature-item"
         style={{
-          backgroundImage: "url('assets/feature3-bg.png')",
+          backgroundImage: "url('/assets/feature3-bg.png')",
           color: "#393645",
         }}
       >
@@ -75,7 +75,7 @@ const FeatureSection = () => {
           <div className="row align-items-center">
             <div className="col-auto text-center">
               <img
-                src="assets/feature3-img.png"
+                src="/assets/feature3-img.png"
                 alt="Estruture táticas e proteja o quilombo"
                 className="feature-image"
               />

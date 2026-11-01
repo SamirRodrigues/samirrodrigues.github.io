@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import HomePage from "./pages/HomePage";
 import DetailsPage from "./pages/DetailsPage";
@@ -17,10 +17,19 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/details" element={<DetailsPage />} />
           <Route path="/about" element={<AboutUs />} />
-          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
-          <Route path="/termsconditions" element={<TermsConditions />} />
-          <Route path="/jogos" element={<GamesPage />} />
-          <Route path="/contato" element={<ContactPage />} />
+          <Route path="/games" element={<Navigate to="/games/banze" replace />} />
+          <Route path="/games/banze" element={<GamesPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
+
+          {/* Legacy (Portuguese) routes kept so old links keep working */}
+          <Route path="/jogos" element={<Navigate to="/games/banze" replace />} />
+          <Route path="/contato" element={<Navigate to="/contact" replace />} />
+          <Route path="/privacypolicy" element={<Navigate to="/privacy-policy" replace />} />
+          <Route path="/termsconditions" element={<Navigate to="/terms-conditions" replace />} />
+
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
     </Router>

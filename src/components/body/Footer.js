@@ -84,30 +84,30 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/jogos" onClick={() => handleNavigation("/jogos")}>
+                <Link to="/games" onClick={() => handleNavigation("/games")}>
                   Jogos
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/contato"
-                  onClick={() => handleNavigation("/contato")}
+                  to="/contact"
+                  onClick={() => handleNavigation("/contact")}
                 >
                   Contato
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/privacypolicy"
-                  onClick={() => handleNavigation("/privacypolicy")}
+                  to="/privacy-policy"
+                  onClick={() => handleNavigation("/privacy-policy")}
                 >
                   Política de Privacidade
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/termsconditions"
-                  onClick={() => handleNavigation("/termsconditions")}
+                  to="/terms-conditions"
+                  onClick={() => handleNavigation("/terms-conditions")}
                 >
                   Termos e Condições
                 </Link>

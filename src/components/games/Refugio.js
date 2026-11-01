@@ -15,7 +15,7 @@ const Refugio = () => {
     <section className="refugio-section">
       <div className="refugio-image-wrapper">
         <img
-          src="assets/refugio-banner.png"
+          src="/assets/refugio-banner.png"
           alt="Refúgio do Banzé Banner"
           className="refugio-banner-image"
         />
@@ -38,7 +38,7 @@ const Refugio = () => {
               agora na <strong>Google Play</strong>!
             </p>
             <img
-              src="assets/google-play-badge.png"
+              src="/assets/google-play-badge.png"
               alt="Baixar na Google Play"
               className="google-play-badge"
               onClick={handleImageClick}

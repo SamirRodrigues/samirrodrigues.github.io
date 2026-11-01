@@ -32,7 +32,7 @@ const WhoWeAre = () => {
             {/* Mostrar logo em coluna lateral apenas no desktop */}
             {!isMobile && (
               <Col xs={12} md={3} className="who-we-are-logo">
-                <img src="assets/bs-icon-grey.png" alt="Logo" />
+                <img src="/assets/bs-icon-grey.png" alt="Logo" />
               </Col>
             )}
             <Col xs={12} md={7}>
@@ -41,7 +41,7 @@ const WhoWeAre = () => {
                 {isMobile && (
                   <div className="who-we-are-logo-container">
                     <img
-                      src="assets/bs-icon-grey.png"
+                      src="/assets/bs-icon-grey.png"
                       alt="Logo"
                       className="who-we-are-logo"
                     />
