@@ -10,7 +10,8 @@
   --bf-yellow: #eab50c;
   --bf-red: #cc2a0e;
   --bf-green: #a3b214;
-  --bf-blue: #399fb8;
+  --bf-blue: #399fb8; /* só a abertura (o "telhado") */
+  --bf-sand: #ebddc6; /* faixas de areia, como na lista de jogos */
   --bf-display: "Darumadrop One", "Nunito", system-ui, sans-serif;
   --bf-body: "Nunito", "Red Hat Display", system-ui, sans-serif;
   --bf-outline: 3px 0 0 var(--bf-ink), -3px 0 0 var(--bf-ink), 0 3px 0 var(--bf-ink),
@@ -200,11 +201,6 @@
   right: 4%;
   top: 270px;
 }
-.bf-cloud-3 {
-  width: clamp(100px, 14vw, 190px);
-  right: 5%;
-  top: 28px;
-}
 @media (prefers-reduced-motion: no-preference) {
   .bf-cloud-1 {
     animation: bf-drift 14s ease-in-out infinite alternate;
@@ -228,8 +224,8 @@
   padding: 72px 0 80px;
   position: relative;
 }
-.bf-blue {
-  background: var(--bf-blue);
+.bf-sand {
+  background: var(--bf-sand);
   padding: 72px 0 80px;
   position: relative;
   border-top: 4px solid var(--bf-ink);
@@ -612,7 +608,7 @@
     grid-template-columns: minmax(0, 1fr);
   }
   .bf-wood,
-  .bf-blue,
+  .bf-sand,
   .bf-lendas {
     padding: 56px 0 64px;
   }
@@ -631,4 +627,14 @@
     animation: none !important;
     transition: none !important;
   }
+}
+
+/* Em faixas de areia o texto vai em marrom (creme não tem contraste sobre areia) */
+.bf-sand .bf-heading {
+  color: var(--bf-wood-deep);
+  text-shadow: none;
+}
+.bf-sand .bf-lead {
+  color: var(--bf-text);
+  text-shadow: none;
 }

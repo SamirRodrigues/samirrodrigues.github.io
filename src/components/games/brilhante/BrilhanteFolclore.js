@@ -146,8 +146,7 @@ const BrilhanteFolclore = () => {
       </section>
 
       {/* ---------- Cards ---------- */}
-      <section className="bf-blue" aria-labelledby="bf-cards">
-        <img src={`${A}/cloud-2.webp`} alt="" className="bf-cloud bf-cloud-3" width="340" height="222" />
+      <section className="bf-sand" aria-labelledby="bf-cards">
         <div className="bf-wrap">
           <h2 id="bf-cards" className="bf-heading">
             Acabou a onda? Escolha um card
@@ -263,7 +262,7 @@ const BrilhanteFolclore = () => {
       </section>
 
       {/* ---------- Acessibilidade ---------- */}
-      <section className="bf-blue" aria-labelledby="bf-access">
+      <section className="bf-sand" aria-labelledby="bf-access">
         <div className="bf-wrap bf-access">
           <div className="bf-paper bf-access-card">
             <h2 id="bf-access">Pensado para todo mundo</h2>
