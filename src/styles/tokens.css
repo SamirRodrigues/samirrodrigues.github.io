@@ -1,0 +1,64 @@
+/* Baladeira Studio – design tokens.
+   Light is the default; dark ("grafite") is applied with <html data-theme="dark">.
+   See docs/design-system.md. */
+:root {
+  --bl-orange: #f04b23;
+  --bl-orange-press: #d43f1a;
+
+  --bl-text: #393645;
+  --bl-text-muted: #6b6879;
+  --bl-page: #efefed;
+  --bl-page-warm: #f8f4f2;
+  --bl-sand: #ebddc6; /* games list page background */
+  --bl-card: #ffffff;
+  --bl-surface-dark: #292c37; /* dark cards (home "Quem nós somos") */
+  --bl-band: #f04b23; /* orange bands */
+  --bl-footer: #393645;
+  --bl-logo-strip: #ffffff; /* partner logos need a light ground */
+
+  --bl-accent-text: #f04b23; /* orange used as text */
+  --bl-accent-hover: #d43f1a;
+  --bl-btn-bg: #393645;
+  --bl-btn-bg-hover: #292c37;
+  --bl-btn-fg: #ffffff;
+
+  --bl-line: rgba(57, 54, 69, 0.2);
+  --bl-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bl-text: #edeaf2;
+  --bl-text-muted: #b4b0c2;
+  --bl-page: #393645; /* grafite */
+  --bl-page-warm: #33303f;
+  --bl-sand: #393645;
+  --bl-card: #454253;
+  --bl-surface-dark: #292c37;
+  --bl-band: #c23a18;
+  --bl-footer: #292c37;
+  --bl-logo-strip: #ece8f0;
+
+  --bl-accent-text: #ff7a55;
+  --bl-accent-hover: #ff9a7a;
+  --bl-btn-bg: #f04b23;
+  --bl-btn-bg-hover: #d43f1a;
+  --bl-btn-fg: #ffffff;
+
+  --bl-line: rgba(237, 234, 242, 0.25);
+  --bl-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--bl-page);
+  color: var(--bl-text);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}

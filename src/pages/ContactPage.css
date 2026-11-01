@@ -11,6 +11,6 @@
 .contact-page {
   font-family: "Red Hat Display", sans-serif;
   margin: 0;
-  background-color: #efefed;
+  background-color: var(--bl-page);
   padding: 120px 10%;
 }

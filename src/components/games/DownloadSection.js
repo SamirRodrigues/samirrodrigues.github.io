@@ -9,7 +9,7 @@ const downloads = [
   //   title: "Acesse nossas pesquisas",
   //   description:
   //     "Explore estudos sobre a cultura quilombola e sua resistência histórica, preservando memórias e saberes.",
-  //   image: "assets/download1.png",
+  //   image: "/assets/download1.png",
   //   link: "/assets/pesquisas_quilombolas.pdf", // Exemplo de outro documento
   // },
   {
@@ -17,7 +17,7 @@ const downloads = [
     title: "Baixe nosso plano de aulas",
     description:
       "Tenha acesso aos materiais didáticos para ensinar a história dos quilombos de forma dinâmica e inspiradora.",
-    image: "assets/download2.png",
+    image: "/assets/download2.png",
     link: "/assets/Planos%20de%20Aula%20-%20BANZ%C3%89.pdf", // Caminho atualizado para o PDF
   },
 ];

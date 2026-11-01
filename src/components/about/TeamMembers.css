@@ -1,6 +1,6 @@
 /* Seção dos Membros da Equipe */
 .team-members-section {
-  background-color: #ed5424;
+  background-color: var(--bl-band);
   padding: 80px 0;
   color: #ffffff;
   font-family: "Red Hat Display", sans-serif;

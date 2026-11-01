@@ -1,8 +1,8 @@
 /* src/pages/AboutUs.css */
 .about-us-page {
   padding: var(--section-padding);
-  background-color: #efefed;
-  color: var(--primary-color);
+  background-color: var(--bl-page);
+  color: var(--bl-accent-text);
 }
 
 .about-us-content {

@@ -1,5 +1,5 @@
 .download-section {
-  background-color: #efefed;
+  background-color: var(--bl-page);
   padding: 50px 0;
 }
 
@@ -43,8 +43,8 @@
 .download-button {
   display: inline-block;
   padding: 10px 20px; /* Padding ajustado */
-  background-color: #393645;
-  color: #ffffff;
+  background-color: var(--bl-btn-bg);
+  color: var(--bl-btn-fg);
   text-decoration: none;
   border-radius: 16px;
   font-size: 14px; /* Tamanho de fonte reduzido */
@@ -53,7 +53,7 @@
 }
 
 .download-button:hover {
-  background-color: #333333;
+  background-color: var(--bl-btn-bg-hover);
 }
 
 .download-button i {

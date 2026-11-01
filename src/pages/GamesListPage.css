@@ -1,0 +1,53 @@
+.games-list-page {
+  background-color: var(--bl-sand);
+  color: var(--bl-text);
+  font-family: "Red Hat Display", sans-serif;
+  padding: 130px 0 72px;
+  text-align: left;
+}
+.games-list-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.games-list-title {
+  text-transform: none;
+  text-align: left;
+  font-weight: 300;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  margin: 0;
+  text-wrap: balance;
+}
+.games-list-title strong {
+  font-weight: 900;
+}
+.games-list-lead {
+  text-align: left;
+  margin: 10px 0 36px;
+  color: var(--bl-text-muted);
+  max-width: 50ch;
+}
+.games-list-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px 24px;
+}
+.games-list-soon {
+  margin: 40px 0 0;
+  color: var(--bl-text-muted);
+}
+.games-list-soon a {
+  font-weight: 700;
+  color: var(--bl-text);
+}
+@media (max-width: 760px) {
+  .games-list-page {
+    padding-top: 100px;
+  }
+  .games-list-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 16px;
+  }
+}

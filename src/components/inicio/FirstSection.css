@@ -3,12 +3,12 @@
 /* Primeira Seção - Quem nós Somos */
 .first-section {
   padding: var(--section-padding);
-  background-color: var(--white-color);
+  background-color: var(--bl-page);
   margin-top: 80px; /* Reduzir se necessário para evitar sobreposição com o header */
 }
 
 .first-title {
-  color: var(--primary-color);
+  color: var(--bl-accent-text);
   font-size: 2.5rem;
   font-weight: 500;
   text-align: left;
@@ -20,7 +20,7 @@
 }
 
 .who-we-are .content-box {
-  background-color: var(--secondary-color);
+  background-color: var(--bl-surface-dark);
   border-radius: 30px;
   padding: 40px; /* Ajuste para espaçamento interno */
   color: white;
@@ -68,7 +68,7 @@
 }
 
 .btn-know-more:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--bl-surface-dark);
   color: var(--white-color);
 }
 

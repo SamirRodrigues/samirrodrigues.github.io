@@ -1,0 +1,224 @@
+<title>Seleção de Jogos: 3 Opções</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* Layout: calm warm-paper page. Orange stays a small accent (hover, arrows, focus). Three ways to present the same game data: posters, cover + picker, editorial list. */
+:root{
+  --orange:#F04B23; --orange-press:#D43F1A; --ink:#393645; --ink-deep:#292C37;
+  --paper:#F8F4F2; --white:#FFFFFF; --muted:#6B6879; --hair:rgba(57,54,69,.16);
+  --font:"Red Hat Display",system-ui,sans-serif; --r:16px; --pill:30px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.6;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1000px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* mockup-only toolbar */
+.tools{background:var(--ink-deep);color:#fff;font-size:.8rem}
+.tools .wrap{display:flex;gap:10px 28px;flex-wrap:wrap;align-items:center;padding-block:10px}
+.tools b{font-weight:700;opacity:.7;margin-right:6px}
+.seg{display:inline-flex;border:1px solid rgba(255,255,255,.4);border-radius:var(--pill);padding:2px;gap:2px}
+.seg button{font:inherit;font-size:.8rem;border:0;background:transparent;color:#fff;padding:4px 14px;border-radius:var(--pill);cursor:pointer}
+.seg button[aria-pressed="true"]{background:#fff;color:var(--ink-deep)}
+
+header{padding-block:20px}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.logo img{height:44px;width:auto;display:block}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:28px;flex-wrap:wrap}
+nav a{text-decoration:none;text-transform:uppercase;font-weight:300;font-size:.9rem;letter-spacing:.02em;padding-block:4px}
+nav a[aria-current="page"]{font-weight:700;border-bottom:2px solid var(--ink)}
+nav a:hover{font-weight:500}
+
+.head{padding-block:40px 32px}
+h1{font-weight:300;font-size:clamp(2rem,5vw,3rem);line-height:1.1;margin:0;text-wrap:balance}
+h1 strong{font-weight:900}
+.head p{margin:10px 0 0;color:var(--muted);max-width:50ch}
+main .wrap.body{padding-bottom:72px}
+
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;text-decoration:none;font-weight:500;padding:12px 30px;border-radius:var(--pill);transition:background-color .3s ease}
+.btn:hover{background:var(--ink-deep)}
+.btn.light{background:#fff;color:var(--ink)} .btn.light:hover{background:#EFEFED}
+.btn svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.5}
+.badge img{height:44px;width:auto;display:block}
+.meta{margin:0;padding:0;list-style:none;display:flex;gap:4px 16px;flex-wrap:wrap;font-size:.875rem;color:var(--muted)}
+.ex{display:grid;place-items:center;font-weight:900;color:rgba(255,255,255,.9);text-align:center}
+.ex.a{background:linear-gradient(135deg,#1F6F78,#0E3F49)} .ex.b{background:linear-gradient(135deg,#6B4FA0,#3A2A63)}
+.tagx{display:inline-block;font-size:.75rem;font-weight:700;border:1px solid var(--hair);border-radius:var(--pill);padding:0 10px;color:var(--muted);margin-bottom:6px}
+.soon-note{margin:40px 0 0;color:var(--muted);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.soon-note a{font-weight:700;color:var(--ink)}
+
+/* ---------- Option 1: posters ---------- */
+.posters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 24px}
+.poster{display:block;text-decoration:none}
+.poster .pic{aspect-ratio:7/8;border-radius:12px;overflow:hidden;background:var(--ink-deep);box-shadow:0 2px 8px rgba(57,54,69,.12);transition:transform .35s ease,box-shadow .35s ease}
+.poster .pic img{width:100%;height:100%;object-fit:cover;display:block}
+.poster:hover .pic{transform:translateY(-4px);box-shadow:0 10px 22px rgba(57,54,69,.18)}
+.poster h2{font-size:1.25rem;font-weight:700;line-height:1.25;margin:14px 0 2px}
+.poster:hover h2{color:var(--orange-press)}
+.poster p{margin:0 0 6px;color:var(--muted);font-size:.95rem}
+.single{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:48px;align-items:center}
+.single .pic{aspect-ratio:7/8;border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(57,54,69,.16);background:var(--ink-deep)}
+.single .pic img{width:100%;height:100%;object-fit:cover;display:block}
+.single h2{font-size:2rem;font-weight:700;line-height:1.15;margin:0 0 10px}
+.single p{margin:0 0 14px;max-width:50ch}
+.single .actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-top:24px}
+
+/* ---------- Option 2: cover + picker ---------- */
+.cover{position:relative;border-radius:var(--r);overflow:hidden;background:var(--ink-deep);color:#fff;min-height:380px;display:flex;align-items:flex-end}
+.cover .bg{position:absolute;inset:0}
+.cover .bg img{width:100%;height:100%;object-fit:cover;display:block}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(41,44,55,.92) 0%,rgba(41,44,55,.55) 45%,rgba(41,44,55,0) 75%)}
+.cover .in{position:relative;z-index:1;padding:32px;max-width:640px}
+.cover h2{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:300;line-height:1.1;margin:0 0 8px}
+.cover h2 strong{font-weight:900}
+.cover p{margin:0 0 18px;font-weight:300;font-size:1.05rem}
+.cover .actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.picker{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:20px;padding:0;list-style:none}
+.pick{all:unset;box-sizing:border-box;display:block;width:100%;cursor:pointer;border-radius:12px;padding:6px;border:2px solid transparent;transition:border-color .3s ease}
+.pick:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.pick .t{aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:var(--ink-deep);display:block}
+.pick .t img{width:100%;height:100%;object-fit:cover;display:block}
+.pick .n{display:block;font-weight:500;font-size:.9rem;margin:8px 2px 2px}
+.pick:hover{border-color:var(--hair)}
+.pick[aria-selected="true"]{border-color:var(--ink)}
+.pick[aria-selected="true"] .n{font-weight:700}
+.pick.soon{cursor:default;border:2px dashed var(--hair);display:grid;place-items:center;text-align:center;color:var(--muted);font-size:.9rem;aspect-ratio:auto;min-height:100%;padding:12px}
+
+/* ---------- Option 3: list ---------- */
+.list{list-style:none;margin:0;padding:0;border-top:1px solid var(--hair)}
+.row{display:grid;grid-template-columns:168px minmax(0,1fr) auto;gap:28px;align-items:center;padding:24px 8px;border-bottom:1px solid var(--hair);text-decoration:none;transition:background-color .3s ease}
+.row:hover{background:rgba(57,54,69,.04)}
+.row .th{aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:var(--ink-deep)}
+.row .th img{width:100%;height:100%;object-fit:cover;display:block}
+.row h2{font-size:1.5rem;font-weight:700;line-height:1.2;margin:0 0 4px}
+.row p{margin:0 0 8px;max-width:56ch}
+.go{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;transition:background-color .3s ease,color .3s ease,border-color .3s ease}
+.go svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.5}
+.row:hover .go{background:var(--orange);border-color:var(--orange);color:#fff}
+.row.soon{cursor:default;grid-template-columns:168px minmax(0,1fr)}
+.row.soon:hover{background:none}
+.row.soon .th{background:transparent;border:2px dashed var(--hair);display:grid;place-items:center}
+.row.soon .th img{width:44px;height:auto;opacity:.5}
+.row.soon h2{color:var(--muted);font-weight:500;font-size:1.25rem}
+
+footer{background:var(--ink);color:#fff;padding-block:40px;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+footer img{height:44px;width:auto;display:block}
+footer ul{list-style:none;margin:0;padding:0;display:flex;gap:20px;flex-wrap:wrap}
+footer a{text-decoration:none;color:#fff} footer a:hover{text-decoration:underline}
+
+@media (max-width:760px){
+  .posters{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}
+  .single{grid-template-columns:minmax(0,1fr);gap:24px}
+  .single .pic{max-width:340px}
+  .cover{min-height:420px} .cover .in{padding:24px 20px}
+  .picker{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .row{grid-template-columns:96px minmax(0,1fr) auto;gap:16px;padding:18px 0}
+  .row.soon{grid-template-columns:96px minmax(0,1fr)}
+  .row h2{font-size:1.25rem} .row p{font-size:.95rem}
+  nav ul{gap:16px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.poster:hover .pic{transform:none}}
+[hidden]{display:none!important}
+</style>
+
+<div class="tools"><div class="wrap">
+  <span><b>Proposta</b>
+    <span class="seg" role="group" aria-label="Opção de layout">
+      <button type="button" data-opt="poster" aria-pressed="true">1 · Pôsteres</button>
+      <button type="button" data-opt="capa" aria-pressed="false">2 · Capa</button>
+      <button type="button" data-opt="lista" aria-pressed="false">3 · Lista</button>
+    </span></span>
+  <span><b>Jogos</b>
+    <span class="seg" role="group" aria-label="Quantidade de jogos">
+      <button type="button" data-n="1" aria-pressed="true">Hoje: 1</button>
+      <button type="button" data-n="3" aria-pressed="false">Com mais jogos</button>
+    </span></span>
+</div></div>
+
+<header><div class="wrap">
+  <a class="logo" href="#" aria-label="Baladeira Studio – início"><img src="__LOGO_GREY__" alt="Baladeira Studio" width="97" height="44"></a>
+  <nav aria-label="Principal"><ul>
+    <li><a href="#">Início</a></li><li><a href="#">Quem somos</a></li><li><a href="#" aria-current="page">Jogos</a></li><li><a href="#">Contato</a></li>
+  </ul></nav>
+</div></header>
+
+<main>
+  <div class="wrap head">
+    <h1>Nossos <strong>jogos</strong></h1>
+    <p>Jogos sérios que ensinam história e cultura brasileira.</p>
+  </div>
+  <div class="wrap body" id="view"></div>
+</main>
+
+<footer><div class="wrap">
+  <img src="__LOGO_FULL__" alt="Baladeira Studio" width="97" height="44">
+  <ul><li><a href="#">Início</a></li><li><a href="#">Quem somos</a></li><li><a href="#">Jogos</a></li><li><a href="#">Contato</a></li><li><a href="#">Política de Privacidade</a></li><li><a href="#">Termos e Condições</a></li></ul>
+</div></footer>
+
+<script>
+(function(){
+  var IMG={poster:'__POSTER__',hero:'__HERO__',thumb:'__THUMB__',play:'__PLAY__',icon:'__ICON_GREY__'};
+  var ARROW='<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 1l6 6-6 6"/></svg>';
+  var GAMES=[
+    {name:'O Refúgio do Banzé',line:'Administre um quilombo no período escravocrata e proteja a comunidade.',meta:['Android','Estratégia e história','Cultura quilombola'],real:true},
+    {name:'Segundo jogo',line:'Uma linha que explica o jogo e o que se aprende com ele.',meta:['Android','Tema'],cls:'a'},
+    {name:'Terceiro jogo',line:'Cada jogo traz sua própria arte e paleta.',meta:['Android e iOS','Tema'],cls:'b'}
+  ];
+  var opt='poster',n=1,sel=0;
+  var view=document.getElementById('view');
+
+  function art(g,kind){ // kind: poster | hero | thumb
+    if(g.real) return '<img src="'+IMG[kind]+'" alt="" width="'+(kind==='hero'?1120:kind==='poster'?840:480)+'" height="'+(kind==='hero'?480:kind==='poster'?960:360)+'">';
+    return '<div class="ex '+g.cls+'" style="width:100%;height:100%">Arte do jogo</div>';
+  }
+  function metaList(g){return '<ul class="meta">'+g.meta.map(function(m){return '<li>'+m+'</li>'}).join('')+'</ul>'}
+  function tag(g){return g.real?'':'<span class="tagx">Exemplo</span>'}
+  function soonNote(){return '<p class="soon-note">Novos jogos a caminho. <a href="#">Siga @baladeirastudio</a></p>'}
+
+  function posters(list){
+    if(list.length===1){var g=list[0];
+      return '<div class="single"><a class="pic" href="#" tabindex="-1" aria-hidden="true">'+art(g,'poster')+'</a><div>'
+        +'<h2>'+g.name+'</h2><p>'+g.line+'</p>'+metaList(g)
+        +'<div class="actions"><a class="btn" href="#">Conhecer o jogo '+ARROW+'</a><a class="badge" href="#" aria-label="Baixar na Google Play"><img src="'+IMG.play+'" alt="Disponível no Google Play" width="148" height="44"></a></div>'
+        +'</div></div>'+soonNote();}
+    return '<div class="posters">'+list.map(function(g){
+      return '<a class="poster" href="#"><div class="pic">'+art(g,'poster')+'</div>'+tag(g)+'<h2>'+g.name+'</h2><p>'+g.line+'</p>'+metaList(g)+'</a>';
+    }).join('')+'</div>'+soonNote();
+  }
+  function capa(list){
+    var g=list[sel]||list[0];
+    var bg=g.real?'<img src="'+IMG.hero+'" alt="" width="1120" height="480">':'<div class="ex '+g.cls+'" style="width:100%;height:100%"></div>';
+    var cta='<a class="btn light" href="#">Conhecer o jogo '+ARROW+'</a>'+(g.real?'<a class="badge" href="#" aria-label="Baixar na Google Play"><img src="'+IMG.play+'" alt="Disponível no Google Play" width="148" height="44"></a>':'');
+    var h='<section class="cover" aria-live="polite"><div class="bg">'+bg+'</div><div class="in"><h2>'+g.name+'</h2><p>'+g.line+'</p><div class="actions">'+cta+'</div></div></section>';
+    h+='<ul class="picker" aria-label="Todos os jogos">'+list.map(function(x,i){
+      return '<li><button type="button" class="pick" data-i="'+i+'" aria-selected="'+(i===sel)+'"><span class="t">'+art(x,'thumb')+'</span><span class="n">'+x.name+'</span></button></li>';
+    }).join('')+'<li><div class="pick soon">Novos jogos<br>a caminho</div></li></ul>';
+    return h;
+  }
+  function lista(list){
+    var h='<ul class="list">'+list.map(function(g){
+      return '<li><a class="row" href="#"><span class="th">'+art(g,'thumb')+'</span><span><h2>'+g.name+'</h2><p>'+g.line+'</p>'+metaList(g)+'</span><span class="go" aria-hidden="true">'+ARROW+'</span></a></li>';
+    }).join('');
+    h+='<li><div class="row soon"><span class="th"><img src="'+IMG.icon+'" alt="" width="44" height="44"></span><span><h2>Novos jogos a caminho</h2><p>Siga <a href="#" style="font-weight:700">@baladeirastudio</a> para saber quando chegarem.</p></span></div></li></ul>';
+    return h;
+  }
+  function render(){
+    var list=GAMES.slice(0,n); if(sel>=list.length) sel=0;
+    view.innerHTML = opt==='poster'?posters(list):opt==='capa'?capa(list):lista(list);
+    Array.prototype.forEach.call(document.querySelectorAll('[data-opt]'),function(b){b.setAttribute('aria-pressed',String(b.dataset.opt===opt))});
+    Array.prototype.forEach.call(document.querySelectorAll('[data-n]'),function(b){b.setAttribute('aria-pressed',String(+b.dataset.n===n))});
+  }
+  document.addEventListener('click',function(e){
+    var o=e.target.closest('[data-opt]'),c=e.target.closest('[data-n]'),p=e.target.closest('.pick[data-i]');
+    if(o){opt=o.dataset.opt;render();}
+    else if(c){n=+c.dataset.n;render();}
+    else if(p){sel=+p.dataset.i;render();var again=view.querySelector('.pick[data-i="'+sel+'"]');if(again)again.focus();}
+  });
+  render();
+})();
+</script>

@@ -1,6 +1,7 @@
 /* Estilos para o container principal */
 .contact-us {
-  background-color: #ffffff; /* Alterado para branco */
+  background-color: var(--bl-card);
+  color: var(--bl-text);
   padding: 80px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Suavizado */
@@ -16,7 +17,7 @@
 
 /* Estilos para o título */
 .contact-info h3 {
-  color: #ed5424;
+  color: var(--bl-accent-text);
   font-family: "Red Hat Display", sans-serif;
   font-size: 48px;
   font-weight: 900;
@@ -84,14 +85,14 @@
 
 /* Estilos para o botão */
 .contact-form button {
-  background-color: #393645;
+  background-color: var(--bl-btn-bg);
   border: none;
-  color: #ffffff;
+  color: var(--bl-btn-fg);
 }
 
 /* Hover do botão */
 .contact-form button:hover {
-  background-color: #292c37;
+  background-color: var(--bl-btn-bg-hover);
 }
 
 /* Margem superior do botão */
