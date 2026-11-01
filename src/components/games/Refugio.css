@@ -1,6 +1,6 @@
 /* Seção do Refúgio */
 .refugio-section {
-  background-color: #efefed;
+  background-color: var(--bl-page);
   padding-top: 100px;
   font-family: "Red Hat Display", sans-serif;
   overflow: hidden;
@@ -20,7 +20,7 @@
 .refugio-content {
   text-align: center;
   margin: 40px auto;
-  color: #393645;
+  color: var(--bl-text);
 }
 
 .refugio-content h3 {
@@ -29,7 +29,7 @@
   font-weight: 900;
   line-height: 1.1;
   padding-bottom: 30px;
-  color: #393645;
+  color: var(--bl-text);
   transition: color 0.3s ease;
 }
 
@@ -38,13 +38,13 @@
   font-size: 24px;
   font-weight: 400;
   line-height: 1.5;
-  color: #393645;
+  color: var(--bl-text);
   transition: color 0.3s ease;
 }
 
 .refugio-content:hover h3,
 .refugio-content:hover p {
-  color: #000000;
+  color: var(--bl-text);
 }
 
 /* Estilo da imagem do Google Play Badge */

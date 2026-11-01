@@ -3,7 +3,7 @@
 /* Seção de Patrocinadores */
 .partners-section {
   padding: 40px 0;
-  background-color: white;
+  background-color: var(--bl-logo-strip);
 }
 
 /* Estilos Comuns */
@@ -113,7 +113,7 @@
   }
   .partners-section {
     padding: 10px 0;
-    background-color: white;
+    background-color: var(--bl-logo-strip);
   }
 
   .partner-logo {

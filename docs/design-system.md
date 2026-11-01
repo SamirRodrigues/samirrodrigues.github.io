@@ -94,3 +94,32 @@ Confirm exact hex values with the artist before shipping; sample them from the a
 - `src/App.css` and `index.css` still hold unused CRA boilerplate (`.App-header`, `.App-link`, `#61dafb`).
 - Colors and radii are repeated as literals in every CSS file; move them to CSS variables (`src/styles/tokens.css`).
 - `HomePage.css` / `DownloadSection.css` use `url("/public/assets/…")`, which does not resolve in a production build.
+
+## 10. Theming (implemented)
+
+Tokens live in `src/styles/tokens.css` (prefix `--bl-`). Light is the default;
+dark ("grafite") is `<html data-theme="dark">`, set before first paint by an
+inline script in `public/index.html`, then managed by `src/theme/ThemeContext.js`
+(saved in `localStorage` as `bs-theme`, falls back to `prefers-color-scheme`).
+`ThemeToggle` sits in the header (and in the mobile menu).
+
+| Token | Light | Dark |
+|---|---|---|
+| `--bl-page` | `#EFEFED` | `#393645` |
+| `--bl-sand` (games list) | `#EBDDC6` | `#393645` |
+| `--bl-card` | `#FFFFFF` | `#454253` |
+| `--bl-text` | `#393645` | `#EDEAF2` |
+| `--bl-band` (orange bands) | `#F04B23` | `#C23A18` |
+| `--bl-accent-text` | `#F04B23` | `#FF7A55` |
+| `--bl-btn-bg` | `#393645` | `#F04B23` |
+| `--bl-footer` | `#393645` | `#292C37` |
+
+Rules: new CSS uses tokens, never hex literals; art that only exists in a dark
+version (logos, social icons) is swapped in components via `useTheme()`; partner
+logos stay on a light strip (`--bl-logo-strip`) because they are drawn for white.
+
+## 11. Games catalog
+
+`src/data/games.js` is the single source of truth. `/games` shows the single-game
+feature while there is one game and a poster grid (7:8 posters) from two games on.
+`/games/:slug` renders the game's page from `GAME_PAGES` in `src/pages/GamePage.js`.

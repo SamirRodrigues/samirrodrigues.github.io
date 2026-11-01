@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container, Row, Col } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom"; // Importa useNavigate
+import ThemeToggle from "../../theme/ThemeToggle";
+import { useTheme } from "../../theme/ThemeContext";
 import "./HeaderGrey.css";
 
 const HeaderGrey = () => {
@@ -13,6 +15,10 @@ const HeaderGrey = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const location = useLocation();
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+  // White artwork is needed over the home photo and on the dark theme
+  const onDark = location.pathname === "/" || isDark;
   const navigate = useNavigate(); // Hook de navegação
 
   // Definir a rota correta para selecionar o menu
@@ -96,7 +102,7 @@ const HeaderGrey = () => {
             >
               <img
                 src={
-                  location.pathname === "/"
+                  onDark
                     ? "/assets/logo-bs.png"
                     : "/assets/logo-bs-grey.png"
                 }
@@ -140,7 +146,7 @@ const HeaderGrey = () => {
                     activeKey === "#jogos" ? "active" : ""
                   }`}
                 >
-                  BANZÉ
+                  JOGOS
                 </Nav.Link>
                 <Nav.Link
                   href="#contato"
@@ -169,7 +175,7 @@ const HeaderGrey = () => {
                 >
                   <img
                     src={
-                      location.pathname === "/"
+                      onDark
                         ? "/assets/x-icon.png"
                         : "/assets/x-black-icon.png"
                     }
@@ -184,7 +190,7 @@ const HeaderGrey = () => {
                 >
                   <img
                     src={
-                      location.pathname === "/"
+                      onDark
                         ? "/assets/instagram-icon.png"
                         : "/assets/instagram-black-icon.png"
                     }
@@ -192,6 +198,9 @@ const HeaderGrey = () => {
                     className="header-grey-nav-icon"
                   />
                 </a>
+                <ThemeToggle
+                  className={location.pathname === "/" ? "on-photo" : ""}
+                />
               </div>
             </Col>
           )}
@@ -210,7 +219,7 @@ const HeaderGrey = () => {
               >
                 <img
                   src={
-                    location.pathname === "/"
+                    onDark
                       ? "/assets/sanduich-icon.png"
                       : "/assets/sanduich-icon-grey.png"
                   }
@@ -237,13 +246,18 @@ const HeaderGrey = () => {
                 style={{ cursor: "pointer" }}
               >
                 <img
-                  src="/assets/bs-icon.png"
+                  src={isDark ? "/assets/logo-bs-white.png" : "/assets/bs-icon.png"}
                   alt="Baladeira Studio Logo"
                   className="header-grey-logo"
                 />
               </Navbar.Brand>
-              <button className="header-grey-close-btn" onClick={toggleMenu}>
-                <img src="/assets/close.png" alt="Fechar" />
+              <button
+                type="button"
+                className="header-grey-close-btn"
+                aria-label="Fechar menu"
+                onClick={toggleMenu}
+              >
+                <img src="/assets/close.png" alt="Fechar" className="header-grey-close-icon" />
               </button>
             </div>
             <Nav
@@ -274,7 +288,7 @@ const HeaderGrey = () => {
                   activeKey === "#jogos" ? "active" : ""
                 }`}
               >
-                BANZÉ
+                JOGOS
               </Nav.Link>
               <Nav.Link
                 href="#contato"
@@ -292,7 +306,7 @@ const HeaderGrey = () => {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="/assets/x-black-icon.png"
+                  src={isDark ? "/assets/x-icon.png" : "/assets/x-black-icon.png"}
                   alt="Ícone X"
                   className="header-grey-nav-icon"
                 />
@@ -303,11 +317,12 @@ const HeaderGrey = () => {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="/assets/instagram-black-icon.png"
+                  src={isDark ? "/assets/instagram-icon.png" : "/assets/instagram-black-icon.png"}
                   alt="Ícone Instagram"
                   className="header-grey-nav-icon"
                 />
               </a>
+              <ThemeToggle />
             </div>
           </Navbar.Collapse>
         )}

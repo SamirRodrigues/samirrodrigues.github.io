@@ -3,19 +3,16 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./Refugio.css";
 
-const Refugio = () => {
+const Refugio = ({ game }) => {
   const handleImageClick = () => {
-    window.open(
-      "https://play.google.com/store/apps/details?id=com.BaladeiraStudio.RefugioDoBanze&hl=en-US&ah=lV-6m4YJj7pD-UzKbO1YxH9voPw",
-      "_blank"
-    );
+    window.open(game.stores.googlePlay, "_blank", "noopener,noreferrer");
   };
 
   return (
     <section className="refugio-section">
       <div className="refugio-image-wrapper">
         <img
-          src="/assets/refugio-banner.png"
+          src={game.banner}
           alt="Refúgio do Banzé Banner"
           className="refugio-banner-image"
         />

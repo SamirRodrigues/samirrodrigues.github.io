@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { useTheme } from "../../theme/ThemeContext";
 import "./WhoWeAre.css"; // CSS file for specific styles
 
 const WhoWeAre = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const { theme } = useTheme();
+  const logoSrc =
+    theme === "dark" ? "/assets/logo-bs-white.png" : "/assets/bs-icon-grey.png";
 
   // Função para verificar o tamanho da tela e definir se é mobile
   const checkIsMobile = () => {
@@ -32,7 +36,7 @@ const WhoWeAre = () => {
             {/* Mostrar logo em coluna lateral apenas no desktop */}
             {!isMobile && (
               <Col xs={12} md={3} className="who-we-are-logo">
-                <img src="/assets/bs-icon-grey.png" alt="Logo" />
+                <img src={logoSrc} alt="Logo" />
               </Col>
             )}
             <Col xs={12} md={7}>
@@ -41,7 +45,7 @@ const WhoWeAre = () => {
                 {isMobile && (
                   <div className="who-we-are-logo-container">
                     <img
-                      src="/assets/bs-icon-grey.png"
+                      src={logoSrc}
                       alt="Logo"
                       className="who-we-are-logo"
                     />

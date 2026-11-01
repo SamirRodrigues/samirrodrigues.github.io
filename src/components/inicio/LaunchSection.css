@@ -2,7 +2,7 @@
 
 /* Segunda Seção - Lançamento */
 .launch-section {
-  background-color: var(--primary-color);
+  background-color: var(--bl-band);
   color: var(--white-color);
   padding: 40px 0; /* Ajuste conforme necessário */
 }
@@ -19,8 +19,8 @@
 }
 
 .launch-content {
-  background-color: var(--white-color);
-  color: var(--black-color);
+  background-color: var(--bl-card);
+  color: var(--bl-text);
   border-radius: 20px;
   padding: 40px;
   display: flex;
@@ -38,15 +38,15 @@
 .launch-subtitle {
   font-size: 1.8rem;
   font-weight: bold;
-  color: var(--secondary-color);
+  color: var(--bl-text);
 }
 
 .launch-btn {
-  background-color: #393645;
+  background-color: var(--bl-btn-bg);
   padding: 12px 30px;
   margin-top: 40px;
   border-radius: 30px;
-  border: 2px solid #393645;
+  border: 2px solid var(--bl-btn-bg);
   display: flex;
   align-items: center;
   gap: 10px;

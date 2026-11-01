@@ -1,6 +1,6 @@
 /* Seção Quem Somos */
 .who-we-are-section {
-  background-color: #efefed;
+  background-color: var(--bl-page);
   padding: 80px 0;
   font-family: "Red Hat Display", sans-serif;
 }
@@ -21,8 +21,8 @@
 }
 
 .who-we-are-text-card {
-  background-color: #ffffff;
-  color: #393645;
+  background-color: var(--bl-card);
+  color: var(--bl-text);
   padding: 60px;
   border-radius: 30px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
