@@ -1,0 +1,31 @@
+.theme-toggle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  background: transparent;
+  color: var(--bl-text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 15px;
+  margin: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.theme-toggle:hover {
+  background-color: var(--bl-text);
+  color: var(--bl-page);
+}
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--bl-orange);
+  outline-offset: 2px;
+}
+/* over the home hero photo */
+.theme-toggle.on-photo {
+  color: #fff;
+}
+.theme-toggle.on-photo:hover {
+  background-color: #fff;
+  color: #393645;
+}

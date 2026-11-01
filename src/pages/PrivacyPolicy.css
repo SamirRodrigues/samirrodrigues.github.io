@@ -1,8 +1,8 @@
 /* Estilo geral da página */
 .privacy-policy {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: var(--bl-page);
+  color: var(--bl-text);
   padding-top: 100px; /* Evita sobrepor o header */
   padding-bottom: 60px;
   line-height: 1.8;
@@ -14,7 +14,7 @@
   max-width: 960px;
   margin: 0 auto;
   padding: 40px 20px;
-  background-color: #ffffff;
+  background-color: var(--bl-card);
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Sombra suave */
   transition: transform 0.3s ease;
@@ -29,14 +29,14 @@
 .privacy-policy h2,
 .privacy-policy h3,
 .privacy-policy strong {
-  color: #f04b23;
+  color: var(--bl-accent-text);
   transition: color 0.3s ease;
 }
 
 .privacy-policy h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  border-bottom: 2px solid #f04b23; /* Linha abaixo do título */
+  border-bottom: 2px solid var(--bl-accent-text); /* Linha abaixo do título */
   padding-bottom: 10px;
 }
 
@@ -46,7 +46,7 @@
 }
 
 .privacy-policy h2:hover {
-  color: #d43f1a; /* Alteração de cor no hover */
+  color: var(--bl-accent-hover); /* Alteração de cor no hover */
 }
 
 /* Justifica o texto */
@@ -71,20 +71,20 @@
   transform: translateX(
     5px
   ); /* Desloca o item da lista ligeiramente para a direita */
-  color: #d43f1a;
+  color: var(--bl-accent-hover);
 }
 
 /* Estilo para links */
 .privacy-policy a {
-  color: #f04b23;
+  color: var(--bl-accent-text);
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: all 0.3s ease;
 }
 
 .privacy-policy a:hover {
-  color: #d43f1a;
-  border-bottom: 1px solid #d43f1a; /* Adiciona uma linha ao passar o mouse */
+  color: var(--bl-accent-hover);
+  border-bottom: 1px solid var(--bl-accent-hover); /* Adiciona uma linha ao passar o mouse */
 }
 
 /* Efeito de hover no container */

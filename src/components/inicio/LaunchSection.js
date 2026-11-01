@@ -3,13 +3,15 @@ import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { FaChevronRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { useTheme } from "../../theme/ThemeContext";
 import "./LaunchSection.css";
 
 const LaunchSection = () => {
   const navigate = useNavigate();
+  const { theme } = useTheme();
 
   const handleNavigation = () => {
-    navigate("/jogos");
+    navigate("/games/banze");
     window.scrollTo(0, 0); // Rola a página para o topo
   };
 
@@ -52,7 +54,10 @@ const LaunchSection = () => {
               </div>
               {/* Logo exibida apenas no desktop */}
               <div className="launch-logo desktop-only justify-content-center">
-                <img src="/assets/banzé.png" alt="Refúgio do Banzé" />
+                <img
+                  src={theme === "dark" ? "/assets/banzé-white.png" : "/assets/banzé.png"}
+                  alt="Refúgio do Banzé"
+                />
               </div>
             </div>
           </Col>

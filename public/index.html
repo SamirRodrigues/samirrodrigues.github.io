@@ -3,6 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#efefed" />
+    <script>
+      /* Apply the saved/system theme before first paint to avoid a flash. */
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem("bs-theme"); } catch (e) {}
+        if (t !== "dark" && t !== "light") {
+          t = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+        document.documentElement.setAttribute("data-bs-theme", t);
+      })();
+    </script>
     <title>Baladeira Studio</title>
     <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />

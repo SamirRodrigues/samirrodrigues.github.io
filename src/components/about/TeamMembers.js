@@ -9,7 +9,7 @@ const teamMembers = [
     position: "Producer|Programador",
     description:
       "Profissional de TI com foco em inovação e desenvolvimento de jogos educacionais.",
-    image: "assets/Perfil1.jpg",
+    image: "/assets/Perfil1.jpg",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const teamMembers = [
     position: "Historiadora",
     description:
       "Especialista em conectar o passado ao presente através de narrativas inspiradoras e educativas.",
-    image: "assets/Perfil2.jpg",
+    image: "/assets/Perfil2.jpg",
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const teamMembers = [
     position: "Artista",
     description:
       "Artista que se dedica a criar visuais envolventes e expressivos que dão vida aos projetos.",
-    image: "assets/Perfil3.jpg",
+    image: "/assets/Perfil3.jpg",
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const teamMembers = [
     position: "Desenvolvedor Web",
     description:
       "Desenvolvedor web apaixonado por criar soluções eficientes e inovadoras para o mundo digital.",
-    image: "assets/Perfil4.jpg",
+    image: "/assets/Perfil4.jpg",
   },
   {
     id: 5,
@@ -41,7 +41,7 @@ const teamMembers = [
     position: "Designer",
     description:
       "Designer que vive para criar identidades visuais marcantes e interfaces que conquistam à primeira vista, além de ser apaixonado por compor trilhas sonoras que dão alma a experiências criativas e imersivas.",
-    image: "assets/Perfil5.jpeg",
+    image: "/assets/Perfil5.jpeg",
   },
   {
     id: 6,
@@ -49,7 +49,7 @@ const teamMembers = [
     position: "Game Designer",
     description:
       "Profissional com foco no desenvolvimento de jogos em busca da diversão.",
-    image: "assets/Perfil6.jpeg",
+    image: "/assets/Perfil6.jpeg",
   },
   {
     id: 7,
@@ -57,7 +57,7 @@ const teamMembers = [
     position: "Programador",
     description:
       "Programador comprometido em criar jogos que proporcionam momentos de diversão, conexão e aprendizado.",
-    image: "assets/Perfil7.jpg",
+    image: "/assets/Perfil7.jpg",
   },
 ];
 

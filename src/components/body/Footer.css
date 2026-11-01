@@ -1,5 +1,5 @@
 .footer {
-  background-color: #393645;
+  background-color: var(--bl-footer);
   color: white;
   font-size: 15px;
   font-family: "Red Hat Display", sans-serif;

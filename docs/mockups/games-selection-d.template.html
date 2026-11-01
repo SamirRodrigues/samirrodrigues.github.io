@@ -1,0 +1,164 @@
+<title>Seleção de Jogos: Fundos</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* Layout: the poster layout, unchanged. Only the page background varies: three candidates pulled from the site (desert hero, brand orange, footer graphite). */
+:root{
+  --orange:#F04B23; --orange-press:#D43F1A; --ink:#393645; --ink-deep:#292C37;
+  --font:"Red Hat Display",system-ui,sans-serif; --pill:30px;
+  /* theme tokens: default = Areia */
+  --bg:#EBDDC6; --fg:#393645; --muted:#5E5A6B; --hair:rgba(57,54,69,.2); --accent:#B8340F;
+  --btn-bg:#393645; --btn-fg:#FFFFFF; --btn-bg-hover:#292C37; --pic-shadow:rgba(57,54,69,.2);
+  --logo-dark:block; --logo-light:none; --footer-bg:#393645; --footer-line:transparent;
+  color-scheme:light;
+}
+[data-bg="laranja"]{
+  --bg:#F04B23; --fg:#FFFFFF; --muted:rgba(255,255,255,.88); --hair:rgba(255,255,255,.4); --accent:#FFFFFF;
+  --btn-bg:#393645; --btn-fg:#FFFFFF; --btn-bg-hover:#292C37; --pic-shadow:rgba(41,44,55,.35);
+  --logo-dark:none; --logo-light:block;
+}
+[data-bg="grafite"]{
+  --bg:#393645; --fg:#FFFFFF; --muted:rgba(255,255,255,.72); --hair:rgba(255,255,255,.22); --accent:#FF7A55;
+  --btn-bg:#F04B23; --btn-fg:#FFFFFF; --btn-bg-hover:#D43F1A; --pic-shadow:rgba(0,0,0,.4);
+  --logo-dark:none; --logo-light:block; --footer-bg:#292C37;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:16px;line-height:1.6;margin:0;transition:background-color .4s ease,color .4s ease}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1000px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+.tools{background:#292C37;color:#fff;font-size:.8rem}
+.tools .wrap{display:flex;gap:10px 28px;flex-wrap:wrap;align-items:center;padding-block:10px}
+.tools b{font-weight:700;opacity:.7;margin-right:6px}
+.seg{display:inline-flex;border:1px solid rgba(255,255,255,.4);border-radius:var(--pill);padding:2px;gap:2px}
+.seg button{font:inherit;font-size:.8rem;border:0;background:transparent;color:#fff;padding:4px 14px;border-radius:var(--pill);cursor:pointer}
+.seg button[aria-pressed="true"]{background:#fff;color:#292C37}
+.tools :focus-visible{outline-color:#fff}
+
+header{padding-block:20px}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.logo img{height:44px;width:auto}
+.logo .d{display:var(--logo-dark)} .logo .l{display:var(--logo-light)}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:28px;flex-wrap:wrap}
+nav a{text-decoration:none;text-transform:uppercase;font-weight:300;font-size:.9rem;letter-spacing:.02em;padding-block:4px}
+nav a[aria-current="page"]{font-weight:700;border-bottom:2px solid var(--fg)}
+nav a:hover{font-weight:500}
+
+.head{padding-block:40px 32px}
+h1{font-weight:300;font-size:clamp(2rem,5vw,3rem);line-height:1.1;margin:0;text-wrap:balance}
+h1 strong{font-weight:900}
+.head p{margin:10px 0 0;color:var(--muted);max-width:50ch}
+.body{padding-bottom:72px}
+
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--btn-bg);color:var(--btn-fg);text-decoration:none;font-weight:500;padding:12px 30px;border-radius:var(--pill);transition:background-color .3s ease}
+.btn:hover{background:var(--btn-bg-hover)}
+.btn svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.5}
+.badge img{height:44px;width:auto;display:block}
+.meta{margin:0;padding:0;list-style:none;display:flex;gap:4px 16px;flex-wrap:wrap;font-size:.875rem;color:var(--muted)}
+.ex{display:grid;place-items:center;font-weight:900;color:rgba(255,255,255,.9);text-align:center;width:100%;height:100%}
+.ex.a{background:linear-gradient(135deg,#1F6F78,#0E3F49)} .ex.b{background:linear-gradient(135deg,#6B4FA0,#3A2A63)}
+.tagx{display:inline-block;font-size:.75rem;font-weight:700;border:1px solid var(--hair);border-radius:var(--pill);padding:0 10px;color:var(--muted);margin-bottom:6px}
+.soon-note{margin:40px 0 0;color:var(--muted)}
+.soon-note a{font-weight:700;color:var(--fg)}
+
+.posters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 24px}
+.poster{display:block;text-decoration:none}
+.poster .pic{aspect-ratio:7/8;border-radius:12px;overflow:hidden;background:#292C37;box-shadow:0 3px 10px var(--pic-shadow);transition:transform .35s ease,box-shadow .35s ease}
+.poster .pic img{width:100%;height:100%;object-fit:cover;display:block}
+.poster:hover .pic{transform:translateY(-4px);box-shadow:0 12px 24px var(--pic-shadow)}
+.poster h2{font-size:1.25rem;font-weight:700;line-height:1.25;margin:14px 0 2px}
+.poster:hover h2{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;text-decoration-color:var(--accent)}
+.poster p{margin:0 0 6px;color:var(--muted);font-size:.95rem}
+.single{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:48px;align-items:center}
+.single .pic{aspect-ratio:7/8;border-radius:12px;overflow:hidden;box-shadow:0 8px 22px var(--pic-shadow);background:#292C37}
+.single .pic img{width:100%;height:100%;object-fit:cover;display:block}
+.single h2{font-size:2rem;font-weight:700;line-height:1.15;margin:0 0 10px}
+.single p{margin:0 0 14px;max-width:50ch}
+.single .actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-top:24px}
+
+footer{background:var(--footer-bg);color:#fff;padding-block:40px;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+footer img{height:44px;width:auto;display:block}
+footer ul{list-style:none;margin:0;padding:0;display:flex;gap:20px;flex-wrap:wrap}
+footer a{text-decoration:none;color:#fff} footer a:hover{text-decoration:underline}
+footer :focus-visible{outline-color:#fff}
+
+@media (max-width:760px){
+  .posters{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}
+  .single{grid-template-columns:minmax(0,1fr);gap:24px}
+  .single .pic{max-width:340px}
+  nav ul{gap:16px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.poster:hover .pic{transform:none}}
+</style>
+
+<div class="tools"><div class="wrap">
+  <span><b>Fundo</b>
+    <span class="seg" role="group" aria-label="Cor de fundo">
+      <button type="button" data-bg="areia" aria-pressed="true">Areia</button>
+      <button type="button" data-bg="laranja" aria-pressed="false">Laranja</button>
+      <button type="button" data-bg="grafite" aria-pressed="false">Grafite</button>
+    </span></span>
+  <span><b>Jogos</b>
+    <span class="seg" role="group" aria-label="Quantidade de jogos">
+      <button type="button" data-n="1" aria-pressed="true">Hoje: 1</button>
+      <button type="button" data-n="3" aria-pressed="false">Com mais jogos</button>
+    </span></span>
+</div></div>
+
+<header><div class="wrap">
+  <a class="logo" href="#" aria-label="Baladeira Studio – início"><img class="d" src="__LOGO_GREY__" alt="Baladeira Studio" width="97" height="44"><img class="l" src="__LOGO_FULL__" alt="Baladeira Studio" width="97" height="44"></a>
+  <nav aria-label="Principal"><ul>
+    <li><a href="#">Início</a></li><li><a href="#">Quem somos</a></li><li><a href="#" aria-current="page">Jogos</a></li><li><a href="#">Contato</a></li>
+  </ul></nav>
+</div></header>
+
+<main>
+  <div class="wrap head">
+    <h1>Nossos <strong>jogos</strong></h1>
+    <p>Jogos sérios que ensinam história e cultura brasileira.</p>
+  </div>
+  <div class="wrap body" id="view"></div>
+</main>
+
+<footer><div class="wrap">
+  <img src="__LOGO_FULL__" alt="Baladeira Studio" width="97" height="44">
+  <ul><li><a href="#">Início</a></li><li><a href="#">Quem somos</a></li><li><a href="#">Jogos</a></li><li><a href="#">Contato</a></li><li><a href="#">Política de Privacidade</a></li><li><a href="#">Termos e Condições</a></li></ul>
+</div></footer>
+
+<script>
+(function(){
+  var IMG={poster:'__POSTER__',play:'__PLAY__'};
+  var ARROW='<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 1l6 6-6 6"/></svg>';
+  var GAMES=[
+    {name:'O Refúgio do Banzé',line:'Administre um quilombo no período escravocrata e proteja a comunidade.',meta:['Android','Estratégia e história','Cultura quilombola'],real:true},
+    {name:'Segundo jogo',line:'Uma linha que explica o jogo e o que se aprende com ele.',meta:['Android','Tema'],cls:'a'},
+    {name:'Terceiro jogo',line:'Cada jogo traz sua própria arte e paleta.',meta:['Android e iOS','Tema'],cls:'b'}
+  ];
+  var n=1,view=document.getElementById('view'),root=document.documentElement;
+  function art(g){return g.real?'<img src="'+IMG.poster+'" alt="" width="840" height="960">':'<div class="ex '+g.cls+'">Arte do jogo</div>'}
+  function meta(g){return '<ul class="meta">'+g.meta.map(function(m){return '<li>'+m+'</li>'}).join('')+'</ul>'}
+  function soon(){return '<p class="soon-note">Novos jogos a caminho. <a href="#">Siga @baladeirastudio</a></p>'}
+  function render(){
+    var list=GAMES.slice(0,n),h;
+    if(n===1){var g=list[0];
+      h='<div class="single"><a class="pic" href="#" tabindex="-1" aria-hidden="true">'+art(g)+'</a><div><h2>'+g.name+'</h2><p>'+g.line+'</p>'+meta(g)
+       +'<div class="actions"><a class="btn" href="#">Conhecer o jogo '+ARROW+'</a><a class="badge" href="#" aria-label="Baixar na Google Play"><img src="'+IMG.play+'" alt="Disponível no Google Play" width="148" height="44"></a></div></div></div>'+soon();
+    }else{
+      h='<div class="posters">'+list.map(function(g){return '<a class="poster" href="#"><div class="pic">'+art(g)+'</div>'+(g.real?'':'<span class="tagx">Exemplo</span>')+'<h2>'+g.name+'</h2><p>'+g.line+'</p>'+meta(g)+'</a>'}).join('')+'</div>'+soon();
+    }
+    view.innerHTML=h;
+    Array.prototype.forEach.call(document.querySelectorAll('[data-n]'),function(b){b.setAttribute('aria-pressed',String(+b.dataset.n===n))});
+  }
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('[data-bg]'),c=e.target.closest('[data-n]');
+    if(b){var v=b.dataset.bg;if(v==='areia')root.removeAttribute('data-bg');else root.setAttribute('data-bg',v);
+      Array.prototype.forEach.call(document.querySelectorAll('[data-bg]'),function(x){x.setAttribute('aria-pressed',String(x===b))});}
+    else if(c){n=+c.dataset.n;render();}
+  });
+  render();
+})();
+</script>

@@ -1,0 +1,198 @@
+<title>Seleção de Jogos</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* Layout: paper page, wide featured card first, then a 2-up grid; every game is one data-driven card (image, title, line, CTA). */
+:root{
+  --orange:#F04B23; --orange-press:#D43F1A;
+  --ink:#393645; --ink-deep:#292C37;
+  --paper:#EFEFED; --card:#FFFFFF; --muted:#6B6879; --line:rgba(57,54,69,.28);
+  --btn-bg:#393645; --btn-fg:#FFFFFF; --btn-bg-hover:#292C37;
+  --font:"Red Hat Display",system-ui,sans-serif;
+  --r-card:16px; --r-pill:30px;
+  --shadow:0 4px 12px rgba(0,0,0,.1);
+  --logo-light:block; --logo-dark:none;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --orange:#FF6A45; --orange-press:#F04B23; --ink:#EDEAF2; --ink-deep:#14131A;
+  --paper:#1D1C25; --card:#292C37; --muted:#A9A5B8; --line:rgba(237,234,242,.3);
+  --btn-bg:#F04B23; --btn-fg:#FFFFFF; --btn-bg-hover:#D43F1A; --shadow:none;
+  --logo-light:none; --logo-dark:block; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --orange:#FF6A45; --orange-press:#F04B23; --ink:#EDEAF2; --ink-deep:#14131A;
+  --paper:#1D1C25; --card:#292C37; --muted:#A9A5B8; --line:rgba(237,234,242,.3);
+  --btn-bg:#F04B23; --btn-fg:#FFFFFF; --btn-bg-hover:#D43F1A; --shadow:none;
+  --logo-light:none; --logo-dark:block; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.6;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1000px;margin-inline:auto;padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px))}
+.wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* header */
+header{padding-block:20px}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.logo img{height:44px;width:auto}
+.logo .l{display:var(--logo-light)} .logo .d{display:var(--logo-dark)}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:28px;flex-wrap:wrap}
+nav a{text-decoration:none;text-transform:uppercase;font-weight:300;font-size:.9rem;letter-spacing:.02em;padding-block:4px}
+nav a[aria-current="page"]{font-weight:700;border-bottom:2px solid var(--ink)}
+nav a:hover{font-weight:500}
+
+/* title */
+.intro{padding-block:40px 28px;display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+h1{font-weight:300;font-size:clamp(2rem,5vw,3rem);line-height:1.1;margin:0;text-wrap:balance;color:var(--orange)}
+h1 strong{font-weight:900}
+.intro p{margin:8px 0 0;max-width:46ch;color:var(--muted)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:var(--r-pill);padding:3px;gap:2px}
+.seg button{font:inherit;font-size:.875rem;border:0;background:transparent;color:var(--ink);padding:6px 16px;border-radius:var(--r-pill);cursor:pointer;transition:background-color .3s ease,color .3s ease}
+.seg button[aria-pressed="true"]{background:var(--btn-bg);color:var(--btn-fg)}
+.seg-note{font-size:.75rem;color:var(--muted);margin:6px 4px 0;text-align:right}
+
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;padding-bottom:64px}
+.card{background:var(--card);border-radius:var(--r-card);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.card.featured{grid-column:1/-1}
+.art{display:block;position:relative;overflow:hidden;background:var(--ink-deep)}
+.art img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.card:hover .art img{transform:scale(1.03)}
+.featured .art{aspect-ratio:3.2/1}
+.card:not(.featured) .art{aspect-ratio:16/9}
+.body{padding:28px 32px 32px;display:flex;gap:24px;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;flex:1}
+.copy{flex:1 1 320px;min-width:0}
+h2{font-size:1.5rem;font-weight:700;line-height:1.2;margin:0 0 8px;text-wrap:balance}
+.copy p{margin:0;max-width:56ch}
+.facts{margin:14px 0 0;padding:0;list-style:none;display:flex;gap:6px 18px;flex-wrap:wrap;font-size:.875rem;color:var(--muted)}
+.actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--btn-bg);color:var(--btn-fg);text-decoration:none;font-weight:500;padding:12px 30px;border-radius:var(--r-pill);transition:background-color .3s ease,transform .3s ease}
+.btn:hover{background:var(--btn-bg-hover)}
+.btn svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.5}
+.badge img{height:44px;width:auto;display:block}
+.stretch::after{content:"";position:absolute;inset:0} /* whole card is one link target */
+.card{position:relative}
+.card a.btn,.card .badge{position:relative;z-index:1}
+
+/* coming-soon slot */
+.soon{order:2;border:2px dashed var(--line);border-radius:var(--r-card);padding:32px;display:flex;flex-direction:column;justify-content:center;gap:6px;min-height:200px;background:transparent}
+.soon h2{font-size:1.25rem}
+.soon p{margin:0;color:var(--muted)}
+.soon a{font-weight:700}
+
+/* example-only art */
+.ex{display:grid;place-items:center;font-weight:900;font-size:1.25rem;letter-spacing:.02em;color:rgba(255,255,255,.9)}
+.art.ex{text-decoration:none}
+.ex.a{background:linear-gradient(135deg,#1F6F78,#0E3F49)}
+.ex.b{background:linear-gradient(135deg,#6B4FA0,#3A2A63)}
+.tagx{display:inline-block;font-size:.75rem;font-weight:700;border:1px solid var(--line);border-radius:var(--r-pill);padding:1px 10px;margin-bottom:8px;color:var(--muted)}
+
+/* footer */
+footer{background:var(--ink-deep);color:#fff;padding-block:40px;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+footer img{height:40px;width:auto}
+footer ul{list-style:none;margin:0;padding:0;display:flex;gap:20px;flex-wrap:wrap}
+footer a{text-decoration:none;color:#fff} footer a:hover{text-decoration:underline}
+
+@media (max-width:760px){
+  .grid{grid-template-columns:minmax(0,1fr)}
+  .featured .art{aspect-ratio:2/1}
+  .body{padding:22px 20px 24px}
+  nav ul{gap:16px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.card:hover .art img{transform:none}}
+[hidden]{display:none!important}
+</style>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="Baladeira Studio – início"><img class="l" src="__LOGO_GREY__" alt="Baladeira Studio" width="97" height="44"><img class="d" src="__LOGO_FULL__" alt="Baladeira Studio" width="97" height="44"></a>
+    <nav aria-label="Principal"><ul>
+      <li><a href="#">Início</a></li><li><a href="#">Quem somos</a></li><li><a href="#" aria-current="page">Jogos</a></li><li><a href="#">Contato</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="intro">
+      <div>
+        <h1>Escolha seu <strong>jogo</strong></h1>
+        <p>Jogos sérios que ensinam história e cultura brasileira. Cada um tem sua própria página, com download e material de apoio.</p>
+      </div>
+      <div>
+        <div class="seg" role="group" aria-label="Pré-visualização do layout">
+          <button type="button" id="b1" aria-pressed="true">Hoje: 1 jogo</button>
+          <button type="button" id="b3" aria-pressed="false">Com mais jogos</button>
+        </div>
+        <p class="seg-note">Controle só desta proposta</p>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Jogos da Baladeira Studio">
+      <article class="card featured">
+        <a class="art stretch" href="#" aria-label="Conhecer O Refúgio do Banzé" tabindex="-1">
+          <img src="__BANNER__" alt="" width="1400" height="350">
+        </a>
+        <div class="body">
+          <div class="copy">
+            <h2>O Refúgio do Banzé</h2>
+            <p>Administre um quilombo no período escravocrata, tome decisões de estratégia e proteja a comunidade.</p>
+            <ul class="facts"><li>Android</li><li>Estratégia e história</li><li>Cultura quilombola</li></ul>
+          </div>
+          <div class="actions">
+            <a class="badge" href="#" aria-label="Baixar na Google Play"><img src="__PLAY__" alt="Disponível no Google Play" width="148" height="44"></a>
+            <a class="btn" href="#">Conhecer o jogo <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 1l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="soon" id="soon">
+        <h2>Novos jogos a caminho</h2>
+        <p>Siga <a href="#">@baladeirastudio</a> para saber quando o próximo chegar.</p>
+      </article>
+
+      <div id="examples" hidden style="display:contents">
+        <article class="card">
+          <a class="art stretch ex a" href="#" tabindex="-1" aria-hidden="true"><span>Arte do jogo</span></a>
+          <div class="body"><div class="copy">
+            <span class="tagx">Exemplo</span>
+            <h2>Segundo jogo</h2><p>Uma linha que explica o jogo e o que se aprende com ele.</p>
+            <ul class="facts"><li>Android</li><li>Tema</li></ul></div>
+            <div class="actions"><a class="btn" href="#">Conhecer o jogo <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 1l6 6-6 6"/></svg></a></div></div>
+        </article>
+        <article class="card">
+          <a class="art stretch ex b" href="#" tabindex="-1" aria-hidden="true"><span>Arte do jogo</span></a>
+          <div class="body"><div class="copy">
+            <span class="tagx">Exemplo</span>
+            <h2>Terceiro jogo</h2><p>Cada jogo traz sua própria paleta, tirada da arte dele.</p>
+            <ul class="facts"><li>Android e iOS</li><li>Tema</li></ul></div>
+            <div class="actions"><a class="btn" href="#">Conhecer o jogo <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 1l6 6-6 6"/></svg></a></div></div>
+        </article>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="__LOGO_FULL__" alt="Baladeira Studio" width="97" height="44">
+    <ul><li><a href="#">Início</a></li><li><a href="#">Quem somos</a></li><li><a href="#">Jogos</a></li><li><a href="#">Contato</a></li><li><a href="#">Política de Privacidade</a></li><li><a href="#">Termos e Condições</a></li></ul>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b1=document.getElementById('b1'),b3=document.getElementById('b3'),ex=document.getElementById('examples'),soon=document.getElementById('soon');
+  function set(many){
+    b1.setAttribute('aria-pressed',String(!many));b3.setAttribute('aria-pressed',String(many));
+    ex.hidden=!many; ex.style.display=many?'contents':'none';
+    soon.style.gridColumn=many?'auto':'1/-1'; soon.style.minHeight=many?'':'0';
+  }
+  b1.addEventListener('click',function(){set(false)});
+  b3.addEventListener('click',function(){set(true)});
+  set(false);
+})();
+</script>
