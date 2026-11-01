@@ -13,6 +13,7 @@ export const GamePoster = ({ game }) => (
     <h2>{game.name}</h2>
     <p>{game.summary}</p>
     <ul className="game-meta">
+      {game.status && <li className="game-status">{game.status}</li>}
       {meta(game).map((m) => (
         <li key={m}>{m}</li>
       ))}

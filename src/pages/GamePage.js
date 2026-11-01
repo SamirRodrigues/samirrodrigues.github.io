@@ -7,6 +7,7 @@ import Refugio from "../components/games/Refugio";
 import PartnersSection from "../components/inicio/PartnersSection";
 import FeatureSection from "../components/games/FeatureSection";
 import DownloadSection from "../components/games/DownloadSection";
+import BrilhanteFolclore from "../components/games/brilhante/BrilhanteFolclore";
 import { getGame } from "../data/games";
 import "./GamerPage.css";
 
@@ -20,7 +21,11 @@ const GAME_PAGES = {
       <DownloadSection />
     </>
   ),
+  "brilhante-folclore": () => <BrilhanteFolclore />,
 };
+
+// Games with their own artwork use a header tuned for it.
+const HEADER_TONE = { "brilhante-folclore": "wood" };
 
 const GamePage = () => {
   const { slug } = useParams();
@@ -31,7 +36,7 @@ const GamePage = () => {
 
   return (
     <>
-      <HeaderGrey />
+      <HeaderGrey tone={HEADER_TONE[slug]} />
       <main className="games-page">
         <Content game={game} />
       </main>

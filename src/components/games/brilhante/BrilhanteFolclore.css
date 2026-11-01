@@ -1,0 +1,640 @@
+/* Brilhante Folclore: página feita com a arte e as cores do próprio jogo.
+   Cores: guia de estilo do jogo (docs/arte/guia-de-estilo.md). A página não
+   troca com o tema claro/escuro do site: é o mundo do jogo. */
+.bf {
+  --bf-ink: #42210b; /* contorno */
+  --bf-text: #4a2a14;
+  --bf-cream: #fbecd5;
+  --bf-wood: #965529;
+  --bf-wood-deep: #592511;
+  --bf-yellow: #eab50c;
+  --bf-red: #cc2a0e;
+  --bf-green: #a3b214;
+  --bf-blue: #399fb8; /* só a abertura (o "telhado") */
+  --bf-sand: #ebddc6; /* faixas de areia, como na lista de jogos */
+  --bf-display: "Darumadrop One", "Nunito", system-ui, sans-serif;
+  --bf-body: "Nunito", "Red Hat Display", system-ui, sans-serif;
+  --bf-outline: 3px 0 0 var(--bf-ink), -3px 0 0 var(--bf-ink), 0 3px 0 var(--bf-ink),
+    0 -3px 0 var(--bf-ink), 2px 2px 0 var(--bf-ink), -2px 2px 0 var(--bf-ink),
+    2px -2px 0 var(--bf-ink), -2px -2px 0 var(--bf-ink), 0 6px 0 rgba(66, 33, 11, 0.55);
+
+  font-family: var(--bf-body);
+  color: var(--bf-text);
+  text-align: left;
+  overflow-x: clip;
+}
+.bf *,
+.bf *::before,
+.bf *::after {
+  box-sizing: border-box;
+}
+/* zero specificity so component rules can set their own size */
+:where(.bf) img {
+  max-width: 100%;
+  height: auto;
+}
+.bf-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  position: relative;
+}
+.bf :focus-visible {
+  outline: 4px solid var(--bf-yellow);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* ---- superfícies ---- */
+.bf-paper {
+  background: var(--bf-cream);
+  color: var(--bf-text);
+  border: 4px solid var(--bf-ink);
+  border-radius: 18px;
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.25);
+}
+.bf-heading {
+  font-family: var(--bf-display);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 5vw, 2.8rem);
+  line-height: 1.1;
+  margin: 0 0 12px;
+  color: var(--bf-cream);
+  text-shadow: var(--bf-outline);
+  text-wrap: balance;
+}
+.bf-lead {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--bf-cream);
+  max-width: 56ch;
+  margin: 0 0 28px;
+  text-shadow: 0 2px 0 rgba(66, 33, 11, 0.6);
+}
+.bf-fine {
+  font-size: 0.95rem;
+  margin: 12px 0 0;
+}
+
+/* ---- abertura ---- */
+.bf-hero {
+  position: relative;
+  background: #399fb8 var(--bf-img-sky) center bottom / cover no-repeat;
+  padding: 150px 0 64px;
+  text-align: center;
+}
+.bf-hero::before {
+  /* faixa de madeira escura atrás do cabeçalho */
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 96px;
+  background: #3a1c0c var(--bf-img-wood-dark) center / cover;
+  box-shadow: 0 4px 0 var(--bf-ink);
+  z-index: 1;
+}
+.bf-hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+.bf-badge {
+  width: clamp(150px, 26vw, 230px);
+  filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.25));
+}
+.bf-title {
+  font-family: var(--bf-display);
+  font-weight: 400;
+  font-size: clamp(2.6rem, 9vw, 5.2rem);
+  line-height: 1;
+  margin: 18px 0 22px;
+  color: var(--bf-cream);
+  text-transform: none;
+  text-shadow: var(--bf-outline);
+  text-wrap: balance;
+}
+.bf-hero-text {
+  max-width: 560px;
+  margin: 0 0 28px;
+  padding: 18px 24px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.bf-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  justify-content: center;
+  align-items: center;
+}
+.bf-hero-note {
+  margin: 18px 0 0;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 2px 0 var(--bf-ink), 0 0 6px rgba(66, 33, 11, 0.6);
+}
+
+/* placas de madeira com texto por cima */
+.bf-sign,
+.bf-soon {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: min(280px, 80vw);
+  aspect-ratio: 600 / 264;
+  text-decoration: none;
+  font-family: var(--bf-display);
+  font-size: 1.45rem;
+  line-height: 1.1;
+  text-align: center;
+}
+.bf-soon {
+  aspect-ratio: 480 / 170;
+  width: min(250px, 80vw);
+}
+.bf-sign-bg,
+.bf-soon-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 4px rgba(0, 0, 0, 0.3));
+}
+.bf-sign span,
+.bf-soon span {
+  position: relative;
+  padding: 0 14px;
+}
+.bf-sign span {
+  color: #fff;
+  text-shadow: 0 3px 0 rgba(66, 33, 11, 0.7);
+  margin-right: 22px; /* a ponta da seta fica à direita */
+}
+.bf-soon span {
+  color: var(--bf-ink);
+}
+.bf-sign {
+  transition: transform 0.2s ease;
+}
+.bf-sign:hover {
+  transform: translateY(-3px) rotate(-1deg);
+}
+
+/* nuvens */
+.bf-cloud {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.95;
+  z-index: 1;
+}
+.bf-cloud-1 {
+  width: clamp(120px, 20vw, 260px);
+  left: 3%;
+  top: 150px;
+}
+.bf-cloud-2 {
+  width: clamp(100px, 16vw, 210px);
+  right: 4%;
+  top: 270px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .bf-cloud-1 {
+    animation: bf-drift 14s ease-in-out infinite alternate;
+  }
+  .bf-cloud-2 {
+    animation: bf-drift 18s ease-in-out infinite alternate-reverse;
+  }
+  @keyframes bf-drift {
+    from {
+      transform: translateX(-14px);
+    }
+    to {
+      transform: translateX(14px);
+    }
+  }
+}
+
+/* ---- seções ---- */
+.bf-wood {
+  background: var(--bf-wood) var(--bf-img-wood) center top / 720px auto repeat;
+  padding: 72px 0 80px;
+  position: relative;
+}
+.bf-sand {
+  background: var(--bf-sand);
+  padding: 72px 0 80px;
+  position: relative;
+  border-top: 4px solid var(--bf-ink);
+  border-bottom: 4px solid var(--bf-ink);
+}
+.bf-lendas {
+  background: #7a3a1c var(--bf-img-wood) center top / 720px auto repeat;
+  background-blend-mode: multiply;
+  padding: 72px 0 88px;
+  position: relative;
+  scroll-margin-top: 0;
+}
+
+/* como se joga */
+.bf-steps {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+.bf-step {
+  padding: 18px 16px 20px;
+  text-align: center;
+}
+.bf-step-icon {
+  width: 84px;
+  height: 84px;
+  object-fit: contain;
+  margin-bottom: 6px;
+}
+.bf-step h3 {
+  font-family: var(--bf-display);
+  font-weight: 400;
+  font-size: 1.3rem;
+  margin: 0 0 6px;
+  color: var(--bf-wood-deep);
+}
+.bf-step p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+/* cards de upgrade */
+.bf-cards {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 760px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.bf-card {
+  all: unset;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 420 / 594;
+  container-type: inline-size;
+  cursor: pointer;
+  filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.3));
+  transition: transform 0.25s ease, opacity 0.25s ease, filter 0.25s ease;
+}
+.bf-card:hover {
+  transform: translateY(-6px);
+}
+.bf-card[aria-pressed="true"] {
+  transform: translateY(-10px) scale(1.04);
+}
+.bf-card[data-dim="true"] {
+  opacity: 0.55;
+  filter: grayscale(0.4) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2));
+}
+.bf-card:focus-visible {
+  outline: 4px solid var(--bf-yellow);
+  outline-offset: 4px;
+  border-radius: 10px;
+}
+.bf-card-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.bf-card-icon {
+  position: absolute;
+  left: 21%;
+  top: 6%;
+  width: 58%;
+  height: 36%;
+  object-fit: contain;
+}
+.bf-card-effect,
+.bf-card-name {
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-family: var(--bf-display);
+  line-height: 1.05;
+}
+.bf-card-effect {
+  top: 49%;
+  height: 19%;
+  font-size: 7.6cqw;
+  color: var(--bf-ink);
+}
+.bf-card-name {
+  top: 74%;
+  height: 22%;
+  font-size: 7.2cqw;
+  color: var(--bf-cream);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.bf-cards-caption {
+  margin: 28px auto 0;
+  max-width: 560px;
+  padding: 12px 18px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  background: rgba(66, 33, 11, 0.82);
+  color: var(--bf-cream);
+  border: 3px solid var(--bf-ink);
+  border-radius: 12px;
+}
+
+/* fase */
+.bf-level {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+}
+.bf-level-card {
+  position: relative;
+  aspect-ratio: 700 / 856;
+  filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.3));
+}
+.bf-level-paper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.bf-level-map {
+  position: absolute;
+  left: 9%;
+  top: 17%;
+  width: 82%;
+  height: auto;
+  border-radius: 6px;
+}
+.bf-level-name {
+  position: absolute;
+  left: 7%;
+  top: -7%;
+  width: 86%;
+  height: auto;
+}
+.bf-level-text {
+  padding: 28px 30px;
+}
+.bf-level-text h2 {
+  font-family: var(--bf-display);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3.6vw, 2.2rem);
+  line-height: 1.1;
+  margin: 0 0 14px;
+  color: var(--bf-wood-deep);
+  text-transform: none;
+}
+.bf-level-text p {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.55;
+  max-width: 60ch;
+}
+
+/* caderno de lendas */
+.bf-review {
+  max-width: 62ch;
+  margin: 0 0 32px;
+  padding: 14px 18px;
+  background: var(--bf-yellow);
+  color: var(--bf-ink);
+  border: 4px solid var(--bf-ink);
+  border-radius: 14px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.bf-legends {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+.bf-legend {
+  padding: 20px 22px;
+  min-width: 0;
+}
+.bf-legend:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  max-width: calc(50% - 11px);
+}
+.bf-legend-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.bf-legend-icon {
+  width: 96px;
+  height: 96px;
+  flex: none;
+  border-radius: 50%;
+  background: #825a45;
+  border: 4px solid var(--bf-ink);
+  object-fit: cover;
+}
+.bf-legend h3 {
+  font-family: var(--bf-display);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.1;
+  margin: 0;
+  color: var(--bf-wood-deep);
+}
+.bf-legend-sub {
+  margin: 2px 0 0;
+  font-weight: 700;
+}
+.bf-legend-game {
+  margin: 14px 0 10px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+.bf-legend details {
+  border-top: 3px dashed rgba(66, 33, 11, 0.35);
+  padding-top: 10px;
+}
+.bf-legend summary {
+  cursor: pointer;
+  font-family: var(--bf-display);
+  font-size: 1.15rem;
+  color: var(--bf-red);
+  padding: 6px 0;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+.bf-legend details[open] summary {
+  color: var(--bf-wood-deep);
+}
+.bf-legend details p {
+  margin: 6px 0 10px;
+  line-height: 1.55;
+  font-weight: 600;
+}
+.bf-legend blockquote {
+  margin: 8px 0 12px;
+  padding: 8px 14px;
+  border-left: 6px solid var(--bf-yellow);
+  background: rgba(234, 181, 12, 0.18);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+.bf-legend cite {
+  display: block;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 700;
+}
+.bf-legend cite::before {
+  content: "— ";
+}
+
+/* acessibilidade */
+.bf-access {
+  display: flex;
+  justify-content: center;
+}
+.bf-access-card {
+  max-width: 640px;
+  padding: 28px 32px;
+}
+.bf-access-card h2 {
+  font-family: var(--bf-display);
+  font-weight: 400;
+  font-size: clamp(1.7rem, 4vw, 2.3rem);
+  margin: 0 0 14px;
+  color: var(--bf-wood-deep);
+  text-transform: none;
+}
+.bf-access-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.bf-access-card li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 0;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.bf-star {
+  width: 30px;
+  height: auto;
+  flex: none;
+}
+
+/* fechamento */
+.bf-closing {
+  background: #3a1c0c var(--bf-img-wood-dark) center / cover;
+  padding: 72px 0 88px;
+  text-align: center;
+}
+.bf-closing-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bf-closing-hat {
+  width: min(360px, 70vw);
+  height: auto;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 8px 6px rgba(0, 0, 0, 0.35));
+}
+.bf-closing .bf-lead {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---- telas pequenas ---- */
+@media (max-width: 900px) {
+  .bf-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .bf-level {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 48px;
+  }
+  .bf-level-card {
+    width: min(340px, 100%); /* all children are absolute, so it needs an explicit width */
+    margin: 28px auto 0;
+  }
+  .bf-legends {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .bf-legend:last-child:nth-child(odd) {
+    max-width: none;
+  }
+}
+@media (max-width: 600px) {
+  .bf-hero {
+    padding: 128px 0 72px;
+  }
+  .bf-hero::before {
+    height: 80px;
+  }
+  .bf-cards {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 260px; /* the card text scales with the card, so keep it readable */
+    gap: 22px;
+  }
+  .bf-steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .bf-wood,
+  .bf-sand,
+  .bf-lendas {
+    padding: 56px 0 64px;
+  }
+  .bf-cloud-1 {
+    top: 120px;
+  }
+  .bf-cloud-2 {
+    top: auto;
+    bottom: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bf *,
+  .bf *::before,
+  .bf *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Em faixas de areia o texto vai em marrom (creme não tem contraste sobre areia) */
+.bf-sand .bf-heading {
+  color: var(--bf-wood-deep);
+  text-shadow: none;
+}
+.bf-sand .bf-lead {
+  color: var(--bf-text);
+  text-shadow: none;
+}

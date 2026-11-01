@@ -351,3 +351,15 @@
 :root[data-theme="dark"] .header-grey-nav-icon:hover {
   transform: scale(1.1);
 }
+
+/* ===================== Páginas de jogo com arte própria (tone="wood") ===================== */
+@media (min-width: 991px) {
+  .header-wood .header-grey-nav-link,
+  .header-wood .header-grey-nav-link.active,
+  .header-wood .header-grey-nav-link:hover {
+    color: #fff;
+  }
+  .header-wood .header-grey-nav-link::after {
+    background: #fff;
+  }
+}

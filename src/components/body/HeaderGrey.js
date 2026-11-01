@@ -6,7 +6,7 @@ import ThemeToggle from "../../theme/ThemeToggle";
 import { useTheme } from "../../theme/ThemeContext";
 import "./HeaderGrey.css";
 
-const HeaderGrey = () => {
+const HeaderGrey = ({ tone }) => {
   const [activeKey, setActiveKey] = useState("#inicio");
   const [menuOpen, setMenuOpen] = useState(false);
   const [isTablet, setIsTablet] = useState(
@@ -18,7 +18,8 @@ const HeaderGrey = () => {
   const { theme } = useTheme();
   const isDark = theme === "dark";
   // White artwork is needed over the home photo and on the dark theme
-  const onDark = location.pathname === "/" || isDark;
+  const onWood = tone === "wood"; // game pages with their own artwork
+  const onDark = location.pathname === "/" || isDark || onWood;
   const navigate = useNavigate(); // Hook de navegação
 
   // Definir a rota correta para selecionar o menu
@@ -82,7 +83,7 @@ const HeaderGrey = () => {
         location.pathname === "/" && !isMobile && !isTablet
           ? "header-homepage"
           : ""
-      }`}
+      } ${onWood ? "header-wood" : ""}`}
       expanded={menuOpen}
     >
       <Container fluid>
@@ -199,7 +200,7 @@ const HeaderGrey = () => {
                   />
                 </a>
                 <ThemeToggle
-                  className={location.pathname === "/" ? "on-photo" : ""}
+                  className={location.pathname === "/" || onWood ? "on-photo" : ""}
                 />
               </div>
             </Col>
