@@ -79,11 +79,6 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/about" onClick={() => handleNavigation("/about")}>
-                  Quem somos
-                </Link>
-              </li>
-              <li>
                 <Link to="/games" onClick={() => handleNavigation("/games")}>
                   Jogos
                 </Link>

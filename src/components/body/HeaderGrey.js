@@ -26,9 +26,7 @@ const HeaderGrey = ({ tone }) => {
 
   // Definir a rota correta para selecionar o menu
   useEffect(() => {
-    if (location.pathname === "/about") {
-      setActiveKey("/about");
-    } else if (location.pathname === "/" || location.pathname === "/details") {
+    if (location.pathname === "/" || location.pathname === "/details") {
       setActiveKey("/");
     } else if (location.pathname.startsWith("/games")) {
       setActiveKey("/games");
@@ -41,7 +39,7 @@ const HeaderGrey = ({ tone }) => {
   }, [location.pathname]);
 
   const handleSelect = (selectedKey, event) => {
-    // Os links têm href real (/about etc.); a navegação fica com o React Router
+    // Os links têm href real (/games etc.); a navegação fica com o React Router
     if (event) event.preventDefault();
     setActiveKey(selectedKey);
     navigate(selectedKey);
@@ -126,14 +124,6 @@ const HeaderGrey = ({ tone }) => {
                   }`}
                 >
                   INÍCIO
-                </Nav.Link>
-                <Nav.Link
-                  href="/about"
-                  className={`header-grey-nav-link ${
-                    activeKey === "/about" ? "active" : ""
-                  }`}
-                >
-                  QUEM SOMOS
                 </Nav.Link>
                 <Nav.Link
                   href="/games"
@@ -267,14 +257,6 @@ const HeaderGrey = ({ tone }) => {
                 }`}
               >
                 INÍCIO
-              </Nav.Link>
-              <Nav.Link
-                href="/about"
-                className={`header-grey-nav-link ${
-                  activeKey === "/about" ? "active" : ""
-                }`}
-              >
-                QUEM SOMOS
               </Nav.Link>
               <Nav.Link
                 href="/games"

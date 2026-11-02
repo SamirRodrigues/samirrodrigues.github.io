@@ -5,7 +5,6 @@ import HomePage from "./pages/HomePage";
 import DetailsPage from "./pages/DetailsPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
-import AboutUs from "./pages/AboutUs";
 import GamesListPage from "./pages/GamesListPage";
 import GamePage from "./pages/GamePage";
 import ContactPage from "./pages/ContactPage";
@@ -17,7 +16,6 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/details" element={<DetailsPage />} />
-          <Route path="/about" element={<AboutUs />} />
           <Route path="/games" element={<GamesListPage />} />
           <Route path="/games/:slug" element={<GamePage />} />
           <Route path="/contact" element={<ContactPage />} />
@@ -25,6 +23,7 @@ function App() {
           <Route path="/terms-conditions" element={<TermsConditions />} />
 
           {/* Legacy (Portuguese) routes kept so old links keep working */}
+          <Route path="/about" element={<Navigate to="/" replace />} />
           <Route path="/jogos" element={<Navigate to="/games" replace />} />
           <Route path="/contato" element={<Navigate to="/contact" replace />} />
           <Route path="/privacypolicy" element={<Navigate to="/privacy-policy" replace />} />
