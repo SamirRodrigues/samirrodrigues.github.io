@@ -3,6 +3,7 @@
 // contorno marrom #42210B, creme #FBECD5, madeira, fonte Darumadrop One).
 import React, { useState } from "react";
 import { legends } from "./legends";
+import ExternalMark from "../../body/ExternalMark";
 import "./BrilhanteFolclore.css";
 
 const A = "/assets/brilhante";
@@ -301,7 +302,13 @@ const BrilhanteFolclore = () => {
             rel="noopener noreferrer"
           >
             <Img name="sign-red" w="600" h="264" className="bf-sign-bg" />
-            <span>Siga @baladeirastudio</span>
+            <span>
+              Siga{" "}
+              <span className="bf-nowrap">
+                @baladeirastudio
+                <ExternalMark />
+              </span>
+            </span>
           </a>
         </div>
       </section>

@@ -2,6 +2,7 @@
 // Feita só com a arte e a paleta do próprio jogo: linho cru, pontilhado de
 // costura, fios nas cores do Bordado Caicó, madeira clara e bordados em camadas.
 import React, { useState } from "react";
+import ExternalMark from "../../body/ExternalMark";
 import "./LinhasDoSerido.css";
 
 const A = "/assets/linhas-do-serido";
@@ -448,7 +449,10 @@ const LinhasDoSerido = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span>Siga @baladeirastudio</span>
+            <span>
+              Siga @baladeirastudio
+              <ExternalMark />
+            </span>
           </a>
           <p className="ls-thanks">
             Nosso agradecimento às bordadeiras do Seridó, que transmitem esse
