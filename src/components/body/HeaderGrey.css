@@ -363,3 +363,22 @@
     background: #fff;
   }
 }
+
+/* ===================== Páginas de jogo em linho claro (tone="linen") ===================== */
+@media (min-width: 991px) {
+  .header-linen .header-grey-nav-link,
+  .header-linen .header-grey-nav-link.active,
+  .header-linen .header-grey-nav-link:hover {
+    color: #5b4a3b;
+  }
+  .header-linen .header-grey-nav-link::after {
+    background: #5b4a3b;
+  }
+  .header-linen .theme-toggle {
+    color: #5b4a3b;
+  }
+  .header-linen .theme-toggle:hover {
+    background-color: #5b4a3b;
+    color: #f4eddd;
+  }
+}

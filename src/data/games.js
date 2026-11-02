@@ -29,6 +29,18 @@ export const games = [
     banner: "/assets/brilhante/sky.webp",
     stores: {}, // no public download yet
   },
+  {
+    slug: "linhas-do-serido",
+    name: "Linhas do Seridó",
+    summary:
+      "Separe anéis de lã por cor em pinos de madeira e borde, camada por camada, desenhos do Bordado Caicó.",
+    status: "Em breve",
+    platforms: ["Android"],
+    topics: ["Quebra-cabeça", "Bordado seridoense"],
+    poster: "/assets/linhas-do-serido-poster.jpg", // 7:8 portrait
+    banner: "/assets/linhas-do-serido/bastidor.webp",
+    stores: {}, // no public download yet
+  },
 ];
 
 export const getGame = (slug) => games.find((g) => g.slug === slug);

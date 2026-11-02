@@ -82,6 +82,8 @@ game's card/page. Brand tokens (orange, ink, paper) stay constant around it.
 
 The Brilhante Folclore page (`src/components/games/brilhante/`) does not follow the site's light/dark theme: it is the game's world, built only from the game's own sprites (`public/assets/brilhante/`), its fonts (Darumadrop One for display, Nunito for text) and its UI rules (thick `#42210B` outline, cream paper, wooden signs). Its header uses `tone="wood"`.
 
+The Linhas do Seridó page (`src/components/games/linhas/`) is also its own world, in light linen: tecido `#F4EDDD`, tinta `#5B4A3B`, borda dourada `#B89A66`, pontilhado `#A89A82`, fios azul `#4F6E9C`/`#324E78`, rosa `#E8A5B8`, amarelo `#F1DC84`, ouro `#E19A41`. Fonts: Amatic SC (titles), Alegreya SC (labels, buttons), Alegreya (text). Images come from the game's own art pack (`public/assets/linhas-do-serido/`); the layer order of the embroidery demo was checked pixel by pixel against the finished drawing. Its header uses `tone="linen"`, which keeps the header dark-on-light even when the site is in dark mode.
+
 Confirm exact hex values for Banzé with the artist before shipping; sample them from the art.
 
 ## 8. Quality floor (from Web Interface Guidelines)
