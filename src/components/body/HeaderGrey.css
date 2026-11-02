@@ -46,6 +46,13 @@
   font-weight: bold;
 }
 
+/* O destaque é a linha do ::after; sem isto o a:hover global sublinha o texto também */
+.header-grey-nav-link:hover,
+.header-grey-nav-link:focus,
+.header-grey-nav-link.active {
+  text-decoration: none;
+}
+
 .header-grey-nav-link.active {
   font-weight: 700;
   color: var(--bl-text);
