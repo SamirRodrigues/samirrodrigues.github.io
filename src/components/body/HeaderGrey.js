@@ -7,7 +7,7 @@ import { useTheme } from "../../theme/ThemeContext";
 import "./HeaderGrey.css";
 
 const HeaderGrey = ({ tone }) => {
-  const [activeKey, setActiveKey] = useState("#inicio");
+  const [activeKey, setActiveKey] = useState("/");
   const [menuOpen, setMenuOpen] = useState(false);
   const [isTablet, setIsTablet] = useState(
     window.innerWidth >= 768 && window.innerWidth <= 991
@@ -27,32 +27,24 @@ const HeaderGrey = ({ tone }) => {
   // Definir a rota correta para selecionar o menu
   useEffect(() => {
     if (location.pathname === "/about") {
-      setActiveKey("#quemsomos");
+      setActiveKey("/about");
     } else if (location.pathname === "/" || location.pathname === "/details") {
-      setActiveKey("#inicio");
+      setActiveKey("/");
     } else if (location.pathname.startsWith("/games")) {
-      setActiveKey("#jogos");
+      setActiveKey("/games");
     } else if (location.pathname === "/contact") {
-      setActiveKey("#contato");
+      setActiveKey("/contact");
     } else {
       // Pode definir uma lógica padrão ou manter uma chave inativa
       setActiveKey(null);
     }
   }, [location.pathname]);
 
-  const handleSelect = (selectedKey) => {
+  const handleSelect = (selectedKey, event) => {
+    // Os links têm href real (/about etc.); a navegação fica com o React Router
+    if (event) event.preventDefault();
     setActiveKey(selectedKey);
-
-    // Navegar para as páginas corretas
-    if (selectedKey === "#quemsomos") {
-      navigate("/about");
-    } else if (selectedKey === "#inicio") {
-      navigate("/");
-    } else if (selectedKey === "#jogos") {
-      navigate("/games"); // Adiciona navegação para a página de jogos
-    } else if (selectedKey === "#contato") {
-      navigate("/contact"); // Ajuste a rota conforme necessário para contato
-    }
+    navigate(selectedKey);
 
     // Fecha o menu ao clicar em um link no mobile/tablet
     if (isMobile || isTablet) {
@@ -128,33 +120,33 @@ const HeaderGrey = ({ tone }) => {
                 onSelect={handleSelect}
               >
                 <Nav.Link
-                  href="#inicio"
+                  href="/"
                   className={`header-grey-nav-link ${
-                    activeKey === "#inicio" ? "active" : ""
+                    activeKey === "/" ? "active" : ""
                   }`}
                 >
                   INÍCIO
                 </Nav.Link>
                 <Nav.Link
-                  href="#quemsomos"
+                  href="/about"
                   className={`header-grey-nav-link ${
-                    activeKey === "#quemsomos" ? "active" : ""
+                    activeKey === "/about" ? "active" : ""
                   }`}
                 >
                   QUEM SOMOS
                 </Nav.Link>
                 <Nav.Link
-                  href="#jogos"
+                  href="/games"
                   className={`header-grey-nav-link ${
-                    activeKey === "#jogos" ? "active" : ""
+                    activeKey === "/games" ? "active" : ""
                   }`}
                 >
                   JOGOS
                 </Nav.Link>
                 <Nav.Link
-                  href="#contato"
+                  href="/contact"
                   className={`header-grey-nav-link ${
-                    activeKey === "#contato" ? "active" : ""
+                    activeKey === "/contact" ? "active" : ""
                   }`}
                 >
                   CONTATO
@@ -269,34 +261,33 @@ const HeaderGrey = ({ tone }) => {
               onSelect={handleSelect}
             >
               <Nav.Link
-                href="#inicio"
+                href="/"
                 className={`header-grey-nav-link ${
-                  activeKey === "#inicio" ? "active" : ""
+                  activeKey === "/" ? "active" : ""
                 }`}
               >
                 INÍCIO
               </Nav.Link>
               <Nav.Link
-                href="#quemsomos"
+                href="/about"
                 className={`header-grey-nav-link ${
-                  activeKey === "#quemsomos" ? "active" : ""
+                  activeKey === "/about" ? "active" : ""
                 }`}
-                onClick={() => navigate("/about")} // Garante a navegação
               >
                 QUEM SOMOS
               </Nav.Link>
               <Nav.Link
-                href="#jogos"
+                href="/games"
                 className={`header-grey-nav-link ${
-                  activeKey === "#jogos" ? "active" : ""
+                  activeKey === "/games" ? "active" : ""
                 }`}
               >
                 JOGOS
               </Nav.Link>
               <Nav.Link
-                href="#contato"
+                href="/contact"
                 className={`header-grey-nav-link ${
-                  activeKey === "#contato" ? "active" : ""
+                  activeKey === "/contact" ? "active" : ""
                 }`}
               >
                 CONTATO
