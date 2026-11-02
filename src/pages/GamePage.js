@@ -8,6 +8,7 @@ import PartnersSection from "../components/inicio/PartnersSection";
 import FeatureSection from "../components/games/FeatureSection";
 import DownloadSection from "../components/games/DownloadSection";
 import BrilhanteFolclore from "../components/games/brilhante/BrilhanteFolclore";
+import LinhasDoSerido from "../components/games/linhas/LinhasDoSerido";
 import { getGame } from "../data/games";
 import "./GamerPage.css";
 
@@ -22,10 +23,11 @@ const GAME_PAGES = {
     </>
   ),
   "brilhante-folclore": () => <BrilhanteFolclore />,
+  "linhas-do-serido": () => <LinhasDoSerido />,
 };
 
 // Games with their own artwork use a header tuned for it.
-const HEADER_TONE = { "brilhante-folclore": "wood" };
+const HEADER_TONE = { "brilhante-folclore": "wood", "linhas-do-serido": "linen" };
 
 const GamePage = () => {
   const { slug } = useParams();

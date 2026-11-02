@@ -16,7 +16,9 @@ const HeaderGrey = ({ tone }) => {
 
   const location = useLocation();
   const { theme } = useTheme();
-  const isDark = theme === "dark";
+  const forceLight = tone === "linen"; // pages with a light artwork of their own
+  const siteDark = theme === "dark"; // the mobile menu always follows the site theme
+  const isDark = siteDark && !forceLight;
   // White artwork is needed over the home photo and on the dark theme
   const onWood = tone === "wood"; // game pages with their own artwork
   const onDark = location.pathname === "/" || isDark || onWood;
@@ -83,7 +85,7 @@ const HeaderGrey = ({ tone }) => {
         location.pathname === "/" && !isMobile && !isTablet
           ? "header-homepage"
           : ""
-      } ${onWood ? "header-wood" : ""}`}
+      } ${onWood ? "header-wood" : ""} ${forceLight ? "header-linen" : ""}`}
       expanded={menuOpen}
     >
       <Container fluid>
@@ -247,7 +249,7 @@ const HeaderGrey = ({ tone }) => {
                 style={{ cursor: "pointer" }}
               >
                 <img
-                  src={isDark ? "/assets/logo-bs-white.png" : "/assets/bs-icon.png"}
+                  src={siteDark ? "/assets/logo-bs-white.png" : "/assets/bs-icon.png"}
                   alt="Baladeira Studio Logo"
                   className="header-grey-logo"
                 />
@@ -307,7 +309,7 @@ const HeaderGrey = ({ tone }) => {
                 rel="noopener noreferrer"
               >
                 <img
-                  src={isDark ? "/assets/x-icon.png" : "/assets/x-black-icon.png"}
+                  src={siteDark ? "/assets/x-icon.png" : "/assets/x-black-icon.png"}
                   alt="Ícone X"
                   className="header-grey-nav-icon"
                 />
@@ -318,7 +320,7 @@ const HeaderGrey = ({ tone }) => {
                 rel="noopener noreferrer"
               >
                 <img
-                  src={isDark ? "/assets/instagram-icon.png" : "/assets/instagram-black-icon.png"}
+                  src={siteDark ? "/assets/instagram-icon.png" : "/assets/instagram-black-icon.png"}
                   alt="Ícone Instagram"
                   className="header-grey-nav-icon"
                 />
