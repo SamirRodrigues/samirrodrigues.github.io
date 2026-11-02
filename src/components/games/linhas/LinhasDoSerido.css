@@ -637,3 +637,9 @@
     animation: none !important;
   }
 }
+
+/* Mantém a paleta do jogo em modo de cores forçadas (alto contraste). */
+.ls {
+  forced-color-adjust: none;
+  color-scheme: light;
+}
