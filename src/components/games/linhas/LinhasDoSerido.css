@@ -395,6 +395,29 @@
   height: auto;
 }
 
+/* ---- recursos de apoio ---- */
+.ls-resources {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.ls-resource {
+  text-align: center;
+}
+.ls-resource-img {
+  width: 120px;
+  height: auto;
+  margin: 0 auto 8px;
+  display: block;
+  filter: drop-shadow(0 4px 3px rgba(91, 74, 59, 0.25));
+}
+.ls-resource p {
+  margin: 0;
+}
+
 /* ---- tradição ---- */
 .ls-tradition {
   display: grid;
@@ -440,10 +463,28 @@
   border-radius: 14px;
   font-size: 1.05rem;
 }
-.ls-vignette {
-  width: 100%;
+.ls-medal {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--ls-paper);
+  border: 3px solid var(--ls-gold);
+  box-shadow: 0 8px 14px rgba(91, 74, 59, 0.2), inset 0 0 0 10px #f1e6cf;
+}
+.ls-medal::before {
+  content: "";
+  position: absolute;
+  inset: 16px;
+  border: 2px dashed var(--ls-dots);
+  border-radius: 50%;
+  opacity: 0.7;
+}
+.ls-medal img {
+  width: 70%;
   height: auto;
-  filter: drop-shadow(0 8px 6px rgba(91, 74, 59, 0.2));
+  position: relative;
 }
 
 /* ---- acessibilidade ---- */
@@ -470,6 +511,26 @@
   max-width: 150px;
   filter: drop-shadow(0 4px 3px rgba(91, 74, 59, 0.25));
 }
+.ls-access-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: grid;
+  gap: 8px;
+  max-width: 66ch;
+}
+.ls-access-list li {
+  padding-left: 30px;
+  position: relative;
+}
+.ls-access-list li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.62em;
+  width: 9px;
+  border-top: 3px dashed var(--ls-blue);
+}
 .ls-audience {
   max-width: 720px;
 }
@@ -481,7 +542,6 @@
 .ls-closing {
   padding: 88px 0 96px;
   text-align: center;
-  background-color: var(--ls-linen-shade);
 }
 .ls-closing-inner {
   display: flex;
@@ -512,7 +572,6 @@
 .ls-corner-br {
   right: 14px;
   bottom: 14px;
-  transform: rotate(180deg);
 }
 
 /* ---- telas pequenas ---- */
@@ -542,8 +601,11 @@
     margin: 0 auto;
     width: 100%;
   }
-  .ls-vignette {
-    max-width: 200px;
+  .ls-medal {
+    max-width: 220px;
+  }
+  .ls-resources {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 @media (max-width: 560px) {

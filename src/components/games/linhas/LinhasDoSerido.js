@@ -77,6 +77,24 @@ const stitches = [
   },
 ];
 
+const resources = [
+  {
+    img: "recurso-desfazer",
+    name: "Desfazer",
+    text: "Volta a última jogada, para experimentar sem medo de errar.",
+  },
+  {
+    img: "recurso-dica",
+    name: "Dica",
+    text: "Mostra um movimento possível, do pino de origem ao de destino.",
+  },
+  {
+    img: "recurso-pino-extra",
+    name: "Pino extra",
+    text: "Libera um pino vazio a mais. Vale uma vez por fase.",
+  },
+];
+
 const process = [
   {
     name: "Riscado",
@@ -162,9 +180,9 @@ const LinhasDoSerido = () => {
           <div className="ls-hero-art">
             <img
               src={`${A}/bastidor.webp`}
-              alt="Bastidor com um bordado de quatro pétalas em forma de coração, em fios rosa, amarelo e azul"
+              alt="Bastidor com uma flor Richelieu bordada em fios rosa, amarelo e azul, com o miolo em rococó"
               width="560"
-              height="613"
+              height="612"
               fetchpriority="high"
             />
           </div>
@@ -188,6 +206,7 @@ const LinhasDoSerido = () => {
           </ol>
           <ul className="ls-rules">
             <li>Cada pino comporta até quatro anéis.</li>
+            <li>Na primeira partida, uma fase guiada ensina a jogar e só aceita a jogada certa.</li>
             <li>Sem vidas nem energia: se travar, desfaça, peça uma dica, libere um pino extra ou reinicie a fase.</li>
           </ul>
         </div>
@@ -278,7 +297,9 @@ const LinhasDoSerido = () => {
           </h2>
           <p className="ls-lead">
             Cada bloco da trilha ensina um ponto do Bordado Caicó, com três
-            fases. Ao concluir as três, o jogador ganha o selo do ponto.
+            fases. Ao concluir as três, o jogador ganha o selo do ponto. A
+            Indicação de Procedência Caicó reconhece doze pontos: o protótipo
+            traz quatro, e os outros oito ficam para versões futuras.
           </p>
           <ul className="ls-stitches">
             {stitches.map((s) => (
@@ -303,8 +324,35 @@ const LinhasDoSerido = () => {
         </div>
       </section>
 
+      {/* ---------- Pontos de Cultura, Coleção e recursos ---------- */}
+      <section className="ls-section ls-section-shade" aria-labelledby="ls-cultura">
+        <div className="ls-wrap">
+          <h2 id="ls-cultura" className="ls-heading">
+            Pontos de Cultura e Coleção
+          </h2>
+          <p className="ls-lead">
+            Cada fase concluída rende Pontos de Cultura. Eles desbloqueiam
+            curiosidades sobre o bordado na Coleção, onde também ficam os
+            selos de cada ponto, e podem ser trocados na Loja por recursos de
+            apoio.
+          </p>
+          <ul className="ls-resources">
+            {resources.map((r) => (
+              <li key={r.img} className="ls-card ls-resource">
+                <Img name={r.img} w="288" h="312" className="ls-resource-img" />
+                <h3>{r.name}</h3>
+                <p>{r.text}</p>
+              </li>
+            ))}
+          </ul>
+          <p className="ls-fine">
+            Os recursos que sobram ficam guardados para as próximas fases.
+          </p>
+        </div>
+      </section>
+
       {/* ---------- Tradição ---------- */}
-      <section className="ls-section ls-section-shade" aria-labelledby="ls-tradicao">
+      <section className="ls-section" aria-labelledby="ls-tradicao">
         <div className="ls-wrap ls-tradition">
           <div>
             <h2 id="ls-tradicao" className="ls-heading">
@@ -335,12 +383,19 @@ const LinhasDoSerido = () => {
               (bordadodecaico.com.br) e ainda serão revisadas com as bordadeiras.
             </p>
           </div>
-          <Img name="vinheta-agulha" w="320" h="320" className="ls-vignette" alt="Agulha com linha sobre um bastidor bordado" />
+          <div className="ls-medal">
+            <Img
+              name="desenho-03"
+              w="320"
+              h="320"
+              alt="Flor de cinco pétalas bordada em fios rosa e amarelo, com haste e folhas azuis"
+            />
+          </div>
         </div>
       </section>
 
       {/* ---------- Acessibilidade ---------- */}
-      <section className="ls-section" aria-labelledby="ls-acess">
+      <section className="ls-section ls-section-shade" aria-labelledby="ls-acess">
         <div className="ls-wrap">
           <h2 id="ls-acess" className="ls-heading">
             Para jogar sem depender da cor
@@ -359,6 +414,11 @@ const LinhasDoSerido = () => {
               </li>
             ))}
           </ul>
+          <ul className="ls-access-list">
+            <li>Controles só por toque, com um dedo, e alto contraste entre os fios e o fundo.</li>
+            <li>Em Ajustes, chaves separadas para música e efeitos sonoros (a dos efeitos também controla a vibração) e para as marcas nos anéis.</li>
+            <li>Sem punição por erro: dá para desfazer, pedir dica ou recomeçar a fase.</li>
+          </ul>
           <div className="ls-card ls-audience">
             <p>
               Pensado para crianças e jovens de 8 a 16 anos, estudantes,
@@ -372,8 +432,8 @@ const LinhasDoSerido = () => {
 
       {/* ---------- Fechamento ---------- */}
       <section className="ls-closing" aria-labelledby="ls-closing">
-        <img src={`${A}/cantoneira.webp`} alt="" className="ls-corner ls-corner-tl" width="300" height="300" loading="lazy" />
-        <img src={`${A}/cantoneira.webp`} alt="" className="ls-corner ls-corner-br" width="300" height="300" loading="lazy" />
+        <img src={`${A}/desenho-05.webp`} alt="" className="ls-corner ls-corner-tl" width="320" height="320" loading="lazy" />
+        <img src={`${A}/desenho-03.webp`} alt="" className="ls-corner ls-corner-br" width="320" height="320" loading="lazy" />
         <div className="ls-wrap ls-closing-inner">
           <h2 id="ls-closing" className="ls-heading">
             Em breve no Android
@@ -394,6 +454,10 @@ const LinhasDoSerido = () => {
             Nosso agradecimento às bordadeiras do Seridó, que transmitem esse
             ofício de geração em geração e mantêm viva a tradição do Bordado
             Caicó.
+          </p>
+          <p className="ls-fine">
+            A música (“Baião lo-fi”) e os efeitos sonoros são originais do
+            projeto.
           </p>
         </div>
       </section>
