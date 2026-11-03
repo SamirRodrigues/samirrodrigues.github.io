@@ -1,14 +1,16 @@
-/* Painel escuro liso e fixo (não muda com o tema): a régua é branca. */
+/* Fundo branco liso e fixo (não muda com o tema): o manual pede branco no
+   fundo da versão colorida. */
 .regua-pnab {
-  background: #292c37;
-  color: #ffffff;
-  padding: 48px 16px 56px;
+  background: #ffffff;
+  color: #393645;
+  padding: 40px 16px 48px;
   text-align: center;
   forced-color-adjust: none;
-  color-scheme: dark;
+  color-scheme: light;
+  border-top: 1px solid rgba(57, 54, 69, 0.15);
 }
 .regua-pnab-inner {
-  max-width: 560px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 .regua-pnab-title {
@@ -19,20 +21,22 @@
   text-transform: uppercase;
 }
 .regua-pnab-text {
-  margin: 0 auto 24px;
-  max-width: 42ch;
-  font-size: 1rem;
+  margin: 0 auto 16px;
+  max-width: 60ch;
+  font-size: 0.95rem;
   line-height: 1.5;
 }
+/* celular: régua vertical (a imagem já traz a área de não interferência) */
 .regua-pnab-img {
   display: block;
   margin: 0 auto;
-  width: 200px; /* o manual pede no mínimo 150 px de largura */
-  max-width: 100%;
+  width: min(260px, 80%);
   height: auto;
 }
-@media (min-width: 900px) {
+/* a partir de 768 px a <picture> troca para a horizontal */
+@media (min-width: 768px) {
   .regua-pnab-img {
-    width: 240px;
+    width: 100%;
+    max-width: 1000px;
   }
 }

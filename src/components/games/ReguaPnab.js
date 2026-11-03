@@ -1,9 +1,12 @@
-// Régua de marcas da PNAB (RN): Fundação José Augusto, Secult/RN, Governo do RN,
-// SNC, Política Nacional Aldir Blanc, Ministério da Cultura e Governo Federal.
-// O arquivo é a versão branca (negativa) do manual de marcas, sem alterações:
-// por isso vai sobre um painel escuro liso, sem rotação, moldura ou filtro.
+// Régua de marcas da PNAB (RN), conforme o "Manual de Aplicação das Marcas
+// PNAB - RN" (Ciclo 2): versão colorida sobre fundo branco, horizontal por
+// padrão e vertical quando a horizontal não cabe (celular). Os arquivos são os
+// do manual, sem alteração; a ordem e o espaçamento vêm prontos na imagem.
 import React from "react";
 import "./ReguaPnab.css";
+
+const ALT =
+  "Secult RN, Governo do Estado do Rio Grande do Norte, Sistema Nacional de Cultura, Política Nacional Aldir Blanc de Fomento à Cultura, Ministério da Cultura e Governo Federal";
 
 const ReguaPnab = () => (
   <section className="regua-pnab" aria-labelledby="regua-pnab-title">
@@ -12,18 +15,27 @@ const ReguaPnab = () => (
         Realização
       </h2>
       <p className="regua-pnab-text">
-        Projeto realizado com recursos da Política Nacional Aldir Blanc de
-        Fomento à Cultura.
+        Secretaria de Estado da Cultura, Governo do Estado do Rio Grande do
+        Norte, Sistema Nacional de Cultura, Política Nacional Aldir Blanc de
+        Fomento à Cultura, Ministério da Cultura e Governo Federal.
       </p>
-      <img
-        className="regua-pnab-img"
-        src="/assets/regua-pnab-rn.png"
-        width="319"
-        height="875"
-        loading="lazy"
-        decoding="async"
-        alt="Fundação José Augusto, Secult RN, Governo do Estado do Rio Grande do Norte, Sistema Nacional de Cultura, Política Nacional Aldir Blanc de Fomento à Cultura, Ministério da Cultura e Governo Federal"
-      />
+      <picture>
+        <source
+          media="(min-width: 768px)"
+          srcSet="/assets/regua-pnab-rn-horizontal.png"
+          width="1920"
+          height="200"
+        />
+        <img
+          className="regua-pnab-img"
+          src="/assets/regua-pnab-rn-vertical.png"
+          width="600"
+          height="1800"
+          loading="lazy"
+          decoding="async"
+          alt={ALT}
+        />
+      </picture>
     </div>
   </section>
 );
