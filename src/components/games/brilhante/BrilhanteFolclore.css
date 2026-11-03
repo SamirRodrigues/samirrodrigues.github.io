@@ -639,6 +639,14 @@
   text-shadow: none;
 }
 
+/* A página é feita de cores do jogo (amarelo, vermelho, madeira). Em modo de
+   alto contraste / cores forçadas (Windows, alguns Android) o navegador as
+   trocava por cores do sistema e fichas, faixas e botões perdiam a cor. */
+.bf {
+  forced-color-adjust: none;
+  color-scheme: light;
+}
+
 /* Mantém a seta de link externo junto do @ na placa */
 .bf-sign .bf-nowrap {
   white-space: nowrap;

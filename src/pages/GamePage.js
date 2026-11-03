@@ -9,6 +9,7 @@ import FeatureSection from "../components/games/FeatureSection";
 import DownloadSection from "../components/games/DownloadSection";
 import BrilhanteFolclore from "../components/games/brilhante/BrilhanteFolclore";
 import LinhasDoSerido from "../components/games/linhas/LinhasDoSerido";
+import ReguaPnab from "../components/games/ReguaPnab";
 import { getGame } from "../data/games";
 import "./GamerPage.css";
 
@@ -22,8 +23,18 @@ const GAME_PAGES = {
       <DownloadSection />
     </>
   ),
-  "brilhante-folclore": () => <BrilhanteFolclore />,
-  "linhas-do-serido": () => <LinhasDoSerido />,
+  "brilhante-folclore": () => (
+    <>
+      <BrilhanteFolclore />
+      <ReguaPnab />
+    </>
+  ),
+  "linhas-do-serido": () => (
+    <>
+      <LinhasDoSerido />
+      <ReguaPnab />
+    </>
+  ),
 };
 
 // Games with their own artwork use a header tuned for it.
