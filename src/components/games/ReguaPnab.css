@@ -1,42 +1,84 @@
 /* Fundo branco liso e fixo (não muda com o tema): o manual pede branco no
-   fundo da versão colorida. */
+   fundo da versão colorida. Todas as marcas usam a mesma escala (--k = px por
+   pixel do arquivo), então a proporção entre elas é a do manual. */
 .regua-pnab {
+  --k: min(0.48px, (100vw - 32px) / 2300);
   background: #ffffff;
   color: #393645;
   padding: 40px 16px 48px;
-  text-align: center;
   forced-color-adjust: none;
   color-scheme: light;
   border-top: 1px solid rgba(57, 54, 69, 0.15);
 }
-.regua-pnab-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.regua-pnab-title {
-  margin: 0 0 8px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-.regua-pnab-text {
-  margin: 0 auto 16px;
-  max-width: 60ch;
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-/* celular: régua vertical (a imagem já traz a área de não interferência) */
-.regua-pnab-img {
+.regua-pnab img {
   display: block;
-  margin: 0 auto;
-  width: min(260px, 80%);
   height: auto;
+  max-width: none;
 }
-/* a partir de 768 px a <picture> troca para a horizontal */
-@media (min-width: 768px) {
-  .regua-pnab-img {
-    width: 100%;
-    max-width: 1000px;
+.regua-label {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #393645;
+}
+.regua-brand {
+  width: calc(var(--k) * 300);
+}
+
+/* ---- desktop: marca | Apoio | Realização ---- */
+.regua-h {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: calc(var(--k) * 90);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.regua-h .regua-brand {
+  align-self: center;
+}
+/* rótulos na mesma linha; a imagem de cada grupo fica centralizada na altura */
+.regua-h .regua-group {
+  display: flex;
+  flex-direction: column;
+}
+.regua-h .regua-group img {
+  margin: auto 0;
+}
+.regua-h-apoio {
+  width: calc(var(--k) * 555);
+}
+.regua-h-realizacao {
+  width: calc(var(--k) * 1240);
+}
+.regua-v {
+  display: none;
+}
+
+/* ---- celular: marca acima, depois Apoio e Realização ---- */
+@media (max-width: 767px) {
+  .regua-pnab {
+    --k: 0.5px;
+  }
+  .regua-h {
+    display: none;
+  }
+  .regua-v {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    text-align: center;
+  }
+  .regua-v .regua-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .regua-v-apoio {
+    width: calc(var(--k) * 325);
+  }
+  .regua-v-realizacao {
+    width: calc(var(--k) * 495);
   }
 }
