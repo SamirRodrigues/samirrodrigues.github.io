@@ -7,7 +7,6 @@ import { useTheme } from "../../theme/ThemeContext";
 import "./HeaderGrey.css";
 
 const HeaderGrey = ({ tone }) => {
-  const [activeKey, setActiveKey] = useState("/");
   const [menuOpen, setMenuOpen] = useState(false);
   const [isTablet, setIsTablet] = useState(
     window.innerWidth >= 768 && window.innerWidth <= 991
@@ -24,26 +23,20 @@ const HeaderGrey = ({ tone }) => {
   const onDark = location.pathname === "/" || isDark || onWood;
   const navigate = useNavigate(); // Hook de navegação
 
-  // Definir a rota correta para selecionar o menu
-  useEffect(() => {
-    if (location.pathname === "/about") {
-      setActiveKey("/about");
-    } else if (location.pathname === "/" || location.pathname === "/details") {
-      setActiveKey("/");
-    } else if (location.pathname.startsWith("/games")) {
-      setActiveKey("/games");
-    } else if (location.pathname === "/contact") {
-      setActiveKey("/contact");
-    } else {
-      // Pode definir uma lógica padrão ou manter uma chave inativa
-      setActiveKey(null);
-    }
-  }, [location.pathname]);
+  // Item do menu derivado da rota, já no primeiro render (sem a linha deslizar de INÍCIO)
+  const { pathname } = location;
+  const activeKey =
+    pathname === "/" || pathname === "/details"
+      ? "/"
+      : pathname.startsWith("/games")
+      ? "/games"
+      : pathname === "/contact"
+      ? "/contact"
+      : null;
 
   const handleSelect = (selectedKey, event) => {
-    // Os links têm href real (/about etc.); a navegação fica com o React Router
+    // Os links têm href real (/games etc.); a navegação fica com o React Router
     if (event) event.preventDefault();
-    setActiveKey(selectedKey);
     navigate(selectedKey);
 
     // Fecha o menu ao clicar em um link no mobile/tablet
@@ -126,14 +119,6 @@ const HeaderGrey = ({ tone }) => {
                   }`}
                 >
                   INÍCIO
-                </Nav.Link>
-                <Nav.Link
-                  href="/about"
-                  className={`header-grey-nav-link ${
-                    activeKey === "/about" ? "active" : ""
-                  }`}
-                >
-                  QUEM SOMOS
                 </Nav.Link>
                 <Nav.Link
                   href="/games"
@@ -267,14 +252,6 @@ const HeaderGrey = ({ tone }) => {
                 }`}
               >
                 INÍCIO
-              </Nav.Link>
-              <Nav.Link
-                href="/about"
-                className={`header-grey-nav-link ${
-                  activeKey === "/about" ? "active" : ""
-                }`}
-              >
-                QUEM SOMOS
               </Nav.Link>
               <Nav.Link
                 href="/games"

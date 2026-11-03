@@ -646,3 +646,9 @@
   forced-color-adjust: none;
   color-scheme: light;
 }
+
+/* Mantém a seta de link externo junto do @ na placa */
+.bf-sign .bf-nowrap {
+  white-space: nowrap;
+  padding: 0;
+}

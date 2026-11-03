@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
+import ExternalMark from "./ExternalMark";
 import "./Footer.css";
 
 const Footer = () => {
@@ -51,21 +52,25 @@ const Footer = () => {
                 href="https://x.com/baladeirastudio"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="footer-external"
               >
                 <img src="/assets/x-icon.png" alt="X" className="social-icon" />
-                @baladeirastudio
+                <span>@baladeirastudio</span>
+                <ExternalMark />
               </a>
               <a
                 href="https://instagram.com/baladeirastudio"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="footer-external"
               >
                 <img
                   src="/assets/instagram-icon.png"
                   alt="Instagram"
                   className="social-icon"
                 />
-                @baladeirastudio
+                <span>@baladeirastudio</span>
+                <ExternalMark />
               </a>
             </div>
           </Col>
@@ -76,11 +81,6 @@ const Footer = () => {
               <li>
                 <Link to="/" onClick={() => handleNavigation("/")}>
                   Início
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" onClick={() => handleNavigation("/about")}>
-                  Quem somos
                 </Link>
               </li>
               <li>

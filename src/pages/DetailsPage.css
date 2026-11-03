@@ -21,15 +21,9 @@
 
 /* Media Queries */
 @media (max-width: 768px) {
-  .who-we-are .content-box,
-  .launch-content {
+  .who-we-are .content-box {
     flex-direction: column;
     text-align: center;
-  }
-
-  .launch-logo img {
-    width: 80%;
-    margin: 20px auto;
   }
 
   .partner-logo {
@@ -38,22 +32,15 @@
 }
 
 @media (max-width: 576px) {
-  .first-section,
-  .launch-section {
+  .first-section {
     padding: 30px 10px;
   }
 
-  .first-title,
-  .launch-title {
+  .first-title {
     font-size: 1.8rem;
   }
 
-  .who-we-are .content-box,
-  .launch-content {
+  .who-we-are .content-box {
     padding: 30px;
-  }
-
-  .launch-logo img {
-    width: 100%;
   }
 }

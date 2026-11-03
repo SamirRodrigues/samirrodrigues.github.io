@@ -1,4 +1,5 @@
 import React from "react";
+import ExternalMark from "../components/body/ExternalMark";
 import "./TermsConditions.css"; // Importa o CSS
 import HeaderGrey from "../components/body/HeaderGrey"; // Importa o Header
 import Footer from "../components/body/Footer"; // Importa o Footer
@@ -67,6 +68,7 @@ const TermsConditions = () => {
                 rel="noopener noreferrer"
               >
                 Google Play Services
+                <ExternalMark />
               </a>
             </li>
             <li>
@@ -76,6 +78,7 @@ const TermsConditions = () => {
                 rel="noopener noreferrer"
               >
                 AdMob
+                <ExternalMark />
               </a>
             </li>
             <li>
@@ -85,6 +88,7 @@ const TermsConditions = () => {
                 rel="noopener noreferrer"
               >
                 Unity
+                <ExternalMark />
               </a>
             </li>
             <li>
@@ -94,6 +98,7 @@ const TermsConditions = () => {
                 rel="noopener noreferrer"
               >
                 GameAnalytics
+                <ExternalMark />
               </a>
             </li>
           </ul>

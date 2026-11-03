@@ -2,6 +2,7 @@
 import React from "react";
 import HeaderGrey from "../components/body/HeaderGrey";
 import Footer from "../components/body/Footer";
+import ExternalMark from "../components/body/ExternalMark";
 import { GameFeature, GamePoster } from "../components/games/GameCard";
 import { games } from "../data/games";
 import "./GamesListPage.css";
@@ -36,6 +37,7 @@ const GamesListPage = () => (
             rel="noopener noreferrer"
           >
             Siga @baladeirastudio
+            <ExternalMark />
           </a>
         </p>
       </div>

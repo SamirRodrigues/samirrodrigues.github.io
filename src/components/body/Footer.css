@@ -228,3 +228,25 @@ footer h5 {
     text-align: left;
   }
 }
+
+/* Links externos (redes sociais): sublinhados e com a seta ↗ */
+.footer a.footer-external {
+  display: inline-flex;
+  align-items: center;
+}
+.footer a.footer-external span {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+.footer a.footer-external:hover,
+.footer a.footer-external:focus-visible {
+  color: #fba42b;
+}
+
+/* Links internos do rodapé voltam a sublinhar no hover */
+.footer-menu li a:hover,
+.footer-menu li a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
