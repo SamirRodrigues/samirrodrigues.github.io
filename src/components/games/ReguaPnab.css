@@ -1,0 +1,38 @@
+/* Painel escuro liso e fixo (não muda com o tema): a régua é branca. */
+.regua-pnab {
+  background: #292c37;
+  color: #ffffff;
+  padding: 48px 16px 56px;
+  text-align: center;
+  forced-color-adjust: none;
+  color-scheme: dark;
+}
+.regua-pnab-inner {
+  max-width: 560px;
+  margin: 0 auto;
+}
+.regua-pnab-title {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.regua-pnab-text {
+  margin: 0 auto 24px;
+  max-width: 42ch;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.regua-pnab-img {
+  display: block;
+  margin: 0 auto;
+  width: 200px; /* o manual pede no mínimo 150 px de largura */
+  max-width: 100%;
+  height: auto;
+}
+@media (min-width: 900px) {
+  .regua-pnab-img {
+    width: 240px;
+  }
+}
